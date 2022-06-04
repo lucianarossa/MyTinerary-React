@@ -1,12 +1,12 @@
 import "./styles/App.css";
-import Header from "./components/Header";
+import Navbar from "./components/NavBar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 function App() {
   return (
   <>
-  <Header />
+  <Navbar color= {"white"} />
   <Main />
   <Footer />
   </>

@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import logo from "../images/logo2.png"
+import "../styles/navbar.css"
 
 const pages = ['home', 'cities'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -87,7 +88,7 @@ const NavBar = ({color}) => {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: 'Lucida Sans',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -101,7 +102,7 @@ const NavBar = ({color}) => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block' }}
               >
                 {page}
               </Button>
