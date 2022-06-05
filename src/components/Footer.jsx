@@ -1,11 +1,13 @@
 import React from "react";
+import logo from "../images/logo2.png"
 import "../styles/footer.css"
-import NavBar from "./NavBar";
 
 function Footer() {
     return(
-   
-        <NavBar color={"gray"}/>
+        <div className="footer-container">
+        <img className= "logo" src={logo} alt="" />
+
+    </div>
 )
 }
 

@@ -1,18 +1,14 @@
 import React from "react";
 import "../styles/main.css"
-import Welcome from "./Welcome"
+import Cover from "./Cover"
 import Carrousel from "./Carrousel"
 
 
 function Main() {
     return(
         <>
-        <div className="BackroundImage">
-            <Welcome/>
-        </div>
-        <div className="CarrouselContainer" >
-            <Carrousel/>
-        </div>
+        <Cover/>
+        <Carrousel/>
         </>
 )
 }

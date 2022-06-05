@@ -1,9 +1,10 @@
 import React from "react";
+import "../styles/carrousel.css"
 
 function Carrousel() {
     return(
     
-        <h1>CARROUSEL</h1>
+        <div className="carrousel-container"></div>
         
     )
 }
