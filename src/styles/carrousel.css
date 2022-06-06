@@ -1,4 +1,13 @@
 .carrousel-container {
-    height: 120vh;
+    height: 90vh;
     width: 100%;
+    background-color: rgba(159, 245, 245, 0.489);
+    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 35%);
+}
+
+.carrousel-title {
+    text-align: center;
+    font-size: 25px;
+    padding-top: 3rem;
+    color: white;
 }

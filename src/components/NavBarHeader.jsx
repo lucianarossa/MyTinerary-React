@@ -16,7 +16,7 @@ import logo from "../images/logo2.png"
 import "../styles/navbarheader.css"
 
 const pages = ['home', 'cities'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Sign Up', 'Log In'];
 
 const NavBarHeader = ({color}) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -41,7 +41,13 @@ const NavBarHeader = ({color}) => {
     <AppBar position="static" sx= {{backgroundColor: color}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img className= "logo" src={logo} alt="" />
+
+        {/* LOGO MYTINERARIES */}
+
+          <img className= "logo" src={logo} alt="logo" />
+
+        {/* MENU HOME AND CITIES */}
+
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -78,6 +84,8 @@ const NavBarHeader = ({color}) => {
               ))}
             </Menu>
           </Box>
+
+
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -88,14 +96,15 @@ const NavBarHeader = ({color}) => {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'Lucida Sans',
+              fontFamily: "Roboto",
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            LOGO RESPONSIVE
+          {/* LOGO RESPONSIVE */}
+
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -109,10 +118,12 @@ const NavBarHeader = ({color}) => {
             ))}
           </Box>
 
+          {/* USER MENU */}
+
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="User">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="../images/userlogo.png" />
               </IconButton>
             </Tooltip>
             <Menu

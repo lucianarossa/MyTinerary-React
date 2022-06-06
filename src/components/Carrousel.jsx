@@ -4,7 +4,9 @@ import "../styles/carrousel.css"
 function Carrousel() {
     return(
     
-        <div className="carrousel-container"></div>
+        <div className="carrousel-container">
+            <h1 className="carrousel-title">Popular MyTineraries</h1>
+        </div>
         
     )
 }
