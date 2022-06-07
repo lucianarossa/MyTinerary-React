@@ -1,5 +1,5 @@
 .cover-container {
-    height: 90vh;
+    height: 80vh;
     width: 100%;
     object-fit: contain;
     box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 35%);
@@ -12,27 +12,31 @@
 .cover-video {
     object-fit: cover;
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     position: absolute;
     z-index: -2;
 }
 
-.plane-image{
-    width: 50vw;
-    position: absolute;
-    z-index: -1;
-}
-
 .cover-title {
+    font-size: 50px;
     text-align: center;
     color: #EDDAD4;
-    font-size: 55px;
-    padding: 1rem;
+    text-shadow: 0px 1px white;
 }
 
+.cover-subt {
+    padding-top: 2rem;
+    font-size: 23px;
+    text-align: center;
+    color: #7ea6a6;
+    text-shadow: 0px 1px white;
+    letter-spacing: 2px;
+}  
+
 .slogan {
+
     text-align: center;
     color: white;
-    margin-top: 2.5vh;
-    font-size: 25px;
+    font-size: 30px;
+    font-family: 'Seaweed Script', cursive;
 }

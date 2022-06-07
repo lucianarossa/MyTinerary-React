@@ -2,10 +2,10 @@ import React from "react";
 import "../styles/calltoaction.css"
 import CallImage from "../images/callimage.png"
 import Fab from '@mui/material/Fab';
-import NavigationIcon from '@mui/icons-material/Navigation';
 import Box from '@mui/material/Box';
+import Cities from "./Cities"
 
-function Cover() {
+function CallToAction() {
     return(
     
         <div className="call-container">   
@@ -13,10 +13,10 @@ function Cover() {
               <h1 className="call-title">If you want to discover the most amazing places around the world</h1>
               <p className="call-description">you are in the right place!</p>
               <Box sx={{ '& > :not(style)': { m: 1 } }}>
-              <Fab variant="extended" className="call-button">
-                 <NavigationIcon sx={{ mr: 0 }} />
+              <Fab variant="extended" className="call-button" href={Cities}>
                JOIN THE JOURNEY
               </Fab>
+
               </Box>
            </div>
            <img className="call-image" src={CallImage} alt="" />
@@ -25,4 +25,4 @@ function Cover() {
     )
 }
 
-export default Cover
+export default CallToAction

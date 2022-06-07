@@ -1,13 +1,30 @@
 .carrousel-container {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     background-color: rgba(159, 245, 245, 0.489);
     box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 35%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .carrousel-title {
     text-align: center;
-    font-size: 25px;
-    padding-top: 3rem;
+    font-size: 40px;
     color: white;
+    text-shadow: 2px 1px #EDDAD4;
+    margin-top: 1rem;
+}
+
+.carrousel {
+    height: 60vh;
+    width: 80vw;
+    margin-bottom: 2rem;
+    
+}
+
+.carrousel-img{
+    height: 60vh !important;
+    object-fit: cover !important;
 }

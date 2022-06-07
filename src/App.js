@@ -1,12 +1,14 @@
 import "./styles/App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import NavBarHeader from "./components/NavBarHeader";
+import NavBar from "./components/NavBar";
+
 
 function App() {
   return (
   <>
-  <NavBarHeader color= {"white"} />
+  <NavBar/>
   <Main />
   <Footer />
   </>
