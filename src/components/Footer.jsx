@@ -1,11 +1,12 @@
 import React from "react";
 import logo from "../images/logo2.png"
-import FooterVideo from "../images/footervideo.mp4"
 import Instagram from "../images/instagram.png"
 import Facebook from "../images/facebook.png"
 import Twitter from "../images/twitter.png"
 import YouTube from "../images/youtube.png"
 import "../styles/footer.css"
+import {Link as LinkRouter} from "react-router-dom"
+
      
       
       function Footer() {
@@ -14,8 +15,8 @@ import "../styles/footer.css"
                  <div className="foot-nav">
                  <img className= "logo-footer" src={logo} alt="logo" />
                  <div className="footer-navbar">
-                    <a className= "footer-link" href="/">HOME</a>
-                    <a className= "footer-link" href="/">CITIES</a>
+                    <LinkRouter className= "footer-link" to={"/"}>HOME</LinkRouter>
+                    <LinkRouter className= "footer-link" to={"/construccion"}>CITIES</LinkRouter>
                  </div>
                  </div>
                  <div className="media-container">

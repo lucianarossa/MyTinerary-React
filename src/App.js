@@ -1,15 +1,20 @@
 import "./styles/App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Main from "./components/Main";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import {Routes, Route} from "react-router-dom";
+import Index from "./pages/Index.jsx";
+import PaginaConstruccion from "./pages/PaginaConstruccion.jsx";
 
 
 function App() {
   return (
   <>
   <NavBar/>
-  <Main />
+   <Routes>
+     <Route path="/" element={<Index/>}/>
+     <Route path="/construccion" element={<PaginaConstruccion/>}/>
+   </Routes>
   <Footer />
   </>
   )

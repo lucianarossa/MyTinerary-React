@@ -43,3 +43,13 @@ align-items: center;
     margin-left: .3rem;
 }
 
+.media-container a:hover{
+    background-color: #EDDAD4 !important;
+    border-radius: 10em;
+}
+
+.footer-navbar a:hover{
+    color: #EDDAD4 !important;
+    text-shadow: 2px 2px black;
+}
+

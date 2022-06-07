@@ -45,3 +45,31 @@
   font-family: 'Paytone One', sans-serif !important;
 }
 
+.Links{
+  text-decoration: none;
+}
+
+.paginaconstruccion{
+  background-color: #EDDAD4;
+  height: 62vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+}
+
+.titulo-construccion{
+    letter-spacing: 2px;
+    text-align: center;
+    color: rgb(3, 75, 75);
+    font-size: 30px;
+    padding-bottom: .5rem;
+    z-index: 1;
+}
+
+.plane-image {
+  height: 18rem;
+  position: absolute;
+  z-index: 0;
+}

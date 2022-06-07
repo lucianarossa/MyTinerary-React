@@ -12,10 +12,11 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from "../images/logo2.png"
+import {Link as LinkRouter} from "react-router-dom"
 
 // ARRAYS PARA IMPRIMIR MENU Y USER MENU
 
-const pages = ['Home', 'Cities'];
+const pages = [{name: "Home", to:"/" }, {name: "Cities", to:"/construccion"}];
 const settings = ['Sign Up', 'Log In'];
 
 
@@ -89,10 +90,12 @@ const Navbar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page, index) => (
+                <LinkRouter to={page.to} key={index} onClick={handleCloseNavMenu}className="Links">
+                <MenuItem>
+                  <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
+                </LinkRouter>
               ))}
             </Menu>
           </Box>
@@ -125,14 +128,15 @@ const Navbar = () => {
 {/* //MENU */}
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pages.map((page, index) => (
+              <LinkRouter to={page.to} key={index}
+              onClick={handleCloseNavMenu} className="Links">
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block', fontSize: 18, fontFamily:"font-family: 'Nunito', sans-serif;" }}
               >
-                {page}
+                {page.name}
               </Button>
+              </LinkRouter>
             ))}
           </Box>
 
