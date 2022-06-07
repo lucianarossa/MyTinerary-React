@@ -1,9 +1,7 @@
 import React from "react";
 import "../styles/carrousel.css"
 import Carousel from 'react-bootstrap/Carousel'
-import CaboFrio from "../images/cabofrio-brazil-america.jpg"
-import Cancun from "../images/cancun-mexico-america.jpg"
-import Tamarindo from "../images/tamarindo-costarica-america.jpg"
+
 
 function Carrousel() {
     return(
@@ -14,7 +12,7 @@ function Carrousel() {
         <Carousel.Item>
           <img
             className="d-block w-100 carrousel-img"
-            src={CaboFrio}
+            src={process.env.PUBLIC_URL+"/assets/paris-france.jpg"}
             alt="First slide"
           />
           <Carousel.Caption>
@@ -25,7 +23,7 @@ function Carrousel() {
         <Carousel.Item>
           <img
             className="d-block w-100 carrousel-img"
-            src={Cancun}
+            src={process.env.PUBLIC_URL+"/assets/barcelona-spain.jpg"}
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -36,7 +34,7 @@ function Carrousel() {
         <Carousel.Item>
           <img
             className="d-block w-100 carrousel-img"
-            src={Tamarindo}
+            src={process.env.PUBLIC_URL+"/assets/viena-austria.jpg"}
             alt="Third slide"
           />
           <Carousel.Caption>

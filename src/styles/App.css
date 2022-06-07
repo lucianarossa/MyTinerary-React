@@ -49,17 +49,17 @@
   text-decoration: none;
 }
 
-.paginaconstruccion{
+.buildingpage{
   background-color: #EDDAD4;
-  height: 62vh;
+  height: 68vh;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap-reverse;
 }
 
-.titulo-construccion{
+.biulding-title{
     letter-spacing: 2px;
     text-align: center;
     color: rgb(3, 75, 75);
@@ -68,8 +68,19 @@
     z-index: 1;
 }
 
+.biulding-subt{
+  width: 300px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: rgb(3, 75, 75);
+  font-size: 20px;
+  padding-bottom: .5rem;
+  z-index: 1;
+}
 .plane-image {
   height: 18rem;
   position: absolute;
   z-index: 0;
 }
+
+

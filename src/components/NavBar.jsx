@@ -11,12 +11,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import Logo from "../images/logo2.png"
 import {Link as LinkRouter} from "react-router-dom"
 
 // ARRAYS PARA IMPRIMIR MENU Y USER MENU
 
-const pages = [{name: "Home", to:"/" }, {name: "Cities", to:"/construccion"}];
+const pages = [{name: "Home", to:"/" }, {name: "Cities", to:"/buildingpage"}];
 const settings = ['Sign Up', 'Log In'];
 
 
@@ -56,7 +55,7 @@ const Navbar = () => {
   {/* // LOGO */}
 
       <Box sx={{display: {xs:"none", md: "flex"}, mr:1}}>
-        <img src={Logo} alt="logo" style={{width:"100px"}}/>
+        <img src={process.env.PUBLIC_URL+"/assets/logo2.png"} alt="logo" style={{width:"100px"}}/>
       </Box>
       
   {/* // MENU HAMBURGUESA */}
@@ -121,7 +120,7 @@ const Navbar = () => {
 
 {/* //LOGO RESPONSIVE */}
           <Box>
-            <img src={Logo} alt="logo" style={{width:"100px"}}/>
+            <img src={process.env.PUBLIC_URL+"/assets/logo2.png"} alt="logo" style={{width:"100px"}}/>
           </Box>
           </Typography>
 

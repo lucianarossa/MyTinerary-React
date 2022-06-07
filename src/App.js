@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import {Routes, Route} from "react-router-dom";
 import Index from "./pages/Index.jsx";
-import PaginaConstruccion from "./pages/PaginaConstruccion.jsx";
+import BuildingPage from "./pages/BuildingPage";
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
   <NavBar/>
    <Routes>
      <Route path="/" element={<Index/>}/>
-     <Route path="/construccion" element={<PaginaConstruccion/>}/>
+     <Route path="/buildingpage" element={<BuildingPage/>}/>
    </Routes>
   <Footer />
   </>
