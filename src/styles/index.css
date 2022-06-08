@@ -9,11 +9,13 @@ body {
   font-family: 'Paytone One', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 #root {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
     
 }
 

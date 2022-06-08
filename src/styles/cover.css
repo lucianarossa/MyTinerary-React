@@ -21,7 +21,7 @@
     font-size: 100px;
     text-align: center;
     color: #EDDAD4;
-    text-shadow: 0px 1px white;
+    text-shadow:0px 15px 20px grey;
 }
 
 .cover-subt {
@@ -30,7 +30,7 @@
     text-align: center;
     color: #7ea6a6;
     text-shadow: 0px 1px white;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
 }  
 
 .slogan {

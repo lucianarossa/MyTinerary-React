@@ -8,10 +8,10 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import {Link as LinkRouter} from "react-router-dom"
+import "../styles/navbar.css"
 
 // ARRAYS PARA IMPRIMIR MENU Y USER MENU
 
@@ -92,7 +92,7 @@ const Navbar = () => {
               {pages.map((page, index) => (
                 <LinkRouter to={page.to} key={index} onClick={handleCloseNavMenu}className="Links">
                 <MenuItem>
-                  <Typography textAlign="center">{page.name}</Typography>
+                  <Typography sx={{color:"black", fontFamily:"'Paytone One', sans-serif"}}textAlign="center">{page.name}</Typography>
                 </MenuItem>
                 </LinkRouter>
               ))}
@@ -130,11 +130,8 @@ const Navbar = () => {
             {pages.map((page, index) => (
               <LinkRouter to={page.to} key={index}
               onClick={handleCloseNavMenu} className="Links">
-              <Button
-                sx={{ my: 2, color: 'black', display: 'block', fontSize: 18, fontFamily:"font-family: 'Nunito', sans-serif;" }}
-              >
-                {page.name}
-              </Button>
+                <button className='navbar-button'> {page.name}
+               </button>
               </LinkRouter>
             ))}
           </Box>
@@ -144,7 +141,7 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="User">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar/>
+                <Avatar alt="userlogo" src={process.env.PUBLIC_URL+"/assets/userlogo.png"}/>
               </IconButton>
             </Tooltip>
             <Menu
@@ -165,7 +162,7 @@ const Navbar = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography sx={{color:"black", fontFamily:"'Paytone One', sans-serif"}} textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>

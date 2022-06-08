@@ -1,7 +1,5 @@
 import React from "react";
 import "../styles/calltoaction.css"
-import Fab from '@mui/material/Fab';
-import Box from '@mui/material/Box';
 import {Link as LinkRouter} from "react-router-dom"
 
 function CallToAction() {
@@ -13,11 +11,8 @@ function CallToAction() {
               <p className="call-description">you are in the right place!</p>
 
               <LinkRouter to="/buildingpage" className="Links">
-              <Box sx={{ '& > :not(style)': { m: 1 } }}>
-              <Fab variant="extended" className="call-button">
-               JOIN THE JOURNEY
-              </Fab>
-              </Box>
+              <button className="call-button"> JOIN THE JOURNEY!
+             </button>
               </LinkRouter>
            </div>
            <img className="call-image" src={process.env.PUBLIC_URL+"/assets/callimage.png"} alt="" />

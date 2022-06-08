@@ -1,16 +1,14 @@
 .footer-container {
     width: 100%;
     padding: 1rem;
-    background-color: #9fc5c5a9;
+    background-color: white;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     
 }
-@media (max-width: 575px){
-    .footer-container{
-       padding: 4px;
-    }}
+
 
 .foot-nav {
     display: flex;
@@ -20,11 +18,6 @@
     height: 15vh;
 }
 
-@media (max-width: 575px){
-    .logo-footer{
-        height: 10vh;
-    }}
-
 .footer-navbar {
    height: 15vh;
    padding-left: 1rem;
@@ -32,56 +25,72 @@
    align-items: center;
 }
 
-@media (max-width: 575px){
-    .footer-navbar{
-        height: 3rem;
-        padding-left: 0;
-    }}
 
+.navbar-button {
+padding: 1em 1.6em;
+font-size: 14px;
+text-transform: uppercase;
+letter-spacing: 2.5px;
+font-weight: 500;
+color: #000;
+margin: .5em;
+background-color: #EDDAD4;
+border: none;
+border-radius: 45px;
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease 0s;
+cursor: pointer;
+outline: none;
+text-decoration: none;
+}
+      
+.navbar-button:hover {
+background-color: rgba(128, 128, 128, 0.669);
+box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+color: #fff;
+transform: translateY(-7px);
+}
+      
+.navbar-button:active {
+transform: translateY(-1px);
+}
+      
 .media-container {
 height: 15vh;
 display: flex;
 align-items: center;
 }
 
-@media (max-width: 575px){
-    .media-container{
-        height: 10vh;
-    }}
-
-
-.footer-link {
-    text-decoration: none;
-    padding: .5rem;
-    color: black;
-    font-family: 'Paytone One', sans-serif !important;
-    font-size: 20px;
-}
-
-@media (max-width: 575px){
-    .footer-link{
-        font-size: 15px;
-        padding: .2rem;
-    }}
-
 .social-media{
     height: 12vh;
     margin-left: .3rem;
 }
 
-@media (max-width: 575px){
-    .social-media{
-        height: 8vh;
-        margin-left: 0;
-    }}
-
-.media-container a:hover{
-    background-color: #EDDAD4 !important;
+.social-media {
+    height: 12vh;
+    margin-left: .3em;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    margin: .5em;
+    background-color: #EDDAD4;
+    border: none;
     border-radius: 10em;
-}
+    box-shadow: 0px 15px 20px grey;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  
+.social-media:hover {
+    background-color: rgba(128, 128, 128, 0.669);
+    box-shadow: 0px 15px 20px grey;
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+.social-media:active {
+    transform: translateY(-1px);
+  }
 
-.footer-navbar a:hover{
-    color: #EDDAD4 !important;
-    text-shadow: 2px 2px black;
-}
 

@@ -2,6 +2,9 @@ import React from "react";
 import "../styles/footer.css"
 import {Link as LinkRouter} from "react-router-dom"
 
+const pages = [{name: "Home", to:"/" }, {name: "Cities", to:"/buildingpage"}];
+
+
      
       
       function Footer() {
@@ -10,8 +13,11 @@ import {Link as LinkRouter} from "react-router-dom"
                  <div className="foot-nav">
                  <img className= "logo-footer" src={process.env.PUBLIC_URL+"/assets/logo2.png"} alt="logo" />
                  <div className="footer-navbar">
-                    <LinkRouter className= "footer-link" to={"/"}>HOME</LinkRouter>
-                    <LinkRouter className= "footer-link" to={"/buildingpage"}>CITIES</LinkRouter>
+                 {pages.map((page, index) => (
+                <LinkRouter  to={page.to} key={index} className='navbar-button'>
+                 {page.name}
+                </LinkRouter>
+                 ))}
                  </div>
                  </div>
                  <div className="media-container">
