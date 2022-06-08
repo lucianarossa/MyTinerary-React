@@ -1,0 +1,85 @@
+[   {
+        "name": "Amsterdam",
+        "country": "Netherlands",
+        "image": "./assets/amsterdam-netherlands.jpg",
+        "id" : "1"
+        
+    },
+    {
+        "name": "Barcelona",
+        "country": "Spain",
+        "image": "./assets/barcelona-spain.jpg",
+        "id" : "2"
+        
+    },
+    {
+        "name": "Berlin",
+        "country": "Germany",
+        "image": "./assets/berlin-germany.jpg",
+        "id" : "3"
+        
+    },
+    {
+        "name": "Budapest",
+        "country": "Hungary",
+        "image": "./assets/budapest-hungary.jpg",
+        "id" : "4"
+        
+    },
+    {
+        "name": "Edinburgh",
+        "country": "Scotland",
+        "image": "./assets/edinburgh-scotland.jpg",
+        "id" : "5"
+        
+    },
+    {
+        "name": "Lisbon",
+        "country": "Portugal",
+        "image": "./assets/lisbon-portugal.jpg",
+        "id" : "6"
+        
+    },
+    {
+        "name": "London",
+        "country": "United Kindom",
+        "image": "./assets/london-uk.jpg",
+        "id" : "7"
+        
+    },
+    {
+        "name": "Moscow",
+        "country": "Russia",
+        "image": "./assets/moscow-russia.jpg",
+        "id" : "8"
+        
+    },
+    {
+        "name": "Paris",
+        "country": "France",
+        "image": "./assets/paris-france.jpg",
+        "id" : "9"
+        
+    },
+    {
+        "name": "Rome",
+        "country": "Italy",
+        "image": "./assets/rome-italy.jpg",
+        "id" : "10"
+        
+    },
+    {
+        "name": "Viena",
+        "country": "Austria",
+        "image": "./assets/viena-austria.jpg",
+        "id" : "11"
+        
+    },
+    {
+        "name": "Zurich",
+        "country": "Switzerland",
+        "image": "./assets/zurich-switzerland.jpg",
+        "id" : "12"
+        
+    }
+]
