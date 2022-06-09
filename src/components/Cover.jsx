@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/cover.css"
 import { Container } from "react-bootstrap";
+import {Link as LinkRouter} from "react-router-dom"
 
 function Cover() {
     return(
@@ -12,6 +13,10 @@ function Cover() {
         <h1 className="cover-title">MyTinerary</h1>
         <h2 className="cover-subt">find your perfect trip!</h2>
         <p className="slogan">design by insiders who know and love their cities!</p>
+        <LinkRouter to= "/BuildingPage" className="Links">
+              <button className="call-button"> JOIN THE JOURNEY!
+             </button>
+        </LinkRouter>
         </Container>
         
     )

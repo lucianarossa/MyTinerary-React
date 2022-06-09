@@ -21,7 +21,7 @@ function Carrousel() {
             {Json.map(city=>(
               <Carousel.Item className="carrousel" key={city.id}>
                 
-                 <img width="80%" className="carrousel-img" src={process.env.PUBLIC_URL+`${city.image}`}/>
+                 <img width="100%" className="carrousel-img" src={process.env.PUBLIC_URL+`${city.image}`} alt="cities"/>
                  <h2 className="city-title">{city.name}</h2>
                  <h3 className="country-title">{city.country}</h3>
                 
