@@ -1,14 +1,14 @@
 import React from "react";
 import Cover from "../components/Cover"
-import CallToAction from "../components/CallToAction"
 import Carrousel from "../components/Carrousel"
+import WelcomeMessage from "../components/WelcomeMessage";
 
 
 function Index() {
     return(
         <>
         <Cover/>
-        <CallToAction/>
+        <WelcomeMessage/>
         <Carrousel/>
         </>
 )

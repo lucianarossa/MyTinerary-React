@@ -1,8 +1,8 @@
 import React from "react";
-import "../styles/calltoaction.css"
+import "../styles/welcomemessage.css"
 
 
-function CallToAction() {
+function WelcomeMessage() {
     return(
     
         <div className="call-container">   
@@ -16,4 +16,4 @@ function CallToAction() {
     )
 }
 
-export default CallToAction
+export default WelcomeMessage

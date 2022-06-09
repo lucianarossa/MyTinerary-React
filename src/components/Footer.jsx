@@ -21,16 +21,16 @@ const pages = [{name: "Home", to:"/" }, {name: "Cities", to:"/buildingpage"}];
                  </div>
                  </div>
                  <div className="media-container">
-                    <a href="https://www.instagram.com/" target="_blank">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                        <img className="social-media" src={process.env.PUBLIC_URL+"/assets/instagram.png"} alt="" />
                     </a>
-                    <a href="https://www.facebook.com/" target="_blank">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                        <img className="social-media" src={process.env.PUBLIC_URL+"/assets/facebook.png"} alt="" />
                     </a>
-                    <a href="https://www.twitter.com/" target="_blank">
+                    <a href="https://www.twitter.com/" target="_blank" rel="noreferrer">
                        <img className="social-media" src={process.env.PUBLIC_URL+"/assets/twitter.png"} alt="" />
                     </a>
-                    <a href="https://www.youtube.com/">
+                    <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
                        <img className="social-media" src={process.env.PUBLIC_URL+"/assets/youtube.png"} alt="" />
                     </a>
                   </div>
