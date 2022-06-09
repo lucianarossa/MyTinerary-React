@@ -19,14 +19,13 @@ const pages = [{name: "Home", to:"/" }, {name: "Cities", to:"/buildingpage"}];
 const settings = ['Sign Up', 'Log In'];
 
 
-// DECLARO COMPONENTE FUNCIONAL
-// SETEO DE HOOKS PARA AMBOS MENUES
+// CREO LOS ESTADOS DEL COMPONENTE NAVBAR PARA AMBOS MENUES en NULL (cerrados)
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-// APLICO ESCUCHADORES DE EVENTOS
+// GUARDO LA FUNCION DE ABRIR, DE AMBOS MENUES con un evento
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -35,7 +34,7 @@ const Navbar = () => {
     setAnchorElUser(event.currentTarget);
   };
 
-  // INICIALIZO HOOKS EN FALSE
+  // GUARDO LA FUNCION DE CERRAR DE AMBOS MENUES con null
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);

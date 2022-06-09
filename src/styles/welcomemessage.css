@@ -37,7 +37,7 @@
     color: black;
     margin-top: 2vh;
     font-size: 40px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .call-image {
@@ -46,6 +46,46 @@
  margin-left: 5rem;
 
 }
+
+.call-button {
+    padding: 15px 25px;
+    margin-top: 2rem;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #EA839B;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 0px 15px 20px grey;
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   
+.call-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+   
+.call-button:hover {
+    color: #e8e8e8;
+   }
+   
+.call-button:hover::before {
+    width: 100%;
+   }
 
 
 @media (max-width: 680px){
