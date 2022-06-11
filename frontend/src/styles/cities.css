@@ -3,11 +3,11 @@
     width: 100%;
     background-image: url(../assets/backround-cities.jpg);
     background-attachment: fixed;
-    background-position: top;
+    background-position: bottom;
     background-size: cover;
     position: relative;
     z-index: 2;
-    box-shadow: inset 0 0 0 1000px #00000033;
+    box-shadow: inset 0 0 0 1000px #0000003f;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,8 +40,7 @@
     
 
 .cities-subt {
-    padding-bottom: 2rem;
-    padding-top: 2rem;
+    padding-bottom: 1rem;
     font-size: 40px;
     text-align: center;
     color: #7ea6a6;
@@ -68,18 +67,18 @@
 .cities-description{
     text-align: center;
     color: white;
-    font-size: 35px;
+    font-size: 40px;
     font-family: 'Seaweed Script', cursive;
     letter-spacing: 2px;
 }
 
 @media (max-width: 680px){    
     .cities-description{
-            font-size: 28px;
+            font-size: 30px;
     }}
 @media (max-width: 380px){
     .cities-description{
-            font-size: 20px;
+            font-size: 30px;
     }}
 
 .main-cities-container{
@@ -87,6 +86,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    
+}
+
+.cities-video{
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 90vh;
+    margin-bottom: 2rem;
+    object-fit:cover;
+    z-index: -2;
 }
 
 /*cards*/
@@ -101,6 +111,7 @@
 
 .card{
     margin: 1.5rem;
+    border-radius: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

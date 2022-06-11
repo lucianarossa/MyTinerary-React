@@ -1,23 +1,11 @@
 import React from "react";
-import { useState } from "react";
 import Json from "../data.json"
 
 
-// CREO LOS ESTADOS DEL COMPONENTE CARDS INICIANDO EN FALSE Y ASIGNO LA FUNCION DE ACTUALIZACION CON EL EVENTO CLICK
-
-const CardsCities = () => {
-    const [showBack, setShowBack] = useState(false); 
-  
-    function handleClick(event) { 
-      if (event.variant === "click") { 
-        setShowBack(!showBack); 
-      } 
-    } 
-
-//DEFINO EL RETURN CON UN MAP AL JSON
+function CardsCities(){
 
     return (
-        <div className="card-container" onClick={handleClick}>
+        <div className="card-container">
           {Json.map(city=>(
 
               <div className="card" key={city.id}>
