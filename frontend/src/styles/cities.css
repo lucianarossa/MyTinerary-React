@@ -40,6 +40,7 @@
     
 
 .cities-subt {
+    padding-bottom: 2rem;
     padding-top: 2rem;
     font-size: 40px;
     text-align: center;
@@ -55,12 +56,12 @@
 
 @media (max-width: 680px){    
     .cities-subt{
-        font-size: 25px;
+        font-size: 30px;
     }}
 
 @media (max-width: 380px){    
     .cities-subt{
-        font-size: 15px;
+        font-size: 25px;
             
     }}
 
@@ -83,9 +84,88 @@
 
 .main-cities-container{
     background-color: rgba(255, 255, 255, 0.167);
-    height: 80vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
+/*cards*/
+
+.card-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+.card{
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.card-img{
+    height: 40vh !important;
+    width: 60vh;
+    object-fit: cover !important;
+    border-radius: 3rem;
+    box-shadow: 0px 12px 15px #7ea6a6;
+
+}
+
+.cities-cursive{
+    color: black;
+}
+
+
+.cities-button{
+ height: 4rem;
+ width: 100%;
+ position: absolute;
+ font-size: 28px;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ text-decoration: none;
+ display: inline-block;
+ transition: all .2s;
+ border: none;
+ color: rgb(255, 255, 255);
+ background-color: rgba(108, 106, 106, 0);
+}
+
+
+.cities-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   }
+   
+   .cities-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+   }
+   
+   .cities-button::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 1s;
+   }
+   
+   .cities-button::after {
+    background-color: #fff;
+   }
+   
+   .cities-button:hover::after {
+    transform: scaleX(1) scaleY(6);
+    opacity: 0;
+   }
