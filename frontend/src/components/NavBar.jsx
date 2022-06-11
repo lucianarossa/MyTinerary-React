@@ -15,7 +15,7 @@ import "../styles/navbar.css"
 
 // ARRAYS PARA IMPRIMIR MENU Y USER MENU
 
-const pages = [{name: "Home", to:"/" }, {name: "Cities", to:"/buildingpage"}];
+const pages = [{name: "Home", to:"/" }, {name: "Cities", to:"/cities"}];
 const settings = ['Sign Up', 'Log In'];
 
 

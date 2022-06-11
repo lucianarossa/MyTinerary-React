@@ -1,0 +1,91 @@
+.cities-container{
+    height: 80vh;
+    width: 100%;
+    background-image: url(../assets/backround-cities.jpg);
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+    box-shadow: inset 0 0 0 1000px #00000033;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cities-title {
+    font-size: 100px;
+    text-align: center;
+    color: #EDDAD4;
+    text-shadow:0px 15px 20px grey;
+}
+
+@media (max-width: 840px){
+    .cities-title{
+        font-size: 70px;
+    }}
+
+@media (max-width: 550px){
+    .cities-title{
+        font-size: 45px;
+    }}
+
+@media (max-width: 380px){    
+    .cities-title{
+            font-size: 35px;
+          
+    }}
+    
+
+.cities-subt {
+    padding-top: 2rem;
+    font-size: 40px;
+    text-align: center;
+    color: #7ea6a6;
+    text-shadow: 0px 1px 5px rgb(186, 185, 185);
+    letter-spacing: 2px;
+}  
+
+@media (max-width: 840px){
+    .cities-subt{
+        font-size: 35px;
+    }}
+
+@media (max-width: 680px){    
+    .cities-subt{
+        font-size: 25px;
+    }}
+
+@media (max-width: 380px){    
+    .cities-subt{
+        font-size: 15px;
+            
+    }}
+
+.cities-description{
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-family: 'Seaweed Script', cursive;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 680px){    
+    .cities-description{
+            font-size: 28px;
+    }}
+@media (max-width: 380px){
+    .cities-description{
+            font-size: 20px;
+    }}
+
+.main-cities-container{
+    background-color: rgba(255, 255, 255, 0.167);
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
