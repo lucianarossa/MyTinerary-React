@@ -84,4 +84,14 @@
   z-index: 0;
 }
 
+.cards-container{
+  display: flex;
+  justify-content: center;
+}
+
+.notfound-container{
+  display: flex;
+ justify-content: center;
+}
+
 

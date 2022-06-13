@@ -101,6 +101,12 @@
 
 /*cards*/
 
+.input-filter{
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;    
+}
+
 .card-container{
     width: 100%;
     display: flex;
@@ -110,73 +116,108 @@
     }
 
 .card{
-    margin: 1.5rem;
-    border-radius: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     border: none;
+    margin: 1rem;
+    width: 250px;
+    height: 350px;
+    background: #000;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .25s ease;
+    backface-visibility: hidden;
+    box-shadow: 0px 12px 15px grey;
 }
 
-.card-img{
-    height: 40vh !important;
-    width: 60vh;
-    object-fit: cover !important;
-    border-radius: 3rem;
-    box-shadow: 0px 12px 15px #7ea6a6;
-
+.card:hover{
+    transform: scale(.9);
 }
 
-.cities-cursive{
-    color: black;
+.card:hover::after{
+    height: 280px;
 }
 
-
-.cities-button{
- height: 4rem;
- width: 100%;
- position: absolute;
- font-size: 28px;
- letter-spacing: 1px;
- text-transform: uppercase;
- text-decoration: none;
- display: inline-block;
- transition: all .2s;
- border: none;
- color: rgb(255, 255, 255);
- background-color: rgba(108, 106, 106, 0);
+.card:hover .card-text p{
+    margin-bottom: 0px;
+    opacity: 1;
 }
 
+.card:hover img{
+    transform: scale(1.25);
+}
 
-.cities-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-   }
-   
-   .cities-button:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
-   }
-   
-   .cities-button::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
+.card::after{
     width: 100%;
-    border-radius: 100px;
+    content: "";
+    left: 0px;
+    bottom: 0px;
+    height: 150px;
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 1s;
-   }
-   
-   .cities-button::after {
-    background-color: #fff;
-   }
-   
-   .cities-button:hover::after {
-    transform: scaleX(1) scaleY(6);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    z-index: 20;
+    transition: all .25s ease;
+}
+
+.card img{
+    object-fit: cover;
+    height: 100%;
+    z-index: 10;
+    transition: all .25s ease;
+}
+
+.card .card-text{
+    height: 100%;
+    z-index: 30;
+    position: absolute;
+    bottom: 0px;
+    color: #fff;
+    text-shadow: 0px 5px 8px black;
+    padding: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+
+.card .card-text h2{
+    font-family: 'Paytone One', sans-serif !important;
+}
+
+.card .card-text p{
+    padding-top: 1rem;
+    font-size: 1rem;
     opacity: 0;
-   }
+    margin-bottom: -170px;
+    transition: all .25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    text-shadow: 0px 5px 8px black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.card .card-text p button{
+    padding: 7px 17px;
+    border-radius: 12px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: all .25s ease;
+    font-family: 'Paytone One', sans-serif !important;
+    font-size: .75rem;
+    outline: none;
+}
+
+.card .card-text p button:hover{
+    background: #fff;
+    color: #000;
+}
+
+
+

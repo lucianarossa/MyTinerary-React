@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/carrousel.css"
 import Carousel from 'react-grid-carousel'
-import Json from "../data.json"
+import Cities from "../data.json"
 
 
 
@@ -18,7 +18,7 @@ function Carrousel() {
             gap: 5,
             loop: true
           }]}>
-            {Json.map(city=>(
+            {Cities.map(city=>(
               <Carousel.Item className="carrousel" key={city.id}>
                 
                  <img width="100%" className="carrousel-img" src={process.env.PUBLIC_URL+`${city.image}`} alt="cities"/>

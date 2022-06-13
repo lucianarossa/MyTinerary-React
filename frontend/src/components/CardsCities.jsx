@@ -1,19 +1,21 @@
 import React from "react";
-import Json from "../data.json"
 
 
-function CardsCities(){
+function CardsCities({cardFilter}){
 
     return (
         <div className="card-container">
-          {Json.map(city=>(
-
+          {cardFilter.map(city=>(
               <div className="card" key={city.id}>
-                
                      <img width="100%" className="card-img" src={process.env.PUBLIC_URL+`${city.image}`} alt="cities"/>
-                     <button className="cities-button">{city.name}</button>
-                     
-                 
+                     <div className="card-text">
+                         <h2 className="city-name">{city.name}</h2>
+                         <p className="city-description">{city.description}
+                            <button>
+                              See More!
+                            </button>
+                         </p>
+                     </div>    
               </div>
            ))}
         </div>
