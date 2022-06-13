@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar";
 import {Routes, Route} from "react-router-dom";
 import Index from "./pages/Index.jsx";
 import Cities from "./pages/Cities";
-import CitiesDetails from "./pages/CitiesDetails";
+import Details from "./pages/Details";
 import ScrollToTop from "react-scroll-to-top";
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
@@ -17,7 +17,7 @@ function App() {
    <Routes>
      <Route path="/" element={<Index/>}/>
      <Route path="/cities" element={<Cities/>}/>
-     <Route path="/citiesdetails" element={<CitiesDetails/>}/>
+     <Route path="/details" element={<Details/>}/>
    </Routes>
   <Footer />
   <ScrollToTop
