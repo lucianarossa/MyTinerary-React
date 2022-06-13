@@ -1,9 +1,9 @@
 import React from "react";
-import CardDetails from "../components/CardDetails"
+import CityDetails from "../components/CityDetails"
 
 function Details(){
 return(
-    <CardDetails/>
+    <CityDetails/>
 )
 }
 

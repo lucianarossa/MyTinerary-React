@@ -11,7 +11,7 @@
         "country": "Spain",
         "image": "./assets/barcelona-spain.jpg",
         "id" : "2",
-        "description": "Beautiful city where people always have something to do, where everyone moves from one place to another by car, bike and scooter."
+        "description": "There's nowhere in the world like Barcelona. From days spent strolling the Gothic Quarter to afternoons at the beach and nights partying ‘til dawn, the city is magnetic."
         
     },
     {
@@ -19,7 +19,7 @@
         "country": "Germany",
         "image": "./assets/berlin-germany.jpg",
         "id" : "3",
-        "description": "A city full of scars, but in each one he has known how to get a tattoo. A city that has always reconciled with itself."
+        "description": "The German capital has a great story to tell its visitors. Ravaged during World War II and divided by the Wall for 28 years, Berlin is regaining its former splendor by leaps and bounds."
         
     },
     {
@@ -27,7 +27,7 @@
         "country": "Hungary",
         "image": "./assets/budapest-hungary.jpg",
         "id" : "4",
-        "description": "The architectural splendor of its palaces, churches and buildings overlooking the Danube is a tribute this time."
+        "description": "Dare to lose yourself in its streets full of history and you will discover why Budapest is known as The Pearl of the Danube and is visited by more than 7 million tourists each year. It will cast a spell on you."
         
     },
     {
@@ -83,7 +83,7 @@
         "country": "Austria",
         "image": "./assets/viena-austria.jpg",
         "id" : "11",
-        "description":"Ancient and modern at the same time; Vienna is gastronomy, its mixture of cultures generates a wide variety of dishes from all the world's cuisines."
+        "description":"A city with a special charm that will be the scene of many memories that you will not be able to forget; on your trip you can enjoy a Viennese coffee accompanied by a piece of the delicious Sacher cake."
         
     },
     {
@@ -91,7 +91,7 @@
         "country": "Switzerland",
         "image": "./assets/zurich-switzerland.jpg",
         "id" : "12",
-        "description":"The cosmopolitan city on the water combines creative urban life with wonderful nature. A great food festival and the liveliest nightlife."
+        "description":"With countless events, a great food festival and the liveliest nightlife, throbs both day and night. Those looking for rest, meanwhile, can approach the Swiss mountains in less than an hour."
         
     }
 ]

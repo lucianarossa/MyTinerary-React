@@ -10,7 +10,7 @@ function Welcome() {
            <div className="call-box">
               <h1 className="call-title">If you want to discover the most amazing places around the world</h1>
               <p className="call-description">you are in the right place!</p>
-              <LinkRouter to= "/Cities" className="Links">
+              <LinkRouter to= "/citiespage" className="Links">
               <button className="call-button"> JOIN THE JOURNEY!
               </button>
               </LinkRouter>

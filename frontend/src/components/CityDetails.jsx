@@ -1,8 +1,8 @@
 import React from "react";
 
-function CardDetails(){
+function CityDetails(){
     return(
     <h2>hola</h2>
     )}
 
-export default CardDetails
+export default CityDetails

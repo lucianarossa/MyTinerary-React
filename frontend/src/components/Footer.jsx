@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/footer.css"
 import {Link as LinkRouter} from "react-router-dom"
 
-const pages = [{name: "Home", to:"/" }, {name: "Cities", to:"/cities"}];
+const pages = [{name: "Home", to:"/" }, {name: "Cities", to:"/citiespage"}];
 
 
      

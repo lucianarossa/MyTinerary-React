@@ -1,16 +1,16 @@
 import React from "react";
 import CoverCities from "../components/CoverCities";
-import MainCities from "../components/MainCities"
-import "../styles/cities.css"
+import "../styles/cities.css";
+import Cities from "../components/Cities";
 
 
-function Cities (){
+function CitiesPage (){
     return(
        <>
        <CoverCities/>
-       <MainCities/>
+       <Cities/>
        </>     
 )
 }
 
-export default Cities
+export default CitiesPage;

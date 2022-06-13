@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import CardsCities from "./CardsCities"
-import Cities from "../data.json"
+import CardsCities from "./CardsCities";
+import CitiesData from "../data.json";
 import NotFound from "./NotFound";
 
 
-function MainCities (){
+function Cities (){
 const [inputValue, setInputValue] = useState("")
 
-let inputFilter = Cities.filter((city) => {
+let inputFilter = CitiesData.filter((city) => {
     return(
     city.name.toLowerCase().startsWith(inputValue.toLowerCase().trim())
     )});
@@ -28,4 +28,4 @@ let inputFilter = Cities.filter((city) => {
 )
 }
 
-export default MainCities
+export default Cities;
