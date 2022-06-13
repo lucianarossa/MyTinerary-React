@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CardsCities from "./CardsCities";
 import CitiesData from "../data.json";
 import NotFound from "./NotFound";
+import { Input  } from '@nextui-org/react';
 
 
 function Cities (){
@@ -19,7 +20,7 @@ let inputFilter = CitiesData.filter((city) => {
             </video>
             <h2 className="cities-subt">Let's explore the world!</h2>
             <div className="cities-filter">
-                <input className="input-filter" onKeyUp={(evento) => {setInputValue(evento.target.value)}} type="text" placeholder=" search cities..."></input> 
+                <Input onKeyUp={(evento) => {setInputValue(evento.target.value)}} type="text" placeholder=" search by city..."></Input> 
             </div>  
             <div className="cards-container">
             {inputFilter.length > 0 ? (<CardsCities cardFilter={inputFilter}/>) : (<NotFound/>) }

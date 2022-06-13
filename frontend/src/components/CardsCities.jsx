@@ -1,4 +1,5 @@
 import React from "react";
+import {Link as LinkRouter} from "react-router-dom"
 
 
 function CardsCities({cardFilter}){
@@ -11,9 +12,9 @@ function CardsCities({cardFilter}){
                      <div className="card-text">
                          <h2 className="city-name">{city.name}</h2>
                          <p className="city-description">{city.description}
-                            <button>
-                              See More!
-                            </button>
+                         <LinkRouter className="button" to= "/details">
+                              SEE MORE!    
+                         </LinkRouter>
                          </p>
                      </div>    
               </div>

@@ -3,6 +3,7 @@ import CityDetails from "../components/CityDetails"
 
 function Details(){
 return(
+    
     <CityDetails/>
 )
 }

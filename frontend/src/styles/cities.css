@@ -101,10 +101,14 @@
 
 /*cards*/
 
-.input-filter{
-    border-radius: 5px;
-    margin-bottom: 2rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;    
+.nextui-c-jeuecp{
+    background-color: #f1e0dcc5!important;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nextui-c-eXOOPO{
+    background-color: #F1E0DC !important;
+    margin-bottom: 3rem;
 }
 
 .card-container{
@@ -157,7 +161,7 @@
     bottom: 0px;
     height: 150px;
     position: absolute;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, #F1E0DC (66, 65, 65, 0) 0%, rgba(0,0,0,1) 100%);
     z-index: 20;
     transition: all .25s ease;
 }
@@ -177,7 +181,7 @@
     color: #fff;
     text-shadow: 0px 5px 8px black;
     padding: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
   
 }
 
@@ -187,7 +191,7 @@
 
 .card .card-text p{
     padding-top: 1rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0;
     margin-bottom: -170px;
     transition: all .25s ease;
@@ -196,10 +200,10 @@
     justify-content: flex-end;
     flex-direction: column;
     text-shadow: 0px 5px 8px black;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Poppins', sans-serif;
 }
 
-.card .card-text p button{
+.card .card-text p .button{
     padding: 7px 17px;
     border-radius: 12px;
     background: transparent;
@@ -210,14 +214,21 @@
     cursor: pointer;
     transition: all .25s ease;
     font-family: 'Paytone One', sans-serif !important;
-    font-size: .75rem;
+    font-size: .8rem;
     outline: none;
+    text-decoration: none;
 }
 
-.card .card-text p button:hover{
+.card .card-text p .button:hover{
     background: #fff;
     color: #000;
 }
+
+.button{
+    text-shadow: none;
+}
+
+
 
 
 
