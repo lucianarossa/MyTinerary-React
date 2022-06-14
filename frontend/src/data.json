@@ -1,7 +1,7 @@
 [   {
         "name": "Amsterdam",
         "country": "Netherlands",
-        "image": "./assets/amsterdam-netherlands.jpg",
+        "image": "/assets/amsterdam-netherlands.jpg",
         "id" : "1",
         "description" : "Open and tolerant city, combining a strong culture with people of simple habits. This City preserves and offers its history and has a permanent offer of varied entertainment."
         
@@ -9,15 +9,15 @@
     {
         "name": "Barcelona",
         "country": "Spain",
-        "image": "./assets/barcelona-spain.jpg",
+        "image": "/assets/barcelona-spain.jpg",
         "id" : "2",
-        "description": "There's nowhere in the world like Barcelona. From days spent strolling the Gothic Quarter to afternoons at the beach and nights partying ‘til dawn, the city is magnetic."
+        "description": "There's nowhere in the world like Barcelona. From days spent strolling the Gothic Quarter to afternoons at the beach and nights partying 'til dawn, the city is magnetic."
         
     },
     {
         "name": "Berlin",
         "country": "Germany",
-        "image": "./assets/berlin-germany.jpg",
+        "image": "/assets/berlin-germany.jpg",
         "id" : "3",
         "description": "The German capital has a great story to tell its visitors. Ravaged during World War II and divided by the Wall for 28 years, Berlin is regaining its former splendor by leaps and bounds."
         
@@ -25,7 +25,7 @@
     {
         "name": "Budapest",
         "country": "Hungary",
-        "image": "./assets/budapest-hungary.jpg",
+        "image": "/assets/budapest-hungary.jpg",
         "id" : "4",
         "description": "Dare to lose yourself in its streets full of history and you will discover why Budapest is known as The Pearl of the Danube and is visited by more than 7 million tourists each year. It will cast a spell on you."
         
@@ -33,7 +33,7 @@
     {
         "name": "Edinburgh",
         "country": "Scotland",
-        "image": "./assets/edinburgh-scotland.jpg",
+        "image": "/assets/edinburgh-scotland.jpg",
         "id" : "5",
         "description":"With its distinctly historic character, Edinburgh seamlessly blends old and new, offering visitors the perfect destination to experience the sights, sounds and tastes of a vibrant and diverse city."
         
@@ -41,15 +41,15 @@
     {
         "name": "Lisbon",
         "country": "Portugal",
-        "image": "./assets/lisbon-portugal.jpg",
+        "image": "/assets/lisbon-portugal.jpg",
         "id" : "6",
-        "description":"A fascinating city full of history, monuments, impressive bridges and vintage street cars. Extremely interesting city to visit and a place you will want to return to."
+        "description":"A fascinating city full of history, monuments, impressive bridges and vintage street cars. Extremely interesting to visit and a place you will want to return to."
         
     },
     {
         "name": "London",
         "country": "United Kindom",
-        "image": "./assets/london-uk.jpg",
+        "image": "/assets/london-uk.jpg",
         "id" : "7",
         "description":"One of the most visited cities in the world due to its special and cosmopolitan character. Impossible to describe through a text, to know London it is necessary to visit it and live it."
         
@@ -57,7 +57,7 @@
     {
         "name": "Moscow",
         "country": "Russia",
-        "image": "./assets/moscow-russia.jpg",
+        "image": "/assets/moscow-russia.jpg",
         "id" : "8",
         "description":"Thriving and exuberant capital that is brimming with life, culture and sometimes traffic. Home to numerous museums, Soviet-era monoliths, and post-Soviet kitsch."
         
@@ -65,7 +65,7 @@
     {
         "name": "Paris",
         "country": "France",
-        "image": "./assets/paris-france.jpg",
+        "image": "/assets/paris-france.jpg",
         "id" : "9",
         "description":"A city that seems designed for the enjoyment of the traveler. Its streets, squares, buildings, gardens and monuments seem designed so that anyone who visits Paris wants to return."
         
@@ -73,7 +73,7 @@
     {
         "name": "Rome",
         "country": "Italy",
-        "image": "./assets/rome-italy.jpg",
+        "image": "/assets/rome-italy.jpg",
         "id" : "10",
         "description":"The Eternal City because in it time seems to have stopped centuries ago. Its monuments and the remains of imposing buildings make a walk through its streets a journey back in time."
         
@@ -81,15 +81,15 @@
     {
         "name": "Vienna",
         "country": "Austria",
-        "image": "./assets/viena-austria.jpg",
+        "image": "/assets/viena-austria.jpg",
         "id" : "11",
-        "description":"A city with a special charm that will be the scene of many memories that you will not be able to forget; on your trip you can enjoy a Viennese coffee accompanied by a piece of the delicious Sacher cake."
+        "description":"A city with a special charm that will be the scene of many memories that you will not be able to forget. On your trip you can enjoy a Viennese coffee accompanied by a piece of the delicious Sacher cake."
         
     },
     {
         "name": "Zurich",
         "country": "Switzerland",
-        "image": "./assets/zurich-switzerland.jpg",
+        "image": "/assets/zurich-switzerland.jpg",
         "id" : "12",
         "description":"With countless events, a great food festival and the liveliest nightlife, throbs both day and night. Those looking for rest, meanwhile, can approach the Swiss mountains in less than an hour."
         

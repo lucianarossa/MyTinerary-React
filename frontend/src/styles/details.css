@@ -1,0 +1,88 @@
+.details-container{
+    height: 80vh;
+    width: 100%;
+    object-fit: contain;
+    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 15%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    
+}
+
+.details-image {
+    object-fit: cover;
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    z-index: -2;
+}
+
+.details-title {
+    font-size: 100px;
+    text-align: center;
+    color: #EDDAD4;
+    text-shadow:0px 15px 20px grey;
+}
+
+@media (max-width: 840px){
+    .details-title{
+        font-size: 70px;
+    }}
+
+@media (max-width: 550px){
+    .details-title{
+        font-size: 50px;
+    }}
+
+@media (max-width: 380px){    
+    .details-title{
+            font-size: 40px;
+          
+    }}
+
+    .details-description{
+        text-align: center;
+        color: white;
+        font-size: 120px;
+        font-family: 'Seaweed Script', cursive;
+        height: 17vh;
+        text-shadow:0px 15px 20px rgb(153, 150, 150);
+    }
+
+    @media (max-width: 840px){    
+        .details-description{
+                font-size: 90px;
+                height: 14vh;
+                
+        }}
+    
+    @media (max-width: 680px){    
+        .details-description{
+                font-size: 90px;
+                height: 13vh;
+        }}
+
+    @media (max-width: 550px){
+        .details-description{
+                font-size: 80px;
+                height: 12vh;
+            }}
+    @media (max-width: 380px){
+        .details-description{
+                font-size: 60px;
+                height: 9vh;
+        }}
+
+
+.details-main{
+    height: 80vh;
+    background-color: #7ea6a6a7;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+    
