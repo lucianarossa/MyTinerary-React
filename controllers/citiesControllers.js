@@ -2,7 +2,7 @@ const City = require('../models/city')
 
 const citiesControllers = {
     getCities: async (req, res) => {
-        let cities  //defino var que contiene el pedido
+        let cities  //defino var que contiene los modelos
         let error = null  //defino el err en null
         try {
             cities = await City.find()
@@ -34,12 +34,12 @@ const citiesControllers = {
         let city
         let error = null
         try {
-            city = await new City({    //new es un constructor, city es el modelo definido arriba
+            city = await new City({    //new es un constructor de modelo.
                 name: name,
                 country: country,
                 description: description,
                 image: image
-            }).save()
+            }).save() // guarda el modelo creado
         } catch (err) {
             error = err
         }
