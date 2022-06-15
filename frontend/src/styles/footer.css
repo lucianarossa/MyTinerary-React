@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    
+
 }
 
 
@@ -19,49 +19,49 @@
 }
 
 .footer-navbar {
-   height: 15vh;
-   padding-left: 1rem;
-   display: flex;
-   align-items: center;
+    height: 15vh;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 
 .navbar-button {
-padding: 1em 1.6em;
-font-size: 14px;
-text-transform: uppercase;
-letter-spacing: 2.5px;
-font-weight: 500;
-color: #000;
-margin: .5em;
-background-color: #EDDAD4;
-border: none;
-border-radius: 45px;
-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-transition: all 0.3s ease 0s;
-cursor: pointer;
-outline: none;
-text-decoration: none;
-}
-      
-.navbar-button:hover {
-background-color: rgba(128, 128, 128, 0.669);
-box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-color: #fff;
-transform: translateY(-7px);
-}
-      
-.navbar-button:active {
-transform: translateY(-1px);
-}
-      
-.media-container {
-height: 15vh;
-display: flex;
-align-items: center;
+    padding: 1em 1.6em;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    margin: .5em;
+    background-color: #EDDAD4;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
 }
 
-.social-media{
+.navbar-button:hover {
+    background-color: rgba(128, 128, 128, 0.669);
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.navbar-button:active {
+    transform: translateY(-1px);
+}
+
+.media-container {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+
+.social-media {
     height: 12vh;
     margin-left: .3rem;
 }
@@ -80,17 +80,15 @@ align-items: center;
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
-  }
-  
+}
+
 .social-media:hover {
     background-color: rgba(128, 128, 128, 0.669);
     box-shadow: 0px 15px 20px grey;
     color: #fff;
     transform: translateY(-7px);
-  }
-  
+}
+
 .social-media:active {
     transform: translateY(-1px);
-  }
-
-
+}

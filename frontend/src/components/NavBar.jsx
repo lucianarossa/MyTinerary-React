@@ -10,12 +10,12 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import {Link as LinkRouter} from "react-router-dom"
+import { Link as LinkRouter } from "react-router-dom"
 import "../styles/navbar.css"
 
 // ARRAYS PARA IMPRIMIR MENU Y USER MENU
 
-const pages = [{name: "Home", to:"/" }, {name: "Cities", to:"/citiespage"}];
+const pages = [{ name: "Home", to: "/" }, { name: "Cities", to: "/citiespage" }];
 const settings = ['Sign Up', 'Log In'];
 
 
@@ -25,7 +25,7 @@ const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-// GUARDO LA FUNCION DE ABRIR, DE AMBOS MENUES con un evento
+  // GUARDO LA FUNCION DE ABRIR, DE AMBOS MENUES con un evento
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -45,21 +45,21 @@ const Navbar = () => {
   };
 
   // IMPRIMO
-   
+
   return (
-    <AppBar position="static" sx={{backgroundColor:"white", color: "black"}}>
+    <AppBar position="static" sx={{ backgroundColor: "white", color: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
-  {/* // LOGO */}
+          {/* // LOGO */}
 
-      <Box sx={{display: {xs:"none", md: "flex"}, mr:1}}>
-        <img src={process.env.PUBLIC_URL+"/assets/logo2.png"} alt="logo" style={{width:"100px"}}/>
-      </Box>
-      
-  {/* // MENU HAMBURGUESA */}
+          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+            <img src={process.env.PUBLIC_URL + "/assets/logo2.png"} alt="logo" style={{ width: "100px" }} />
+          </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
+          {/* // MENU HAMBURGUESA */}
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -89,15 +89,15 @@ const Navbar = () => {
               }}
             >
               {pages.map((page, index) => (
-                <LinkRouter to={page.to} key={index} onClick={handleCloseNavMenu}className="Links">
-                <MenuItem>
-                  <Typography sx={{color:"black", fontFamily:"'Paytone One', sans-serif"}}textAlign="center">{page.name}</Typography>
-                </MenuItem>
+                <LinkRouter to={page.to} key={index} onClick={handleCloseNavMenu} className="Links">
+                  <MenuItem>
+                    <Typography sx={{ color: "black", fontFamily: "'Paytone One', sans-serif" }} textAlign="center">{page.name}</Typography>
+                  </MenuItem>
                 </LinkRouter>
               ))}
             </Menu>
           </Box>
-          
+
 
 
           <Typography
@@ -109,7 +109,7 @@ const Navbar = () => {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily:"monospace",
+              fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -117,30 +117,30 @@ const Navbar = () => {
             }}
           >
 
-{/* //LOGO RESPONSIVE */}
-          <Box>
-            <img src={process.env.PUBLIC_URL+"/assets/logo2.png"} alt="logo" style={{width:"100px"}}/>
-          </Box>
+            {/* //LOGO RESPONSIVE */}
+            <Box>
+              <img src={process.env.PUBLIC_URL + "/assets/logo2.png"} alt="logo" style={{ width: "100px" }} />
+            </Box>
           </Typography>
 
-{/* //MENU */}
+          {/* //MENU */}
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page, index) => (
               <LinkRouter to={page.to} key={index}
-              onClick={handleCloseNavMenu} className="Links">
+                onClick={handleCloseNavMenu} className="Links">
                 <button className='navbar-button'> {page.name}
-               </button>
+                </button>
               </LinkRouter>
             ))}
           </Box>
 
-{/* //USER MENU */}
+          {/* //USER MENU */}
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="User">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="userlogo" src={process.env.PUBLIC_URL+"/assets/userlogo.png"}/>
+                <Avatar alt="userlogo" src={process.env.PUBLIC_URL + "/assets/userlogo.png"} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -161,7 +161,7 @@ const Navbar = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{color:"black", fontFamily:"'Paytone One', sans-serif"}} textAlign="center">{setting}</Typography>
+                  <Typography sx={{ color: "black", fontFamily: "'Paytone One', sans-serif" }} textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>

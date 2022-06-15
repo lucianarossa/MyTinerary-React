@@ -22,7 +22,7 @@
     font-size: 100px;
     text-align: center;
     color: #EDDAD4;
-    text-shadow:0px 15px 20px grey;
+    text-shadow: 0px 15px 20px grey;
 }
 
 .cover-subt {
@@ -32,7 +32,7 @@
     color: #7ea6a6;
     text-shadow: 0px 1px white;
     letter-spacing: 2px;
-}  
+}
 
 .slogan {
 
@@ -42,37 +42,40 @@
     font-family: 'Seaweed Script', cursive;
 }
 
-@media (max-width: 680px){
-    .cover-title{
+@media (max-width: 680px) {
+    .cover-title {
         font-size: 55px;
-    }}
-
-@media (max-width: 680px){    
-    .cover-subt{
-        font-size: 20px;
-    }}
-
-@media (max-width: 680px){    
-    .slogan{
-            font-size: 20px;
-    }}
-
-@media (max-width: 380px){    
-    .cover-title{
-        font-size: 40px;
-      
-    }}
-
-@media (max-width: 380px){    
-    .cover-subt{
-        font-size: 18px;
-        
-    }}
-
-@media (max-width: 380px){
-    .slogan{
-        font-size: 15px;
     }
 }
 
+@media (max-width: 680px) {
+    .cover-subt {
+        font-size: 20px;
+    }
+}
 
+@media (max-width: 680px) {
+    .slogan {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .cover-title {
+        font-size: 40px;
+
+    }
+}
+
+@media (max-width: 380px) {
+    .cover-subt {
+        font-size: 18px;
+
+    }
+}
+
+@media (max-width: 380px) {
+    .slogan {
+        font-size: 15px;
+    }
+}

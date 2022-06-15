@@ -38,6 +38,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -47,11 +48,11 @@
   font-family: 'Paytone One', sans-serif !important;
 }
 
-.Links{
+.Links {
   text-decoration: none;
 }
 
-.buildingpage{
+.buildingpage {
   background-color: #A1B6B2;
   width: 100%;
   display: flex;
@@ -61,16 +62,16 @@
   flex-grow: 1;
 }
 
-.biulding-title{
-    letter-spacing: 2px;
-    text-align: center;
-    color: rgb(3, 75, 75);
-    font-size: 30px;
-    padding-bottom: .5rem;
-    z-index: 1;
+.biulding-title {
+  letter-spacing: 2px;
+  text-align: center;
+  color: rgb(3, 75, 75);
+  font-size: 30px;
+  padding-bottom: .5rem;
+  z-index: 1;
 }
 
-.biulding-subt{
+.biulding-subt {
   width: 300px;
   letter-spacing: 2px;
   text-align: center;
@@ -79,32 +80,30 @@
   padding-bottom: .5rem;
   z-index: 1;
 }
+
 .plane-image {
   height: 18rem;
   position: absolute;
   z-index: 0;
 }
 
-.cards-container{
+.cards-container {
   display: flex;
   justify-content: center;
 }
 
-.notfound-container{
+.notfound-container {
   display: flex;
- justify-content: center;
+  justify-content: center;
 }
 
-.styles_scroll-to-top__2A70v{
- background-color: #eddad4 !important;
- border-radius: 20px !important;
+.styles_scroll-to-top__2A70v {
+  background-color: #eddad4 !important;
+  border-radius: 20px !important;
 }
 
-.MuiSvgIcon-root{
+.MuiSvgIcon-root {
   height: 1.2em !important;
   width: 1.2em !important;
   color: rgb(0, 0, 0) !important;
 }
-
-
-

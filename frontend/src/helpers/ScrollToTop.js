@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 export default function ScrollToTop() {
   const { pathname } = useLocation();
 
-//useeffect tiene la capacidad de reconocer si una variable cambia se dispara la funcion del useeffect
+  //useeffect tiene la capacidad de reconocer si una variable cambia se dispara la funcion del useeffect
 
   useEffect(() => {
     document.documentElement.scrollTo({
