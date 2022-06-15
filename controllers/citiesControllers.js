@@ -2,8 +2,8 @@ const City = require('../models/city')
 
 const citiesControllers = {
     getCities: async (req, res) => {
-        let cities
-        let error = null
+        let cities  //defino var que contiene el pedido
+        let error = null  //defino el err en null
         try {
             cities = await City.find()
         } catch (err) { error = err }
@@ -30,11 +30,11 @@ const citiesControllers = {
     }
     ,
     addCity: async (req, res) => {
-        const { name, country, description, image } = req.body.data
+        const { name, country, description, image } = req.body.data  //desestructuro req.body.data para crear el modelo
         let city
         let error = null
         try {
-            city = await new City({
+            city = await new City({    //new es un constructor, city es el modelo definido arriba
                 name: name,
                 country: country,
                 description: description,

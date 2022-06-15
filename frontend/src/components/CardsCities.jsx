@@ -18,9 +18,6 @@ function CardsCities({ cardFilter }) {
                 SEE MORE!
               </LinkRouter>
             </p>
-            <LinkRouter className="button-two" to={`citydetails/${city._id}`}>
-                SEE MORE!
-            </LinkRouter>
           </div>
         </div>
       ))}
