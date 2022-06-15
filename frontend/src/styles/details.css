@@ -28,17 +28,17 @@
 
 @media (max-width: 840px){
     .details-title{
-        font-size: 70px;
+        font-size: 80px;
     }}
 
 @media (max-width: 550px){
     .details-title{
-        font-size: 50px;
+        font-size: 60px;
     }}
 
 @media (max-width: 380px){    
     .details-title{
-            font-size: 40px;
+            font-size: 48px;
           
     }}
 
@@ -77,7 +77,7 @@
 
 
 .details-main{
-    height: 80vh;
+    min-height: 80vh;
     background-color: #7ea6a6a7;
     width: 100%;
     display: flex;
