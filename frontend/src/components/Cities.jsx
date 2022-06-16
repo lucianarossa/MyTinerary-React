@@ -13,7 +13,6 @@ function Cities() {
     useEffect(() => {
         axios.get("http://localhost:4000/api/cities")
             .then(response => setCities(response.data.response.cities))
-            // eslint-disable-next-line
     }, [])
 
     let cityFilter = cities?.filter(city => city.name.toLowerCase().startsWith(inputValue.toLowerCase().trim()));

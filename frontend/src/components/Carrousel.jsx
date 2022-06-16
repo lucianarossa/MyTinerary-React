@@ -12,7 +12,7 @@ function Carrousel() {
   useEffect(() => {
     axios.get("http://localhost:4000/api/cities")
         .then(response => setCities(response.data.response.cities))
-        // eslint-disable-next-line
+       
 }, [])
 
 

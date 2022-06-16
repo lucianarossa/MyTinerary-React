@@ -15,8 +15,8 @@ function CityDetails() {
   useEffect(() => {
     axios.get(`http://localhost:4000/api/cities/${id}`)
       .then(resp => setCity(resp.data.response.city))
-    // eslint-disable-next-line
-  }, [])
+   
+  }, [id])
 
 
   return (
