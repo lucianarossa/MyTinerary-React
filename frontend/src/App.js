@@ -21,6 +21,11 @@ function App() {
       </Routes>
       <Footer />
       <ScrollToTop
+      style={{
+        marginBottom: "8rem",
+        marginLeft: "2rem"
+    
+      }} 
         smooth
         component={<ExpandLessIcon />} />
 
