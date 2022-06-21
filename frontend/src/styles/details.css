@@ -17,6 +17,7 @@
     height: 80vh;
     position: absolute;
     z-index: -2;
+    background-attachment: fixed;
 }
 
 .details-title {
@@ -85,11 +86,13 @@
 
 
 .details-main {
-    min-height: 80vh;
-    background-color: #95aca8a5;
     width: 100%;
+    background-image: url(../assets/itineraries.png);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
     align-items: center;
+    box-shadow: inset 0px 0px 1000px 400px #bac9c7c7;
 }

@@ -1,19 +1,22 @@
+//guardo en city lo que cree en models
 const City = require('../models/city')
 
+//guardo los controladores y sus metodos para manioular la base de datos
+
 const citiesControllers = {
-    getCities: async (req, res) => {
-        let cities  //defino var que contiene los modelos
-        let error = null  //defino el err en null
+    getCities: async (req, res) => { //devuelve un array 
+        let cities  
+        let error = null 
         try {
-            cities = await City.find()
-        } catch (err) { error = err }
+            cities = await City.find() 
+        } catch (err) { error = err } 
         res.json({
             response: error ? 'ERROR' : { cities },
             success: error ? false : true,
             error: error
         })
     },
-    getOneCity: async (req, res) => {
+    getOneCity: async (req, res) => { //devuelve un objeto
         const id = req.params.id
         let city
         let error = null
@@ -30,16 +33,16 @@ const citiesControllers = {
     }
     ,
     addCity: async (req, res) => {
-        const { name, country, description, image } = req.body.data  //desestructuro req.body.data para crear el modelo
+        const { name, country, description, image } = req.body.data  
         let city
         let error = null
         try {
-            city = await new City({    //new es un constructor de modelo.
+            city = await new City({    
                 name: name,
                 country: country,
                 description: description,
                 image: image
-            }).save() // guarda el modelo creado
+            }).save() 
         } catch (err) {
             error = err
         }
@@ -52,10 +55,10 @@ const citiesControllers = {
     modifyCity: async (req, res) => {
         const id = req.params.id
         const city = req.body
-        let citydb
+        let citydb  
         let error = null
         try {
-            citydb = await City.findOneAndUpdate({ _id: id }, city, {new:true})
+            citydb = await City.findOneAndUpdate({ _id: id }, city, {new:true}) 
         } catch (err) {
             error = err
         }
@@ -83,7 +86,7 @@ const citiesControllers = {
 
     multiplesCities: async (req, res) => {
         let city = []
-        const data = req.body.data //almaceno en la constante data la informacion que le pedi al body
+        const data = req.body.data 
         let error = null
         try {
             data.map(async (item) => {

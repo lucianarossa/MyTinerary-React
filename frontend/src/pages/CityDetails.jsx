@@ -1,12 +1,12 @@
 import React from "react";
+import "../styles/itinerary.css";
 import { Container } from "react-bootstrap";
 import "../styles/details.css"
 import { useParams } from "react-router-dom"
 import { Link as LinkRouter } from "react-router-dom"
 import axios from "axios"
 import { useEffect, useState } from "react"
-
-
+import Itinerary from "../components/Itinerary"
 
 function CityDetails() {
   const { id } = useParams() //recibe el id, desestructura el parametro con el metodo useparams
@@ -27,9 +27,8 @@ function CityDetails() {
         <h1 className="details-title">{city?.name}</h1>
       </Container>
       <Container fluid className="details-main">
-        <h1 className="biulding-title">UNDER CONSTRUCTION</h1>
-        <h2 className="biulding-subt">We are working hard to make this website available!</h2>
-        <img className="plane-image" src={process.env.PUBLIC_URL + "/assets/plane.png"} alt="Plane" />
+        <h1 className="itineraries-title">Itineraries</h1>
+        <Itinerary/>
         <LinkRouter to="/citiespage" className="Links">
           <button className="call-button"> BACK TO CITIES!
           </button>

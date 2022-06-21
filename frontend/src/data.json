@@ -1,0 +1,127 @@
+{
+    "itineraries": [
+        {
+            "Amsterdam": [
+                {
+                    "name": "visit the Jewish quarter of Anne Frank",
+                    "publisher": "Jenna Collins",
+                    "picture": "",
+                    "description": "Discover the history of World War II in Amsterdam and follow in the footsteps of Anne Frank on this tour of the Jewish Quarter.",
+                    "price":"3",
+                    "duration":"3",
+                    "hashtags":"#visitamsterdam, #annefrank, #jewishquarter",
+                    "likes":"2",
+                    "image": "/itinerary-amsterdam"
+                }
+            ]
+        },
+        {
+            "Barcelona": [
+                {
+                    "name": "Gaudi Full Tour",
+                    "publisher": "Arianna Watson",
+                    "picture": "",
+                    "description": "Visit the main works of Gaudi and admire the spectacular views of Barcelona surrounded by modernist architecture.",
+                    "price":"2",
+                    "duration":"4",
+                    "hashtags":"#visitbarcelona, #gaudi, #gaudiarchitecture",
+                    "likes":"4",
+                    "image": "/itinerary-barcelona"
+                }
+            ]
+        },
+        {
+            "London": [
+                {
+                    "name": "The Crown Jewels",
+                    "publisher": "Lisa Thompson",
+                    "picture": "",
+                    "description": "Absorb over 1,000 years of history at the Tower of London and see the Crown Jewels. Gather fascinating facts about the Yeoman Warders, the guardians of the tower, and discover the ravens.",
+                    "price":"5",
+                    "duration":"8",
+                    "hashtags":"#london, #crown, #castles",
+                    "likes":"4",
+                    "image": "/itinerary-london"
+                }
+            ]
+        },
+        {
+            "Edinburgh": [
+                {
+                    "name": "Highlands and their legends",
+                    "publisher": "Mark Connely",
+                    "picture": "",
+                    "description": "Tour the best of the Scottish Highlands. Look for Nessie, meet the hairy cows and see impressive landscapes.",
+                    "price":"3",
+                    "duration":"6",
+                    "hashtags":"#highlands, #visitscotland, #legends",
+                    "likes":"4",
+                    "image": "/itinerary-scotland"
+                },
+                {
+                    "name": "Edinburgh top to bottom",
+                    "publisher": "Amber Fletcher",
+                    "picture": "",
+                    "description": "Visit the city of Edinburgh and the vaults dating back to the early 18th century. Your guide will tell you about murders, witches and the inhabitants of this terrifying place.",
+                    "price":"4",
+                    "duration":"10",
+                    "hashtags":"#edinburgh, #vaults, #castle",
+                    "likes":"4",
+                    "image": "/itinerary-edinburgh"
+                }
+            ]
+        },
+        {
+            "Rome": [
+                {
+                    "name": "Ancient Rome",
+                    "publisher": "Carol Martin",
+                    "picture": "",
+                    "description": "Enjoy an experience without stress. He admires the remains of some of the most important monuments of the Roman Republic.",
+                    "price":"2",
+                    "duration":"8",
+                    "hashtags":"#rome, #ancientrome, #visitrome",
+                    "likes":"4",
+                    "image": "/itinerary-rome1"
+                },
+                {
+                    "name": "Flavors of Italy",
+                    "publisher": "Joseph Corner",
+                    "picture": "",
+                    "description": "Different activities to delight you with the best Italian cuisine.",
+                    "price":"2",
+                    "duration":"7",
+                    "hashtags":"#italiancuisine, #rome, #visititaly",
+                    "likes":"4",
+                    "image": "/itinerary-rome2"
+                }
+            ]
+        },
+        {
+            "Paris": [
+                {
+                    "name": "The city of light",
+                    "publisher": "Mary Thompson",
+                    "picture": "",
+                    "description": "Enjoy the City of Light seeing Paris illuminated after dark..",
+                    "price":"2",
+                    "duration":"8",
+                    "hashtags":"#cityoflight, #paris, #sunsettour",
+                    "likes":"10",
+                    "image": "/itinerary-paris1"
+                },
+                {
+                    "name": "Going back to the Moulin Rouge era",
+                    "publisher": "Katie Bourbon",
+                    "picture": "",
+                    "description": "Enjoy the sumptuous atmosphere of the Moulin Rouge, the world-renowned Parisian cabaret, and its surroundings.",
+                    "price":"5",
+                    "duration":"15",
+                    "hashtags":"#mpulinerouge, #montmartre, #paris",
+                    "likes":"10",
+                    "image": "/itinerary-paris2"
+                }
+            ]
+        }
+    ]
+}
