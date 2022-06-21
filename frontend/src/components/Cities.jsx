@@ -2,20 +2,14 @@ import React, { useState } from "react";
 import CardsCities from "./CardsCities";
 import NotFound from "./NotFound";
 import { Input } from '@nextui-org/react';
-import axios from "axios"
-import { useEffect } from "react";
+import {connect} from "react-redux"
 
-function Cities() {
+
+function Cities(props) {
+
     const [inputValue, setInputValue] = useState("")
-    const [cities, setCities] = useState()
-    
 
-    useEffect(() => {
-        axios.get("http://localhost:4000/api/cities")
-            .then(response => setCities(response.data.response.cities))
-    }, [])
-
-    let cityFilter = cities?.filter(city => city.name.toLowerCase().startsWith(inputValue.toLowerCase().trim()));
+    let cityFilter = props.cities?.filter(city => city.name.toLowerCase().startsWith(inputValue.toLowerCase().trim()));
     
     return (
         <div className="main-cities-container">
@@ -32,5 +26,13 @@ function Cities() {
         </div>
     )
 }
+  
+  const mapStateToProps = (state) => {
+    return{
+      cities: state.citiesReducer.cities,
+      auxiliar: state.citiesReducer.auxiliar
+    }
+  }
+  export default connect(mapStateToProps, null)(Cities)
+  
 
-export default Cities;

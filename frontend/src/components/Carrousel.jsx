@@ -1,19 +1,11 @@
 import React from "react";
 import "../styles/carrousel.css"
 import Carousel from 'react-grid-carousel'
-import { useState, useEffect } from "react"
-import axios from "axios"
+import {connect} from "react-redux"
 
 
-function Carrousel() {
 
-  const [cities, setCities] = useState()
-
-  useEffect(() => {
-    axios.get("http://localhost:4000/api/cities")
-        .then(response => setCities(response.data.response.cities))
-       
-}, [])
+function Carrousel(props) {
 
 
   return (
@@ -28,7 +20,7 @@ function Carrousel() {
           gap: 5,
           loop: true
         }]}>
-        {cities?.map(city => (
+        {props.cities?.map(city => (
           <Carousel.Item className="carrousel" key={city._id}>
 
             <img width="100%" className="carrousel-img" src={process.env.PUBLIC_URL + `${city.image}`} alt="cities" />
@@ -37,12 +29,16 @@ function Carrousel() {
 
           </Carousel.Item>
         ))}
-
       </Carousel>
     </div>
-
-
   )
 }
 
-export default Carrousel
+const mapStateToProps = (state) => {
+  return{
+    cities: state.citiesReducer.cities,
+    auxiliar: state.citiesReducer.auxiliar
+  }
+}
+export default connect(mapStateToProps, null)(Carrousel)
+

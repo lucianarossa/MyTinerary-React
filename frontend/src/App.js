@@ -8,9 +8,19 @@ import CityDetails from "./pages/CityDetails.jsx";
 import ScrollToTop from "react-scroll-to-top";
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import CitiesPage from "./pages/CitiesPage.jsx";
+import { connect } from "react-redux"
+import citiesActions from "./redux/actions/citiesActions"
+import {useEffect} from "react"
 
 
-function App() {
+function App(props) {
+
+  useEffect(() => {
+
+    props.getCities()
+
+ }, [])
+
   return (
     <>
       <NavBar />
@@ -32,5 +42,8 @@ function App() {
     </>
   )
 }
+const mapDispatchToProps = {
+    getCities: citiesActions.getCities,
+  }
 
-export default App;
+  export default connect(null, mapDispatchToProps)(App)
