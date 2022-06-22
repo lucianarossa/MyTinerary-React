@@ -6,18 +6,20 @@ import { User } from "@nextui-org/react";
 
 
 
+
 function Itinerary() {
     return (
-        <Card isHoverable variant="bordered" css={{ w: "80%", backgroundColor: "white", boxShadow:"0px 5px 8px rgba(0, 0, 0, 0.505)" }}>
+        <Card className="iti-card" isHoverable variant="bordered" css={{ w: "80%", backgroundColor: "white", boxShadow:"0px 5px 8px rgba(0, 0, 0, 0.505)" }}>
             <Card.Body css={{ w: "100%" }}>
                 <Text>
-                    <Text h3>"Gaudi Full Tour"</Text>
-                    <User
-                        src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-                        name="Ariana Wattson"
+                    <Text className="iti-title">"Gaudi Full Tour"</Text>
+                    <User 
+                        src={process.env.PUBLIC_URL + "/assets/JennaCollins.jpg"}
+                        name="Jenna Collins"
                         bordered
                         color="error"
                         zoomed
+                        squared
                     />
                     <Text h6 css={{ w: "80%" }}>"Visit the main works of Gaudi and admire the spectacular views of Barcelona surrounded by modernist architecture"</Text>
                     <div className="price-duration">
@@ -29,7 +31,7 @@ function Itinerary() {
             <Grid.Container gap={2} css={{ w: "100%" }} >
                 <Grid>
                     <Collapse.Group divider={false}>
-                        <Collapse title="find out more" shadow css={{ backgroundColor:"#809090", boxShadow:"0px 5px 8px rgba(0, 0, 0, 0.505)"}}>
+                        <Collapse title="MORE INFO" shadow css={{ backgroundColor:"#809090", boxShadow:"0px 5px 8px rgba(0, 0, 0, 0.505)", Size: "10px"}}>
                             <Text>
                                 <Text h3>ACTIVITIES</Text>
                             </Text>

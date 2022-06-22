@@ -18,7 +18,7 @@ function App(props) {
   useEffect(() => {
 
     props.getCities()
-
+// eslint-disable-next-line 
  }, [])
 
   return (
@@ -33,7 +33,8 @@ function App(props) {
       <ScrollToTop
       style={{
         marginBottom: "8rem",
-        marginLeft: "2rem"
+        marginLeft: "3rem",
+        zIndex: "1"
     
       }} 
         smooth

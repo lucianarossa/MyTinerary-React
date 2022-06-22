@@ -7,7 +7,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-attachment: fixed;
 
 }
 
@@ -87,12 +86,14 @@
 
 .details-main {
     width: 100%;
-    background-image: url(../assets/itineraries.png);
+    background-image: url(../assets/itineraries1.png);
+    background-position: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-bottom: 2rem;
     padding-top: 1rem;
     align-items: center;
-    box-shadow: inset 0px 0px 1000px 400px #bac9c7c7;
+    box-shadow: inset 0px 0px 1000px 400px #bac9c791;
 }
