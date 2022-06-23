@@ -5,7 +5,7 @@ const citiesControllers = require('../controllers/citiesControllers');//importo 
 const itinerariesControllers = require ('../controllers/itinerariesControllers');
 
 const {getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities} = citiesControllers;
-const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItineraries} = itinerariesControllers; 
+const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItineraries, getItinerariesByCity} = itinerariesControllers; 
 
 
 //RUTAS CITIES
@@ -34,8 +34,11 @@ Router.route('/itineraries/:id')
 .put(modifyItinerary)
 .get(getOneItinerary)
 
-Router.route("/multiplesItineraries")
-.post(multiplesItineraries)
+Router.route("/multiplesitineraries")
+.post(multiplesItineraries) 
+
+Router.route("/itinerarybycity/:id")
+.get(getItinerariesByCity)
 
 
 module.exports = Router

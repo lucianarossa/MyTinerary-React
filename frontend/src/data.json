@@ -1,118 +1,119 @@
 {
-    "itineraries": [
-        {
-            "Amsterdam": [
+    "data": [
+        
                 {
                     "name": "visit the Jewish quarter of Anne Frank",
-                    "username": "Jenna Collins",
-                    "userimage": "/assets/JennaCollins.jpg",
+                    "author": "Jenna Collins",
+                    "authorimage": "/assets/JennaCollins.jpg",
                     "description": "Discover the history of World War II in Amsterdam and follow in the footsteps of Anne Frank on this tour of the Jewish Quarter.",
-                    "price":"3",
+                    "price":"💵💵",
                     "duration":"3",
-                    "hashtags":"#visitamsterdam, #annefrank, #jewishquarter",
-                    "likes":"0"
-                }
-            ]
-        },
-        {
-            "Barcelona": [
+                    "hashtags":["#visitamsterdam", "#annefrank", "#jewishquarter"],
+                    "likes":"",
+                    "activities":"",
+                    "city":"Amsterdam"
+                },
+            
                 {
                     "name": "Gaudi Full Tour",
-                    "username": "Arianna Watson",
-                    "userimage": "/assets/AriannaWatson.jpg",
+                    "author": "Arianna Watson",
+                    "authorimage": "/assets/AriannaWatson.jpg",
                     "description": "Visit the main works of Gaudi and admire the spectacular views of Barcelona surrounded by modernist architecture.",
-                    "price":"2",
+                    "price":"💵💵",
                     "duration":"4",
-                    "hashtags":"#visitbarcelona, #gaudi, #gaudiarchitecture",
-                    "likes":"0"
-                }
-            ]
-        },
-        {
-            "London": [
+                    "hashtags":["#visitbarcelona", "#gaudi", "#gaudiarchitecture"],
+                    "likes":"",
+                    "activities":"",
+                    "city":"Barcelona"
+                },
+         
+            
                 {
                     "name": "The Crown Jewels",
-                    "username": "Lisa Thompson",
-                    "userimage": "/assets/LisaThompson.jpg",
+                    "author": "Lisa Thompson",
+                    "authorimage": "/assets/LisaThompson.jpg",
                     "description": "Absorb over 1,000 years of history at the Tower of London and see the Crown Jewels. Gather fascinating facts about the Yeoman Warders, the guardians of the tower, and discover the ravens.",
-                    "price":"5",
+                    "price":"💵💵💵💵",
                     "duration":"8",
-                    "hashtags":"#london, #crown, #castles",
-                    "likes":"0"
-                }
-            ]
-        },
-        {
-            "Edinburgh": [
+                    "hashtags":["#london", "#crown", "#castles"],
+                    "likes":"",
+                    "activities":"",
+                    "city":"London"
+                },
+        
                 {
                     "name": "Highlands and their legends",
-                    "username": "Mark Connely",
-                    "userimage": "/assets/MarkConnely.jpg",
+                    "author": "Mark Connely",
+                    "authorimage": "/assets/MarkConnely.jpg",
                     "description": "Tour the best of the Scottish Highlands. Look for Nessie, meet the hairy cows and see impressive landscapes.",
-                    "price":"3",
+                    "price":"💵💵💵",
                     "duration":"6",
-                    "hashtags":"#highlands, #visitscotland, #legends",
-                    "likes":"0"
+                    "hashtags":["#highlands", "#visitscotland", "#legends"],
+                    "likes":"",
+                    "activities":"",
+                    "city":"Edinburgh"
                 },
                 {
                     "name": "Edinburgh top to bottom",
-                    "username": "Amber Fletcher",
-                    "userimage": "/assets/AmberFletcher.jpg",
+                    "author": "Amber Fletcher",
+                    "authorimage": "/assets/AmberFletcher.jpg",
                     "description": "Visit the city of Edinburgh and the vaults dating back to the early 18th century. Your guide will tell you about murders, witches and the inhabitants of this terrifying place.",
-                    "price":"4",
+                    "price":"💵💵💵💵",
                     "duration":"10",
-                    "hashtags":"#edinburgh, #vaults, #castle",
-                    "likes":"0"
-                }
-            ]
-        },
-        {
-            "Rome": [
+                    "hashtags":["#edinburgh", "#vaults", "#castle"],
+                    "likes":"",
+                    "activities":"",
+                    "city":"Edinburgh"
+                },
+      
                 {
                     "name": "Ancient Rome",
-                    "username": "Carol Martin",
-                    "userimage": "/assets/CarolMartin.jpg",
+                    "author": "Carol Martin",
+                    "authorimage": "/assets/CarolMartin.jpg",
                     "description": "Enjoy an experience without stress. He admires the remains of some of the most important monuments of the Roman Republic.",
-                    "price":"2",
+                    "price":"💵💵",
                     "duration":"8",
-                    "hashtags":"#rome, #ancientrome, #visitrome",
-                    "likes":"0"
+                    "hashtags":["#rome", "#ancientrome", "#visitrome"],
+                    "likes":"",
+                    "activities":"",
+                    "city":"Rome"
                 },
                 {
                     "name": "Flavors of Italy",
-                    "username": "Joseph Corner",
-                    "userimage": "/assets/JosephCorner.jpg",
+                    "author": "Joseph Corner",
+                    "authorimage": "/assets/JosephCorner.jpg",
                     "description": "Different activities to delight you with the best Italian cuisine.",
-                    "price":"2",
+                    "price":"💵💵💵",
                     "duration":"7",
-                    "hashtags":"#italiancuisine, #rome, #visititaly",
-                    "likes":"0"
-                }
-            ]
-        },
-        {
-            "Paris": [
+                    "hashtags":["#italiancuisine", "#rome", "#visititaly"],
+                    "likes":"",
+                    "activities":"",
+                    "city":"Rome"
+                },
+         
                 {
                     "name": "The city of light",
-                    "username": "Mary Thomas",
-                    "userimage": "/assets/MaryThomas.jpg",
+                    "author": "Mary Thomas",
+                    "authorimage": "/assets/MaryThomas.jpg",
                     "description": "Enjoy the City of Light seeing Paris illuminated after dark..",
-                    "price":"2",
+                    "price":"💵💵",
                     "duration":"8",
-                    "hashtags":"#cityoflight, #paris, #sunsettour",
-                    "likes":"0"
+                    "hashtags":["#cityoflight", "#paris", "#sunsettour"],
+                    "likes":"",
+                    "activities":"",
+                    "city":"Paris"
                 },
                 {
                     "name": "Going back to the Moulin Rouge era",
-                    "username": "Kevin Bourbon",
-                    "userimage": "/assets/KevinBourbon.jpg",
+                    "author": "Kevin Bourbon",
+                    "authorimage": "/assets/KevinBourbon.jpg",
                     "description": "Enjoy the sumptuous atmosphere of the Moulin Rouge, the world-renowned Parisian cabaret, and its surroundings.",
-                    "price":"5",
+                    "price":"💵💵💵💵💵",
                     "duration":"15",
-                    "hashtags":"#mpulinerouge, #montmartre, #paris",
-                    "likes":"0"
+                    "hashtags":["#mpulinerouge", "#montmartre", "#paris"],
+                    "likes":"",
+                    "activities":"",
+                    "city":"Paris"
                 }
             ]
-        }
-    ]
 }

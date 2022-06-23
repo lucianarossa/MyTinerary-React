@@ -1,15 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CardsCities from "./CardsCities";
 import NotFound from "./NotFound";
 import { Input } from '@nextui-org/react';
-import {connect} from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import citiesActions from "../redux/actions/citiesActions";
 
 
-function Cities(props) {
+
+function Cities() {
 
     const [inputValue, setInputValue] = useState("")
+    const dispatch= useDispatch()
 
-    let cityFilter = props.cities?.filter(city => city.name.toLowerCase().startsWith(inputValue.toLowerCase().trim()));
+    useEffect(() => {
+   
+        dispatch(citiesActions.filterCities(inputValue))
+        // eslint-disable-next-line
+}, [inputValue])
+
+    const cityFilter = useSelector(store => store.citiesReducer.filter)
     
     return (
         <div className="main-cities-container">
@@ -27,12 +36,7 @@ function Cities(props) {
     )
 }
   
-  const mapStateToProps = (state) => {
-    return{
-      cities: state.citiesReducer.cities,
-      auxiliar: state.citiesReducer.auxiliar
-    }
-  }
-  export default connect(mapStateToProps, null)(Cities)
+  
+  export default Cities
   
 

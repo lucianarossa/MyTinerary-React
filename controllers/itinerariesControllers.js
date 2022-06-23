@@ -33,19 +33,21 @@ const itinerariesControllers = {
     }
     ,
     addItinerary: async (req, res) => {
-        const { name, username, userimage, description, price, duration, hashtags, likes } = req.body.data  
+        const { name, author, authorimage, description, price, duration, hashtags, likes, activities, city } = req.body.data  
         let itinerary
         let error = null
         try {
             city = await new Itinerary({    
                 name: name,
-                username: username,
-                userimage: userimage,
+                username: author,
+                userimage: authorimage,
                 description: description,
                 price: price,
                 duration: duration,
                 hashtags: hashtags,
-                likes: likes
+                likes: likes,
+                activities: activities,
+                city: city
             }).save() 
         } catch (err) {
             error = err
@@ -98,13 +100,15 @@ const itinerariesControllers = {
             data.map(async (item) => {
                 await new Itinerary({
                     name: item.name,
-                    username: item.username,
-                    userimage: item.userimage,
+                    author: item.author,
+                    authorimage: item.authorimage,
                     description: item.description,
                     price: item.price,
                     duration: item.duration,
                     hashtags: item.hashtags,
-                    likes: item.likes
+                    likes: item.likes,
+                    activities: item.activities,
+                    city: item.city
                 }).save()
             })
         } catch (err) { error = err }
@@ -115,6 +119,22 @@ const itinerariesControllers = {
             error: error
         })
     },
+
+    getItinerariesByCity: async (req,res) => {
+        const id = req.params.id
+        let itineraries
+        let error = null
+        try {
+            itineraries = await Itinerary.find({ city : id })
+        } catch (err) {
+            error = err
+        }
+        res.json({
+            response: error ? 'ERROR' : itineraries,
+            success: error ? false : true,
+            error: error
+        })
+    }
 
 }
 

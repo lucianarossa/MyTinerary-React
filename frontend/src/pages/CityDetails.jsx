@@ -4,20 +4,22 @@ import { Container } from "react-bootstrap";
 import "../styles/details.css"
 import { useParams } from "react-router-dom"
 import { Link as LinkRouter } from "react-router-dom"
-import axios from "axios"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import Itinerary from "../components/Itinerary"
+import { useDispatch, useSelector } from "react-redux"
+import citiesActions from "../redux/actions/citiesActions";
 
 function CityDetails() {
   const { id } = useParams() //recibe el id, desestructura el parametro con el metodo useparams
-  const [city, setCity] = useState()
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/cities/${id}`)
-      .then(resp => setCity(resp.data.response.city))
    
-  }, [id])
-
+           dispatch(citiesActions.getOneCity(id))
+           // eslint-disable-next-line
+  }, [])
+  
+  const city = useSelector( store => store.citiesReducer.getOneCity) 
 
   return (
     <>
