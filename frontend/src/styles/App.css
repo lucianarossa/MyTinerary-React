@@ -94,11 +94,13 @@
 
 .notfound-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .styles_scroll-to-top__2A70v {
-  background-color: #eddad4 !important;
+  background-color: #e993a6 !important;
   border-radius: 20px !important;
 }
 
@@ -107,3 +109,24 @@
   width: 1.2em !important;
   color: rgb(0, 0, 0) !important;
 }
+
+.notfounditi{
+  height: 35vh;
+}
+
+
+.notf-title{
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 1rem;
+}
+
+@media(min-width: 520px){
+  .notf-title{
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 1rem;
+    width: 60vw;
+  }
+}
+
