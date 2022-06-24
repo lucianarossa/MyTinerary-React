@@ -39,7 +39,6 @@
 @media (max-width: 680px) {
     .iti-title {
         font-size: 30px !important;
-
     }
 }
 
@@ -56,15 +55,13 @@
 .nextui-c-kRHeuF {
     width: 100%;
     padding: 0 !important;
-    padding-bottom: 1rem !important;
-    padding-top: 1rem !important;
     display: flex;
     justify-content: center;
 }
 
 @media(max-width: 540px) {
     .nextui-c-kRHeuF {
-        width: 85%;
+        width: 95%;
         padding: 0 !important;
         padding-bottom: .5rem !important;
     }
@@ -104,15 +101,20 @@
 
 /*descripcion itinerario*/
 
+.nextui-c-PJLV .nextui-c-PJLV-ijmidZT-css{
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
 .nextui-c-PJLV {
-    width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     font-size: 20px;
     margin: 0 !important;
-    padding: 1rem !important;
+    padding: .5rem !important;
 }
 
 @media(max-width:460px) {
@@ -128,7 +130,7 @@
 
 .nextui-c-ijHtNE {
     width: 100% !important;
-    height: 7rem;
+    height: 5rem;
     display: flex !important;
     flex-direction: row;
     padding: 1rem !important;
@@ -137,7 +139,7 @@
 @media(max-width:460px) {
     .nextui-c-ijHtNE {
         width: 100% !important;
-        height: 6rem;
+        height: 5rem;
         margin: 1rem;
     }
 }
@@ -145,14 +147,14 @@
 /*caja del avatar del author*/
 
 .nextui-c-fFabR {
-    height: 5rem !important;
-    width: 5rem !important;
+    height: 4rem !important;
+    width: 4rem !important;
 }
 
 @media(max-width:460px) {
     .nextui-c-fFabR {
-        height: 3.3rem !important;
-        width: 3.3rem !important;
+        height: 2.3rem !important;
+        width: 2.3rem !important;
     }
 }
 
@@ -231,8 +233,8 @@
 }
 
 .nextui-avatar-img {
-    height: 4rem !important;
-    width: 4rem !important;
+    height: 3.3rem !important;
+    width: 3.3rem !important;
     box-shadow: 0px 3px 10px rgba(8, 8, 8, 0.413);
 }
 
@@ -265,6 +267,7 @@
 .iti-card {
     transition: all .2s;
     width: 70% !important;
+    margin-bottom: 2rem !important;
 }
 
 @media(max-width: 720px) {
@@ -300,6 +303,7 @@
     color: white;
     text-shadow: 5px 10px 30px rgba(4, 4, 4, 0.911);
     padding-bottom: 1rem;
+    padding-top: 1rem;
 }
 
 @media(max-width: 460px) {
@@ -318,7 +322,7 @@
     align-items: center;
     color: #E993A6;
     padding-top: 1rem !important;
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
 
 @media(max-width: 590px){
@@ -361,24 +365,23 @@
 
 .button-like {
     border-radius: 30px;
-    padding: .2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     padding-right: 1rem;
     padding-left: 1rem;
     border: 2px solid #E993A6;
     box-shadow: 0px 3px 10px rgba(8, 8, 8, 0.413);
     position: absolute;
     z-index: 1;
+    font-size: 18px;
 
 }
 
 @media(max-width: 590px){
     .button-like {
         border-radius: 30px;
-        padding: .5rem;
         margin-top: .5rem;
-        padding-right: 1rem;
-        padding-left: 1rem;
+        padding-right: .5rem;
+        padding-left: .5rem;
         border: 2px solid #E993A6;
         box-shadow: 0px 3px 10px rgba(8, 8, 8, 0.413);
         position: absolute;
@@ -427,7 +430,7 @@
    }
 
    .nextui-c-BDLTQ{
-    padding: 0 !important;
+    padding: 1rem !important;
    }
 
    .nextui-c-eFfoBo{
