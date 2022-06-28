@@ -91,6 +91,7 @@ const usersControllers = {
                         })
                     }
                 } else {
+                    let matchpassword = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
                     if(matchpassword.length > 0) {
                         const userData = {
                             id: userExist._id,
@@ -102,7 +103,7 @@ const usersControllers = {
                         res.json({
                             success:true,
                             from: from,
-                            response: { token, userData},
+                            response: {userData},
                             message: "Welcome back" + userData.firstName,
                         })
                     } else {
@@ -115,7 +116,7 @@ const usersControllers = {
                 }
             }
         } catch (error) {
-            res.json({success: false, message:"Ups! Something is wrong, try in a few minutes"})
+            res.json({success: false, message:"Ups! Something is wrong, try in a few minutes", console: console.log(error)})
         }
     },
 }

@@ -92,3 +92,26 @@
 .social-media:active {
     transform: translateY(-1px);
 }
+
+@media(max-width: 670px){
+    .social-media {
+        height: 8vh;
+        margin-left: .3rem;
+    }
+    
+}
+
+@media(max-width:670px){
+    .navbar-button {
+        height: 7vh;
+        font-size: 10px !important;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: #000;
+        margin: .5em;
+        background-color: #EDDAD4;
+        border: none;
+        border-radius: 45px;
+}
+}

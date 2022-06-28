@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const usersActions = {
     signUpUser: (userData) => {
-        //console.log(userData)
+        console.log(userData)
         return async (dispatch, getState) => {
-            const res = await axios.post(url+'api/auth/signup', {userData})
+            const res = await axios.post("http://localhost:4000/api/auth/signup", {userData})
             //console.log(res)
             dispatch({
                 type: 'MESSAGE',
@@ -19,8 +19,8 @@ const usersActions = {
     logInUser: (loguedUser) => {
         //console.log(userLogin)
         return async (dispatch, getState) => {
-            const res = await axios.post(url+'api/auth/login', {loguedUser})
-            //console.log(res)
+            const res = await axios.post("http://localhost:4000/api/auth/login", {loguedUser})
+            console.log(res)
             if(res.data.success) {
                 localStorage.setItem('token',res.data.response.token)
                 dispatch({

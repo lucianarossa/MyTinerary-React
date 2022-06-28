@@ -47,18 +47,18 @@
 
 .sign-card {
     transition: all .2s;
-    width: 60% !important;
+    width: 50% !important;
 }
 
 @media(max-width: 720px) {
     .sign-card {
-        width: 70% !important;
+        width: 75% !important;
     }
 }
 
 @media(max-width: 460px) {
     .sign-card {
-        width: 100% !important;
+        width: 95% !important;
     }
 }
 
@@ -80,13 +80,24 @@
 
 /*contenedor inputs*/
 
+.nextui-c-kRHeuF{
+    margin: 0 !important;
+    width: 100% !important;
+}
+
 .nextui-c-hzQjrs{
     margin-top: 0 !important;
+    padding: 0;
     height: 3vh;
     font-size: 13px;
 }
 
 /*inputs*/
+
+.form{
+   width: 90%;
+    padding: 0;
+}
 
 .input-forms{
     height: 4.5vh;
@@ -105,7 +116,7 @@
 
 .first-btn {
     height: 7vh;
-    padding: 8px 20px;
+    padding: 6px 20px;
     margin-bottom: 1rem;
     margin-top: 1rem;
     border: unset;
@@ -145,11 +156,26 @@
     width: 100%;
 }
 
+@media(max-width: 670px){
+    .first-btn {
+    height: 7vh;
+    padding: 6px 10px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: unset;
+    border-radius: 10px;
+    font-size: 12px;
+    }
+    
+}
+
 /*CONTENEDOR SIGNIN MEDIA Y LOGIN/CREATE*/
 
 .boxsign{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /*CONTENEDOR REDES SOCIALES*/
@@ -159,7 +185,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 1rem;
+    margin: .5rem;
 }
 
 /*CONTENEDOR LOGIN/CREATE*/
@@ -169,6 +195,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: .5rem;
 }
 
 /*TITULOS BOXES*/
@@ -222,7 +249,7 @@
 
 .second-btn {
     height: 7vh;
-    padding: 8px 20px;
+    padding: 7px 20px;
     margin-top: 0rem;
     border: unset;
     border-radius: 10px;
@@ -259,6 +286,19 @@
 
 .second-btn:hover::before {
     width: 100%;
+}
+
+@media(max-width: 670px){
+    .second-btn {
+    height: 7vh;
+    padding: 6px 10px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: unset;
+    border-radius: 10px;
+    font-size: 12px;
+    }
+    
 }
 
 
