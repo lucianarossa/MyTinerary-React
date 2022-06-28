@@ -1,4 +1,5 @@
-const User = require('../models/users')
+const User = require('../models/user')
+const bcryptjs = require('bcryptjs')
 
 const usersControllers = {
     signUpUsers: async (req, res) => {
@@ -16,6 +17,7 @@ const usersControllers = {
                 const hashedPassword = bcryptjs.hashSync(password, 10)
                 userExist.from.push(from)
                 userExist.password.push(hashedPassword)
+                await userExist.save()
                 res.json({
                     success: true,
                     from: "signup",
@@ -25,12 +27,12 @@ const usersControllers = {
         } else {
             const hashedPassword = bcryptjs.hashSync(password, 10)
             const newUser = await new User({
-                firstName,
-                lastName,
-                email,
-                password,
-                image,
-                from: [from],
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: [hashedPassword],
+                image: image,
+                from: [from]
             })
             if (from !== "form-signup") {
                 await newUser.save()
@@ -60,7 +62,7 @@ const usersControllers = {
         const {email, password, from} = req.body.loguedUser
         try{
             const userExist = await User.findOne({email})
-            const indexPass = userExist.from.indexOf(from)
+            // const indexPass = userExist.from.indexOf(from)
             if(!userExist){
                 res.json({success: false, message: "You haven't registered yet please Sign Up"})
             } else {

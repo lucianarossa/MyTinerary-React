@@ -43,6 +43,8 @@
     }
 }
 
+/*card general*/
+
 .sign-card {
     transition: all .2s;
     width: 60% !important;
@@ -76,48 +78,126 @@
 }
 
 
-@media (max-width: 680px) {
-    .sign-title {
-        font-size: 30px !important;
-    }
-}
-
-@media(max-width:460px) {
-    .sign-title {
-        font-size: 20px !important;
-        padding-bottom: 0;
-    }
-}
-
 /*contenedor inputs*/
-.nextui-c-kRHeuF{
-    width: 80%;
+
+.nextui-c-hzQjrs{
+    margin-top: 0 !important;
+    height: 3vh;
+    font-size: 13px;
 }
 
-.inputs-container{
-    margin: 0;
+/*inputs*/
+
+.input-forms{
+    height: 4.5vh;
 }
+
+/*BOTONES*/
+/*CONTENEDOR*/
 
 .buttons-sign{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 1rem;
 }
 
+/*BOTON CREATE ACCOUNT*/
+
+.first-btn {
+    height: 7vh;
+    padding: 8px 20px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: unset;
+    border-radius: 10px;
+    color: #212121;
+    z-index: 1;
+    background: #EA839B;
+    position: relative;
+    font-weight: 1000;
+    font-size: 14px;
+    -webkit-box-shadow: 4px 8px 19px -5px rgba(0, 0, 0, 0.27);
+    box-shadow: 0px 15px 20px grey;
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.first-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms
+}
+
+.first-btn:hover {
+    color: #e8e8e8;
+}
+
+.first-btn:hover::before {
+    width: 100%;
+}
+
+/*CONTENEDOR SIGNIN MEDIA Y LOGIN/CREATE*/
+
+.boxsign{
+    width: 100%;
+    display: flex;
+}
+
+/*CONTENEDOR REDES SOCIALES*/
+
+.boxmedia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+/*CONTENEDOR LOGIN/CREATE*/
+
+.boxlogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*TITULOS BOXES*/
+
+.boxtitle{
+    font-size: 14px;
+    text-align: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/*CONTENEDOR REDES SOCIALES LOGOS*/
 
 .media-signup {
-    margin-left: .3rem;
     height: 8vh;
+    margin: 0;
+    padding: 0;
+    margin-top: .3rem;
 }
+
+/*LOGOS MEDIA*/
 
 .signup-media {
     height: 7vh;
-    margin-left: .3em;
+    margin: .3rem;
     display: flex;
     align-items: center;
     text-transform: uppercase;
-    margin: .5em;
     background-color: #EA839B;
     border: none;
     border-radius: 10em;
@@ -138,18 +218,10 @@
     transform: translateY(-1px);
 }
 
-.OrSign{
-  margin: .3rem;
-  font-size: 14px;
-  text-align: center;
-  padding-bottom: .5rem;
-}
+/*SEGUNDO BOTON*/
 
-.have-account{
-    padding-top: .5rem;
-}
-
-.sign-button {
+.second-btn {
+    height: 7vh;
     padding: 8px 20px;
     margin-top: 0rem;
     border: unset;
@@ -166,7 +238,7 @@
     overflow: hidden;
 }
 
-.sign-button::before {
+.second-btn::before {
     content: "";
     position: absolute;
     top: 0;
@@ -181,77 +253,12 @@
     transition: all 250ms
 }
 
-.sign-button:hover {
+.second-btn:hover {
     color: #e8e8e8;
 }
 
-.sign-button:hover::before {
+.second-btn:hover::before {
     width: 100%;
 }
 
-.login-button{
-    padding: 8px 15px;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    border: unset;
-    border-radius: 10px;
-    color: #212121;
-    z-index: 1;
-    background: #EA839B;
-    position: relative;
-    font-weight: 1000;
-    font-size: 12px;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    box-shadow: 0px 15px 20px grey;
-    transition: all 250ms;
-    overflow: hidden;
-}
 
-.login-log{
-    margin-top: 1.5rem;
-    font-size: 12px;
-}
-
-.login-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    border-radius: 10px;
-    background-color: #212121;
-    z-index: -1;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    transition: all 250ms
-}
-
-
-.nextui-c-hzQjrs{
-    margin-top: 1rem;
-
-}
-
-.create-button{
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-
-.input-forms{
-    height: 4vh;
-}
-
-@media(max-width:768px) {
-    .sign-button {
-    padding: 6px 10px;
-    margin-top: 1rem;
-    border: unset;
-    border-radius: 8px;
-    font-size: 10px;
-    }
-}
-
-.nextui-c-hzQjrs{
-    margin-top: 0 !important;
-}

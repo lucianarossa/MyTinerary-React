@@ -56,10 +56,12 @@ function SignUp() {
                                 </Grid>
                                 <div className="buttons-sign">
                                 <LinkRouter to="/" className="Links">
-                                    <button className="sign-button create-button"> CREATE ACCOUNT!
+                                    <button className="first-btn"> CREATE ACCOUNT!
                                     </button>
                                 </LinkRouter>
-                                <p className="OrSign">Or Sign Up with:</p>
+                                <div className="boxsign">
+                                <div className="boxmedia">
+                                <p className="boxtitle">Or Sign Up with:</p>
                                 <div className="media-container media-signup">
                                     <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                                         <img className="signup-media" src={process.env.PUBLIC_URL + "/assets/instagram.png"} alt="" />
@@ -71,12 +73,18 @@ function SignUp() {
                                         <img className="signup-media" src={process.env.PUBLIC_URL + "/assets/linkedin.png"} alt="" />
                                     </a>
                                 </div>
-                                <p className="OrSign have-account">Already have an account?</p>
+                                </div>
+                                <div className="boxlogin">
+                                <p className="boxtitle">Have an account?</p>
+                                <div className="media-container media-signup">
                                 <LinkRouter to="/login" className="Links">
-                                    <button className="sign-button login-button"> LOG IN HERE!
+                                    <button className="second-btn"> LOG IN!
                                     </button>
                                 </LinkRouter>
                                 </div>
+                                </div>
+                                </div>
+                                </div> 
                     </Grid.Container>
                 </Card>
         </Container>
