@@ -14,7 +14,7 @@ function Itinerary({ data }) {
                 <div key={itinerary._id} className="card-box">
                     <Card.Body css={{ w: "100%" }}>
                         <div>
-                            <Text className="iti-title" css={{textShadow: "5px 4px 30px rgba(4, 4, 4, 0.911)" }}>{itinerary.name}</Text>
+                            <Text className="iti-title">{itinerary.name}</Text>
                             <User
                                 src={process.env.PUBLIC_URL + `${itinerary.authorimage}`}
                                 name={itinerary.author}
@@ -41,9 +41,9 @@ function Itinerary({ data }) {
                         </div>
                     </Card.Body>
                     <Grid.Container gap={0} css={{ w: "100%" }}>
-                        <Grid>
-                            <Collapse.Group divider={false}>
-                                <Collapse title="MORE INFO" shadow css={{ backgroundColor: "#8090909f", boxShadow: "0px 5px 8px rgba(0, 0, 0, 0.505)", marginBottom: "0", }}>
+                        <Grid css={{w:"100%"}}>
+                            <Collapse.Group divider={false} css={{w:"100%"}}>
+                                <Collapse title="MORE INFO" shadow css={{ backgroundColor: "#8090909f", boxShadow: "0px 5px 8px rgba(0, 0, 0, 0.505)", marginBottom: "0" }}>
                                     <div>
                                         <h3 className="funtitle">FUN ACTIVITIES COMING SOON !!!</h3>
                                     </div>

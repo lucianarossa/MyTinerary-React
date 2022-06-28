@@ -2,7 +2,7 @@
     height: 80vh;
     width: 100%;
     object-fit: contain;
-    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 15%);
+    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 40%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,8 +15,15 @@
     width: 100%;
     height: 80vh;
     position: absolute;
-    z-index: -2;
-    background-attachment: fixed;
+}
+
+.overlay-cities{
+    height: 80vh;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: black;
+    opacity: .3;
 }
 
 .details-title {
@@ -24,23 +31,27 @@
     text-align: center;
     color: #EDDAD4;
     text-shadow: 0px 15px 20px grey;
+    z-index: 2;
 }
 
 @media (max-width: 840px) {
     .details-title {
         font-size: 80px;
+        text-shadow: 2px -8px 10px rgb(88, 87, 87);
     }
 }
 
 @media (max-width: 550px) {
     .details-title {
         font-size: 60px;
+        text-shadow: 2px -8px 10px rgb(88, 87, 87);
     }
 }
 
 @media (max-width: 380px) {
     .details-title {
         font-size: 48px;
+        text-shadow: 2px -8px 10px rgb(88, 87, 87);
 
     }
 }
@@ -48,45 +59,35 @@
 .details-description {
     text-align: center;
     color: white;
-    font-size: 120px;
+    font-size: 90px;
     font-family: 'Seaweed Script', cursive;
-    height: 17vh;
     text-shadow: 0px 15px 20px rgb(153, 150, 150);
+    z-index: 2;
+    height: 60px;
 }
 
 @media (max-width: 840px) {
     .details-description {
         font-size: 90px;
-        height: 14vh;
+        height: 60px;
 
     }
 }
 
-@media (max-width: 680px) {
-    .details-description {
-        font-size: 90px;
-        height: 13vh;
-    }
-}
 
 @media (max-width: 550px) {
     .details-description {
-        font-size: 80px;
-        height: 12vh;
+        font-size: 60px;
+        height: 45px;
     }
 }
 
-@media (max-width: 380px) {
-    .details-description {
-        font-size: 60px;
-        height: 9vh;
-    }
-}
+
 
 
 .details-main {
     width: 100%;
-    background-image: url(../assets/itineraries1.png);
+    background-image: url(../assets/itineraries2.png);
     background-position: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -95,5 +96,5 @@
     padding-bottom: 2rem;
     padding-top: 1rem;
     align-items: center;
-    box-shadow: inset 0px 0px 1000px 400px #bac9c791;
+    box-shadow: inset 0px 0px 1000px 400px rgba(128, 128, 128, 0.151);
 }

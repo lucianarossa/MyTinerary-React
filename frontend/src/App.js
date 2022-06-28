@@ -7,10 +7,15 @@ import Index from "./pages/Index.jsx";
 import CityDetails from "./pages/CityDetails.jsx";
 import ScrollToTop from "react-scroll-to-top";
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import CitiesPage from "./pages/CitiesPage.jsx";
 import { connect } from "react-redux"
 import citiesActions from "./redux/actions/citiesActions"
 import {useEffect} from "react"
+import CitiesPage from "./pages/CitiesPage"
+import SignUp from "./components/SignUp";
+import LogIn from "./components/LogIn"
+import SignPage from "./pages/SignPage";
+
+
 
 
 function App(props) {
@@ -28,6 +33,9 @@ function App(props) {
         <Route path="/" element={<Index />} />
         <Route path="/citiespage" element={<CitiesPage />} />
         <Route path="citiespage/citydetails/:id" element={<CityDetails />} />
+        <Route path="/signup" element={<SignPage />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<LogIn />} />
       </Routes>
       <Footer />
       <ScrollToTop

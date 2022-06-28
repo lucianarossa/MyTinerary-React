@@ -4,7 +4,9 @@ import "../styles/cities.css";
 import Cities from "../components/Cities";
 
 
+
 function CitiesPage (){
+    
     return(
        <>
        <CoverCities/>

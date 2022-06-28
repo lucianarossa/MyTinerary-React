@@ -28,8 +28,9 @@ function CityDetails() {
   return (
     <>
       <Container fluid className="details-container" key={city?._id}>
-        <img className="details-image" src={process.env.PUBLIC_URL + `${city?.image}`} alt="backround" />
-        <p className="details-description">enjoy</p>
+        <img width="100%" className="details-image" src={process.env.PUBLIC_URL + `${city.image}`} alt="cities" />
+        <div className="overlay-cities"></div>
+        <p className="details-description">{city?.phrase}</p>
         <h1 className="details-title">{city?.name}</h1>
       </Container>
       <Container fluid className="details-main">
@@ -41,6 +42,7 @@ function CityDetails() {
           <button className="call-button"> BACK TO CITIES!
           </button>
         </LinkRouter>
+      
       </Container>
     </>
   )

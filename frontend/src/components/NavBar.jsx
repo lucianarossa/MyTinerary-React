@@ -16,7 +16,7 @@ import "../styles/navbar.css"
 // ARRAYS PARA IMPRIMIR MENU Y USER MENU
 
 const pages = [{ name: "Home", to: "/" }, { name: "Cities", to: "/citiespage" }];
-const settings = ['Sign Up', 'Log In'];
+const settings = [{ name:'Sign Up', to:"/signup"}, { name: "Log In", to: "/login"}];
 
 
 // CREO LOS ESTADOS DEL COMPONENTE NAVBAR PARA AMBOS MENUES en NULL (cerrados)
@@ -159,10 +159,12 @@ const Navbar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ color: "black", fontFamily: "'Paytone One', sans-serif" }} textAlign="center">{setting}</Typography>
+              {settings.map((setting, index) => (
+                <LinkRouter to={setting.to} key={index} onClick={handleCloseUserMenu} className="Links">
+                <MenuItem >
+                  <Typography sx={{ color: "black", fontFamily: "'Paytone One', sans-serif" }} textAlign="center">{setting.name}</Typography>
                 </MenuItem>
+                </LinkRouter>
               ))}
             </Menu>
           </Box>

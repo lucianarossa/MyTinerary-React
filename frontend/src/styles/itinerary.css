@@ -33,6 +33,7 @@
     font-size: 35px !important;
     color: rgba(0, 0, 0, 0.584) !important;
     margin: 0!important;
+    margin-top: 2rem!important;
 
 }
 
@@ -53,7 +54,7 @@
 /*boton more info*/
 
 .nextui-c-kRHeuF {
-    width: 100%;
+    width: 95% !important;
     padding: 0 !important;
     display: flex;
     justify-content: center;
@@ -61,7 +62,7 @@
 
 @media(max-width: 540px) {
     .nextui-c-kRHeuF {
-        width: 95%;
+        width: 95% !important;
         padding: 0 !important;
         padding-bottom: .5rem !important;
     }
@@ -437,4 +438,7 @@
     padding: 0!important;
    }
    
+   .nextui-c-dWWWSv{
+    width: 100% !important;
+   }
   
