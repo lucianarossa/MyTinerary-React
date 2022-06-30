@@ -14,6 +14,7 @@ import CitiesPage from "./pages/CitiesPage"
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn"
 import SignPage from "./pages/SignPage";
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -28,6 +29,16 @@ function App(props) {
 
   return (
     <>
+      <ToastContainer position="bottom-right"
+            theme='light'
+            autoClose={5000}
+            hideProgressBar={true}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover />
       <NavBar />
       <Routes>
         <Route path="/" element={<Index />} />

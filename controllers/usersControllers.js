@@ -3,7 +3,7 @@ const bcryptjs = require('bcryptjs')
 
 const usersControllers = {
     signUpUsers: async (req, res) => {
-        let {firstName, lastName, email, password, image, from} = req.body.userData
+        let {firstName, lastName, email, password, from} = req.body.userData
         try{
             const userExist = await User.findOne({email})
             if(userExist) {
@@ -31,7 +31,7 @@ const usersControllers = {
                 lastName: lastName,
                 email: email,
                 password: [hashedPassword],
-                image: image,
+                // image: image,
                 from: [from]
             })
             if (from !== "form-signup") {
@@ -56,10 +56,9 @@ const usersControllers = {
 },
 
 
-
-
     logInUser: async (req, res) => {
-        const {email, password, from} = req.body.loguedUser
+        const {email, password, from} = req.body.userData
+        console.log(req.body)
         try{
             const userExist = await User.findOne({email})
             // const indexPass = userExist.from.indexOf(from)
@@ -80,7 +79,7 @@ const usersControllers = {
                         success: true,
                         from: from,
                         response: {userData},
-                        message: "Welcome back" + userData.firstName,
+                        message: `Welcome back ${userData.firstName}`,
                     })
 
                     } else {

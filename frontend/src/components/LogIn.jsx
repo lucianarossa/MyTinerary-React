@@ -7,6 +7,8 @@ import { Link as LinkRouter } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import usersActions from "../redux/actions/usersActions";
 import {useState} from "react"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function LogIn() {
@@ -16,15 +18,20 @@ function LogIn() {
 
     const dispatch = useDispatch()
 
-    const handleSubmit = (event) => {
-        console.log(event)
+    const handleSubmit = async (event) => {
         event.preventDefault()
-        const loguedUser = {
+        const userData = {
             email: email,
             password:pass,
             from: "form-signup"
         }
-        dispatch(usersActions.logInUser(loguedUser))
+        const res = await dispatch(usersActions.logInUser(userData))
+        console.log(res)
+        if (res.data.success) {
+                toast.success(res.data.message)
+            }else{
+                toast.error(res.data.message)
+            }
 
         setEmail("")
         setPass("")

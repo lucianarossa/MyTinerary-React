@@ -1,7 +1,7 @@
 
 const Router = require ("express").Router(); // le pido a express que me traiga router para definir las rutas
-
-const citiesControllers = require('../controllers/citiesControllers');//importo mi controlador
+const validator = require ("../config/validator")
+const citiesControllers = require('../controllers/citiesControllers');
 const itinerariesControllers = require ('../controllers/itinerariesControllers');
 const usersControllers = require ('../controllers/usersControllers')
 
@@ -13,7 +13,7 @@ const {signUpUsers, logInUser} = usersControllers
 
 //RUTAS CITIES
 
-Router.route('/cities') //creo el endpoint de la ruta
+Router.route('/cities') 
 .get(getCities)
 .post(addCity)
 
@@ -46,7 +46,7 @@ Router.route("/itinerarybycity/:id")
 // RUTAS USERS
 
 Router.route('/auth/signup')
-.post(signUpUsers)
+.post(validator, signUpUsers)
 
 Router.route ('/auth/login')
 .post(logInUser)

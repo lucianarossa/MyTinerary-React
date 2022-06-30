@@ -7,6 +7,8 @@ import { Link as LinkRouter } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import usersActions from "../redux/actions/usersActions";
 import {useState} from "react"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function SignUp() {
@@ -14,28 +16,42 @@ function SignUp() {
     const [lastName,setLastName] = useState("")
     const [email,setEmail] = useState("")
     const [pass,setPass] = useState("")
-    const [image, setImage] = useState ("")
-
+    // const [image, setImage] = useState ("")
+   
     const dispatch = useDispatch()
 
-    const handleSubmit = (event) => {
-        console.log(event)
+    const handleSubmit = async (event) => {
         event.preventDefault()
         const userData = {
             firstName: firstName,
             lastName: lastName,
             email: email,
             password:pass,
-            image: image,
+            // image: image,
             from: "form-signup"
         }
-        dispatch(usersActions.signUpUser(userData))
+        const res = await dispatch(usersActions.signUpUser(userData))
+        console.log(res)
+        const errormsg = res.data.message
+
+        if(res.data.from === "validator"){
+            errormsg.forEach(e => {
+                toast.error(e.message)
+            })
+        } 
+        if (res.data.from === "signup") {
+            if(res.data.success){
+                toast.success(res.data.message)
+            }else{
+                toast.error(res.data.message)
+            }
+        }
 
         setFirstName("")
         setLastName("")
         setEmail("")
         setPass("")
-        setImage("")
+        // setImage("")
     }
     return (
         <Container fluid className="sign-container">
@@ -79,7 +95,7 @@ function SignUp() {
                                         className="input-forms"
                                     />
                                 </Grid>
-                                <Grid>
+                                {/* <Grid>
                                     <Input onChange={e=>setImage(e.target.value)}
                                         value={image}
                                         label="Url Image"
@@ -87,7 +103,7 @@ function SignUp() {
                                         css={{ w: "70%",textAlign:"left"}}
                                         className="input-forms"
                                     />
-                                </Grid>
+                                </Grid> */}
                                 <div className="buttons-sign">
                                     <button type="submit" className="first-btn"> CREATE ACCOUNT!
                                     </button>
