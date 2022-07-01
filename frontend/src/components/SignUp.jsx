@@ -7,8 +7,16 @@ import { Link as LinkRouter } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import usersActions from "../redux/actions/usersActions";
 import {useState} from "react"
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast from 'react-hot-toast';
+import Select from 'react-select'
+import GoogleSignUp from "./GoogleSignUp";
+
+
+const options = [
+    { value: 'Argentina', label: 'Argentina' },
+    { value: 'Colombia', label: 'Colombia' },
+    { value: 'Mexico', label: 'Mexico' }
+  ]
 
 
 function SignUp() {
@@ -16,7 +24,7 @@ function SignUp() {
     const [lastName,setLastName] = useState("")
     const [email,setEmail] = useState("")
     const [pass,setPass] = useState("")
-    // const [image, setImage] = useState ("")
+    const [image, setImage] = useState ("")
    
     const dispatch = useDispatch()
 
@@ -27,7 +35,7 @@ function SignUp() {
             lastName: lastName,
             email: email,
             password:pass,
-            // image: image,
+            image: image,
             from: "form-signup"
         }
         const res = await dispatch(usersActions.signUpUser(userData))
@@ -51,14 +59,17 @@ function SignUp() {
         setLastName("")
         setEmail("")
         setPass("")
-        // setImage("")
+        setImage("")
     }
     return (
         <Container fluid className="sign-container">
-                <Card className="sign-card" isHoverable variant="bordered" css={{ backgroundColor: "white", boxShadow: "0px 5px 8px rgba(0, 0, 0, 0.505)"}}>
-                <h1 className="signform-title">Journey Becomes Real!</h1>
+            <h1 className="signform-title">Welcome Traveler !</h1>
+                <Card className="sign-card" css={{ backgroundColor: "white", boxShadow: "0px 5px 8px rgba(0, 0, 0, 0.505)"}}>
                             <Grid.Container className="inputs-container">
                                 <form onSubmit={handleSubmit} className="form">
+                                <Grid>
+                                <Select options={options} placeholder="Your Country" className="select-forms"/>
+                                </Grid>
                                 <Grid>
                                     <Input onChange={e=>setFirstName(e.target.value)}
                                         value={firstName}
@@ -66,6 +77,7 @@ function SignUp() {
                                         type="text"
                                         css={{ w: "70%", textAlign:"left"}}
                                         className="input-forms"
+                                        placeholder="🖌️"
                                     />
                                 </Grid>
                                 <Grid>
@@ -75,6 +87,7 @@ function SignUp() {
                                         type="text"
                                         css={{ w: "70%",textAlign:"left" }}
                                         className="input-forms"
+                                        placeholder="🖌️"
                                     />
                                 </Grid>
                                 <Grid>
@@ -84,6 +97,7 @@ function SignUp() {
                                         type="email"
                                         css={{ w: "70%",textAlign:"left"}}
                                         className="input-forms"
+                                        placeholder="✉️"
                                     />
                                 </Grid>
                                 <Grid>
@@ -93,44 +107,30 @@ function SignUp() {
                                         type="password"
                                         css={{ w: "70%",textAlign:"left"}}
                                         className="input-forms"
+                                        placeholder="🔑"
                                     />
                                 </Grid>
-                                {/* <Grid>
+                                <Grid>
                                     <Input onChange={e=>setImage(e.target.value)}
                                         value={image}
                                         label="Url Image"
                                         type="url"
                                         css={{ w: "70%",textAlign:"left"}}
                                         className="input-forms"
+                                        placeholder="📷"
                                     />
-                                </Grid> */}
+                                </Grid>
                                 <div className="buttons-sign">
                                     <button type="submit" className="first-btn"> CREATE ACCOUNT!
                                     </button>
-                                <div className="boxsign">
-                                <div className="boxmedia">
-                                <p className="boxtitle">Or Sign Up with:</p>
-                                <div className="media-container media-signup">
-                                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-                                        <img className="signup-media" src={process.env.PUBLIC_URL + "/assets/instagram.png"} alt="" />
-                                    </a>
-                                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
-                                        <img className="signup-media" src={process.env.PUBLIC_URL + "/assets/facebook.png"} alt="" />
-                                    </a>
-                                    <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-                                        <img className="signup-media" src={process.env.PUBLIC_URL + "/assets/linkedin.png"} alt="" />
-                                    </a>
-                                </div>
-                                </div>
+                                    <p className="boxtitle">Or</p>
+                                    <GoogleSignUp/>
                                 <div className="boxlogin">
-                                <p className="boxtitle">Have an account?</p>
-                                <div className="media-container media-signup">
+                                <p className="boxtitle">Already have an account?</p>
                                 <LinkRouter to="/login" className="Links">
                                     <button className="second-btn"> LOG IN!
                                     </button>
                                 </LinkRouter>
-                                </div>
-                                </div>
                                 </div>
                                 </div>
                                 </form> 

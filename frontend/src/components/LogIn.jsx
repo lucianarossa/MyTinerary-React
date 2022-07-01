@@ -7,8 +7,9 @@ import { Link as LinkRouter } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import usersActions from "../redux/actions/usersActions";
 import {useState} from "react"
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast from 'react-hot-toast';
+import GoogleLogIn from "./GoogleLogIn";
+
 
 
 function LogIn() {
@@ -26,7 +27,7 @@ function LogIn() {
             from: "form-signup"
         }
         const res = await dispatch(usersActions.logInUser(userData))
-        console.log(res)
+        console.log("res", res)
         if (res.data.success) {
                 toast.success(res.data.message)
             }else{
@@ -39,8 +40,8 @@ function LogIn() {
 
     return (
         <Container fluid className="sign-container">
-                <Card className="sign-card" isHoverable variant="bordered" css={{ backgroundColor: "white", boxShadow: "0px 5px 8px rgba(0, 0, 0, 0.505)"}}>
-                <h1 className="signform-title">Hello Again!</h1>
+            <h1 className="signform-title">Hello Again !</h1>
+                <Card className="sign-card" css={{ backgroundColor: "white", boxShadow: "0px 5px 8px rgba(0, 0, 0, 0.505)"}}>
                             <Grid.Container className="inputs-container">
                             <form onSubmit={handleSubmit} className="form">
                                 <Grid>
@@ -50,6 +51,7 @@ function LogIn() {
                                         type="email"
                                         css={{ w: "70%", textAlign:"left"}}
                                         className="input-forms"
+                                        placeholder="✉️"
                                     />
                                 </Grid>
                                 <Grid>
@@ -59,37 +61,22 @@ function LogIn() {
                                         type="password"
                                         css={{ w: "70%", textAlign:"left"}}
                                         className="input-forms"
+                                        placeholder="🔑"
                                     />
                                 </Grid>
                                 <div className="buttons-sign">
                                     <button type="submit" className="first-btn"> LOG IN!
                                     </button>
-                                <div className="boxsign">
-                                <div className="boxmedia">
-                                <p className="boxtitle">Or Log In with:</p>
-                                <div className="media-container media-signup">
-                                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-                                        <img className="signup-media" src={process.env.PUBLIC_URL + "/assets/instagram.png"} alt="" />
-                                    </a>
-                                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
-                                        <img className="signup-media" src={process.env.PUBLIC_URL + "/assets/facebook.png"} alt="" />
-                                    </a>
-                                    <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-                                        <img className="signup-media" src={process.env.PUBLIC_URL + "/assets/linkedin.png"} alt="" />
-                                    </a>
-                                </div>
+                                <p className="boxtitle">Or</p>
+                                <GoogleLogIn/>
                                 </div>
                                 <div className="boxlogin">
                                 <p className="boxtitle">Have an account?</p>
-                                <div className="media-container media-signup">
                                 <LinkRouter to="/signup" className="Links">
                                 <button className="second-btn"> CREATE ACCOUNT!
                                     </button>
                                 </LinkRouter>
                                 </div>
-                                </div>
-                                </div>
-                                </div> 
                                 </form>
                             </Grid.Container>
                 </Card>

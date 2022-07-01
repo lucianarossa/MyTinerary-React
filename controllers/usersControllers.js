@@ -3,7 +3,7 @@ const bcryptjs = require('bcryptjs')
 
 const usersControllers = {
     signUpUsers: async (req, res) => {
-        let {firstName, lastName, email, password, from} = req.body.userData
+        let {firstName, lastName, email, password, image, from} = req.body.userData
         try{
             const userExist = await User.findOne({email})
             if(userExist) {
@@ -11,7 +11,7 @@ const usersControllers = {
                 res.json({
                     success: false,
                     from: "signup",
-                    message: "You have already Sign Up in this way please Sign In"
+                    message: "You are already registered, please Log In"
                 })
                 } else {
                 const hashedPassword = bcryptjs.hashSync(password, 10)
@@ -21,7 +21,7 @@ const usersControllers = {
                 res.json({
                     success: true,
                     from: "signup",
-                    message: "We have added" + from + "to your means of registration"
+                    message: "We have added " + from + " to your means of registration"
                 })
             }
         } else {
@@ -31,7 +31,7 @@ const usersControllers = {
                 lastName: lastName,
                 email: email,
                 password: [hashedPassword],
-                // image: image,
+                image: image,
                 from: [from]
             })
             if (from !== "form-signup") {
@@ -39,14 +39,14 @@ const usersControllers = {
                 res.json({
                     success: true,
                     from: "signup",
-                    message: "Congratulations your user has been created with" + from
+                    message: "Congratulations you have registered with " + from
                 })
             } else {
                 await newUser.save()
                 res.json({
                     success: true,
                     from: "signup",
-                    message: "We sent you an email to validate your registration, please check your email box" 
+                    message: "Please check your mailbox to validate your email" 
                 })
             }
          }
@@ -63,7 +63,7 @@ const usersControllers = {
             const userExist = await User.findOne({email})
             // const indexPass = userExist.from.indexOf(from)
             if(!userExist){
-                res.json({success: false, message: "You haven't registered yet please Sign Up"})
+                res.json({success: false, message: "You are not registered yet please Sign Up"})
             } else {
                 if(from !== "form-signup"){
                     let matchpassword = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
@@ -86,7 +86,7 @@ const usersControllers = {
                         res.json({
                             success: false,
                             from: from,
-                            message: "you have not registered with" + from + "If you want to enter with this method you must sign in with" + from
+                            message: "You are not registered with " + from + "If you want to enter with this method you must sign in with " + from
                         })
                     }
                 } else {
@@ -103,13 +103,13 @@ const usersControllers = {
                             success:true,
                             from: from,
                             response: {userData},
-                            message: "Welcome back" + userData.firstName,
+                            message: "Welcome back " + userData.firstName,
                         })
                     } else {
                         res.json({
                             success: false,
                             from: from,
-                            message: "username or password do not match",
+                            message: "Your mail or your password don't match",
                         })
                     }
                 }

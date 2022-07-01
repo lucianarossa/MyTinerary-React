@@ -17,7 +17,6 @@ const validator = (req, res, next) => {
             .max(20)
             .trim()
             .pattern(new RegExp('[a-zA-Z]'))
-            .required()
             .messages({
                 'string.min': '"last name": min 3 characters',
                 'string.max': '"last name": max 20 characters'
@@ -37,11 +36,7 @@ const validator = (req, res, next) => {
                 'string.min': '"password": min 8 characters',
                 'string.max': '"password": max 30 characters'
             }),
-        // image: joi.string()
-        //     .min(10)
-        //     .trim(),
-        // country: joi.string()
-        //     .trim(),
+        image: joi.string(),
         from: joi.string()
     })
     const validation = schema.validate(req.body.userData, { abortEarly: false })
