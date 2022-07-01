@@ -1,11 +1,16 @@
 const User = require('../models/user')
 const bcryptjs = require('bcryptjs')
+const crypto = require("crypto")
+const sendEmail = require("../controllers/sendEmail")
 
 const usersControllers = {
     signUpUsers: async (req, res) => {
         let {firstName, lastName, email, password, image, from} = req.body.userData
         try{
             const userExist = await User.findOne({email})
+            const verification = false //por default
+            const uniqueString = crypto.randomBytes(15).toString("hex")//utilizo los metodos de crypto
+            //primer condicional si el USUARIO EXISTE
             if(userExist) {
                if (userExist.from.indexOf(from) !== -1){
                 res.json({
@@ -24,34 +29,42 @@ const usersControllers = {
                     message: "We have added " + from + " to your means of registration"
                 })
             }
+            //segundo condicional si el USUARIO NO EXISTE
         } else {
             const hashedPassword = bcryptjs.hashSync(password, 10)
+            // console.log(hashedPassword)
             const newUser = await new User({
                 firstName: firstName,
                 lastName: lastName,
                 email: email,
                 password: [hashedPassword],
                 image: image,
-                from: [from]
+                from: [from],
+                uniqueString: uniqueString, 
+                verification: verification
             })
-            if (from !== "form-signup") {
+            // console.log(newUser)
+            if (from !== "form-signup") {  //si la data NO VIENE DEL FORM
+                newUser.verification = true //establezco en true para que no valide datos
                 await newUser.save()
                 res.json({
                     success: true,
                     from: "signup",
                     message: "Congratulations you have registered with " + from
                 })
-            } else {
+            } else { //si la data VIENE DEL FORM
                 await newUser.save()
+                await sendEmail(email, uniqueString)
                 res.json({
                     success: true,
                     from: "signup",
-                    message: "Please check your mailbox to validate your email" 
+                    message: "Check your mailbox to finish validation" 
                 })
             }
          }
     } catch (error) {
-        res.json({ success: false, message: "Ups! Something is wrong, try in a few minutes"})
+        res.json({ success: false, message: "Ups! Something is wrong, try in a few minutes" ,console: console.log(error)})
+        
     }
 },
 
@@ -118,6 +131,22 @@ const usersControllers = {
             res.json({success: false, message:"Ups! Something is wrong, try in a few minutes", console: console.log(error)})
         }
     },
+
+    verifyMail: async (req, res) => {
+        const string = req.params.string
+        console.log(string)
+        const user = await User.findOne({uniqueString: string})
+        console.log(user)
+        if(user){
+            user.verification = true
+            await user.save()
+            res.redirect("http://localhost:3000")
+        }
+        else {res.json({
+            success: false,
+            message: `email hasn't been confirmed yet!`})
+        }
+    }
 }
 
 module.exports = usersControllers

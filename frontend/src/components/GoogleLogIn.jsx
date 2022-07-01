@@ -29,7 +29,7 @@ export default function GoogleLogIn() {
     useEffect(() => {
         /* global google*/
         google.accounts.id.initialize({
-            client_id: "958184465312-pfbfd9bnsmu4sn2mfb40bnqj257c6557.apps.googleusercontent.com",
+            client_id: "277557540971-8b2gtsg5fh2oh0257uh4p2dq9a24d7ml.apps.googleusercontent.com",
             callback: handleCallBackResponse
         });
 

@@ -12,6 +12,7 @@ import Select from 'react-select'
 import GoogleSignUp from "./GoogleSignUp";
 
 
+
 const options = [
     { value: 'Argentina', label: 'Argentina' },
     { value: 'Colombia', label: 'Colombia' },
@@ -77,7 +78,7 @@ function SignUp() {
                                         type="text"
                                         css={{ w: "70%", textAlign:"left"}}
                                         className="input-forms"
-                                        placeholder="🖌️"
+                                        placeholder="👤"
                                     />
                                 </Grid>
                                 <Grid>
@@ -87,7 +88,7 @@ function SignUp() {
                                         type="text"
                                         css={{ w: "70%",textAlign:"left" }}
                                         className="input-forms"
-                                        placeholder="🖌️"
+                                        placeholder="👤"
                                     />
                                 </Grid>
                                 <Grid>
@@ -114,10 +115,10 @@ function SignUp() {
                                     <Input onChange={e=>setImage(e.target.value)}
                                         value={image}
                                         label="Url Image"
-                                        type="url"
+                                        type="text"
                                         css={{ w: "70%",textAlign:"left"}}
                                         className="input-forms"
-                                        placeholder="📷"
+                                        placeholder="📸"
                                     />
                                 </Grid>
                                 <div className="buttons-sign">

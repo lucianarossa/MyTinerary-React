@@ -7,7 +7,7 @@ const usersControllers = require ('../controllers/usersControllers')
 
 const {getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities} = citiesControllers;
 const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItineraries, getItinerariesByCity} = itinerariesControllers; 
-const {signUpUsers, logInUser} = usersControllers
+const {signUpUsers, logInUser, verifyMail} = usersControllers
 
 
 
@@ -50,6 +50,9 @@ Router.route('/auth/signup')
 
 Router.route ('/auth/login')
 .post(logInUser)
+
+Router.route("/verify/:string") 
+.get(verifyMail)
 
 
 module.exports = Router
