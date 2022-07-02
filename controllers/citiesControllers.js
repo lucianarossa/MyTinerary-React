@@ -104,7 +104,7 @@ const citiesControllers = {
             success: error ? false : true,
             error: error
         })
-    },
+    }, 
 
 }
 

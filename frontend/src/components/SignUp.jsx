@@ -40,7 +40,7 @@ function SignUp() {
             from: "form-signup"
         }
         const res = await dispatch(usersActions.signUpUser(userData))
-        console.log(res)
+        // console.log(res)
         const errormsg = res.data.message
 
         if(res.data.from === "validator"){
@@ -115,7 +115,7 @@ function SignUp() {
                                     <Input onChange={e=>setImage(e.target.value)}
                                         value={image}
                                         label="Url Image"
-                                        type="text"
+                                        type="url"
                                         css={{ w: "70%",textAlign:"left"}}
                                         className="input-forms"
                                         placeholder="📸"

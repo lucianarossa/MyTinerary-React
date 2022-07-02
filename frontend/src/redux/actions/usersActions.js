@@ -46,6 +46,16 @@ const usersActions = {
         }
     },
 
+    logOutUser: () => {
+        return async (dispatch, getState) => {  
+            localStorage.removeItem('token')
+            dispatch({
+                type: 'USER',
+                payload: null
+            })
+        }
+    },
+
     verifyToken: (token) => {
 
         return async (dispatch, getState) => {

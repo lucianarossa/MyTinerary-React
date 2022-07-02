@@ -145,6 +145,16 @@ const usersControllers = {
         } catch (error) {
             res.json({success: false, message:"Ups! Something is wrong, try in a few minutes", console: console.log(error)})
         }
+    }, 
+
+    logOutUser: async (req, res) => {
+       
+        const mail = req.body.email
+        const user = await User.findOne({email})
+        await user.save()
+        res.json({
+            success: true,
+            message: mail+' sign out!'})
     },
 
     verifyMail: async (req, res) => {
