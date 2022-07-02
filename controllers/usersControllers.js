@@ -103,7 +103,7 @@ const usersControllers = {
                         from: from,
                         response: {token, userData}, //al front le mando token y le mando userdata
                         message: "Welcome back " + userData.firstName,
-                    })
+                    }) 
 
                     } else {
                         res.json({

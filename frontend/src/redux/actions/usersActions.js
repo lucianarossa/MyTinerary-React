@@ -54,7 +54,7 @@ const usersActions = {
                 headers: {
                     "Authorization": "Bearer " + token
                 }
-            })
+            }) 
                 .then(res => {
                     if (res.data.success) {
                         dispatch({ type: "USER", payload: res.data.response });
