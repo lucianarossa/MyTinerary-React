@@ -10,7 +10,7 @@ import {useState} from "react"
 import toast from 'react-hot-toast';
 import Select from 'react-select'
 import GoogleSignUp from "./GoogleSignUp";
-
+import { useNavigate } from "react-router-dom";
 
 
 const options = [
@@ -28,6 +28,7 @@ function SignUp() {
     const [image, setImage] = useState ("")
    
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -51,6 +52,7 @@ function SignUp() {
         if (res.data.from === "signup") {
             if(res.data.success){
                 toast.success(res.data.message)
+                navigate("/login")
             }else{
                 toast.error(res.data.message)
             }

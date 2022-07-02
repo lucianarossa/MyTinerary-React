@@ -154,10 +154,10 @@ const Navbar = () => {
           {/* //USER MENU */}
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="USER">
+            <Tooltip title="User" placement="left-start">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
 
-                {user ? <Avatar alt="userlogo" src={user.image} /> : <Avatar alt="userlogo" src={process.env.PUBLIC_URL + "/assets/userlogo.png"} />}
+                {!user ? <Avatar alt="userlogo" src={process.env.PUBLIC_URL + "/assets/userlogo.png"} /> : <Avatar alt="userlogo" src={user.image} />}
 
               </IconButton>
 

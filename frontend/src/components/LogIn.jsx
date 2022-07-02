@@ -9,6 +9,7 @@ import usersActions from "../redux/actions/usersActions";
 import {useState} from "react"
 import toast from 'react-hot-toast';
 import GoogleLogIn from "./GoogleLogIn";
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -18,6 +19,8 @@ function LogIn() {
     const [pass,setPass] = useState("")
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+   
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -27,11 +30,13 @@ function LogIn() {
             from: "form-signup"
         }
         const res = await dispatch(usersActions.logInUser(userData))
-        console.log("res", res)
         if (res.data.success) {
                 toast.success(res.data.message)
+                navigate("/")
+               
             }else{
                 toast.error(res.data.message)
+                navigate("/signup")
             }
 
         setEmail("")

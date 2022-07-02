@@ -72,7 +72,7 @@ const usersControllers = {
 
 
     logInUser: async (req, res) => {
-        const {email, password, from} = req.body.userData
+        const {email, password, from, image} = req.body.userData
         // console.log(req.body)
         try{
             const userExist = await User.findOne({email})
@@ -92,6 +92,7 @@ const usersControllers = {
                             id: userExist._id,
                             firstName: userExist.firstName,
                             email: userExist.email,
+                            image: userExist.image,
                             from: from,
                         }
 
@@ -122,6 +123,7 @@ const usersControllers = {
                             id: userExist._id,
                             firstName: userExist.firstName,
                             email: userExist.email,
+                            image: userExist.image,
                             from: from,
                         }
 
@@ -178,7 +180,7 @@ const usersControllers = {
         if(req,res){
             res.json({
                 success:true,
-                response:{id:req.user.id, firstName:req.user.firstName,email:req.user.email, from:"token"},
+                response:{id:req.user.id, firstName:req.user.firstName,email:req.user.email, image:req.user.image, from:"token"},
                 messagge:"Welcome " + req.user.firstName
             })
          } else {

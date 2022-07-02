@@ -4,10 +4,12 @@ import { useDispatch } from "react-redux"
 import usersActions from "../redux/actions/usersActions"
 import "../styles/App.css"
 import toast from 'react-hot-toast';
+import { useNavigate } from "react-router-dom"
 
 
 function GoogleSignUp() {
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     async function handleCallBackResponse(response) {
         console.log(response.credential);
@@ -34,6 +36,7 @@ function GoogleSignUp() {
         if (res.data.from === "signup") {
             if(res.data.success){
                 toast.success(res.data.message)
+                navigate("/login")
             }else{
                 toast.error(res.data.message)
             }
