@@ -15,15 +15,21 @@ import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn"
 import SignPage from "./pages/SignPage";
 import { Toaster } from 'react-hot-toast'
+import usersActions from "./redux/actions/usersActions";
 
 
 function App(props) {
 
   useEffect(() => {
-
-    props.getCities()
+      props.getCities()
+    if (localStorage.getItem("token") !== null) {
+      const token = localStorage.getItem("token")
+      props.verifyToken(token)
+      
+    }
     // eslint-disable-next-line 
   }, [])
+  
 
   return (
     <>
@@ -63,6 +69,7 @@ function App(props) {
 }
 const mapDispatchToProps = {
   getCities: citiesActions.getCities,
+  verifyToken: usersActions.verifyToken
 }
 
 export default connect(null, mapDispatchToProps)(App)

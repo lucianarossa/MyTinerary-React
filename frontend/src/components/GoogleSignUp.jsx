@@ -45,15 +45,15 @@ function GoogleSignUp() {
     useEffect(() => {
         /*global google*/
         google.accounts.id.initialize({
-            client_id: "277557540971-8b2gtsg5fh2oh0257uh4p2dq9a24d7ml.apps.googleusercontent.com",
+            client_id: '277557540971-8b2gtsg5fh2oh0257uh4p2dq9a24d7ml.apps.googleusercontent.com',
             callback: handleCallBackResponse
         });
 
         google.accounts.id.renderButton(
             document.getElementById("buttonDiv"),
-            { theme: "filled_black", size: "small", locale:'en-IN',text:'signup_with', shape:"pill"}
+            { theme: "filled_black", size: "small", locale:'en',text:'signup_with', shape:"pill"}
         )
-    });
+    }); 
 
     return (
         <div>

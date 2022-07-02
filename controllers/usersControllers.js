@@ -2,6 +2,7 @@ const User = require('../models/user')
 const bcryptjs = require('bcryptjs')
 const crypto = require("crypto")
 const sendEmail = require("../controllers/sendEmail")
+const jwt = require("jsonwebtoken")
 
 const usersControllers = {
     signUpUsers: async (req, res) => {
@@ -10,7 +11,8 @@ const usersControllers = {
             const userExist = await User.findOne({email})
             const verification = false //por default
             const uniqueString = crypto.randomBytes(15).toString("hex")//utilizo los metodos de crypto
-            //primer condicional si el USUARIO EXISTE
+
+            //si el USUARIO EXISTE
             if(userExist) {
                if (userExist.from.indexOf(from) !== -1){
                 res.json({
@@ -29,10 +31,10 @@ const usersControllers = {
                     message: "We have added " + from + " to your means of registration"
                 })
             }
-            //segundo condicional si el USUARIO NO EXISTE
+
+            //si el USUARIO NO EXISTE
         } else {
             const hashedPassword = bcryptjs.hashSync(password, 10)
-            // console.log(hashedPassword)
             const newUser = await new User({
                 firstName: firstName,
                 lastName: lastName,
@@ -71,28 +73,36 @@ const usersControllers = {
 
     logInUser: async (req, res) => {
         const {email, password, from} = req.body.userData
-        console.log(req.body)
+        // console.log(req.body)
         try{
             const userExist = await User.findOne({email})
             // const indexPass = userExist.from.indexOf(from)
-            if(!userExist){
+
+            if(!userExist){ //si el usuario NO EXISTE
                 res.json({success: false, message: "You are not registered yet please Sign Up"})
-            } else {
-                if(from !== "form-signup"){
+
+            } else { //si el usuario EXISTE
+
+                if(from !== "form-signup"){  //EXISTE PERO NO EN SIGNUP
                     let matchpassword = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
-                    if(matchpassword.length > 0) {
+
+                    if(matchpassword.length > 0) { 
+
                         const userData={
                             id: userExist._id,
                             firstName: userExist.firstName,
                             email: userExist.email,
                             from: from,
                         }
+
+                    const token = jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn: 60* 60*24})
                     await userExist.save()
+
                     res.json({
                         success: true,
                         from: from,
-                        response: {userData},
-                        message: `Welcome back ${userData.firstName}`,
+                        response: {token, userData}, //al front le mando token y le mando userdata
+                        message: "Welcome back " + userData.firstName,
                     })
 
                     } else {
@@ -102,6 +112,9 @@ const usersControllers = {
                             message: "You are not registered with " + from + "If you want to enter with this method you must sign in with " + from
                         })
                     }
+
+                    //EXISTE EN SIGNUP
+
                 } else {
                     let matchpassword = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
                     if(matchpassword.length > 0) {
@@ -111,11 +124,13 @@ const usersControllers = {
                             email: userExist.email,
                             from: from,
                         }
+
+                        const token = jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn: 60* 60*24})
                         await userExist.save()
-                        res.json({
+                        res.json({ 
                             success:true,
                             from: from,
-                            response: {userData},
+                            response: {token, userData},
                             message: "Welcome back " + userData.firstName,
                         })
                     } else {
@@ -146,7 +161,23 @@ const usersControllers = {
             success: false,
             message: `email hasn't been confirmed yet!`})
         }
-    }
+    },
+
+    verifyToken:(req,res) =>{
+
+        if(req,res){
+            res.json({
+                success:true,
+                response:{id:req.user.id, firstName:req.user.firstName,email:req.user.email, from:"token"},
+                messagge:"Welcome " + req.user.firstName
+            })
+         } else {
+                res.json({
+                    sucess:false,
+                    message: "Please Log In again"
+                })
+            }
+        },
 }
 
 module.exports = usersControllers
