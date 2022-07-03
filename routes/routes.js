@@ -4,11 +4,14 @@ const validator = require ("../config/validator")
 const citiesControllers = require('../controllers/citiesControllers');
 const itinerariesControllers = require ('../controllers/itinerariesControllers');
 const usersControllers = require ('../controllers/usersControllers')
+const countriesControllers = require ("../controllers/countriesControllers")
 
 const {getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities} = citiesControllers;
 const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItineraries, getItinerariesByCity} = itinerariesControllers; 
 const {signUpUsers, logInUser, logOutUser, verifyMail, verifyToken} = usersControllers
-const passport = require("../config/passport")
+const {getCountries, addCountry, multiplesCountries} = countriesControllers
+const passport = require("../config/passport");
+
 
 
 
@@ -60,5 +63,15 @@ Router.route("/verify/:string")
 
 Router.route('/auth/token')
 .get(passport.authenticate('jwt', {session: false}),verifyToken)
+
+// RUTAS COUNTRIES
+
+Router.route('/countries') 
+.get(getCountries)
+.post(addCountry)
+
+Router.route("/multiplesCountries")
+.post(multiplesCountries)
+
 
 module.exports = Router

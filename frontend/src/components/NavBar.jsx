@@ -141,7 +141,7 @@ const Navbar = () => {
 
           {/* //MENU */}
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
             {pages.map((page, index) => (
               <LinkRouter to={page.to} key={index}
                 onClick={handleCloseNavMenu} className="Links">
@@ -163,7 +163,7 @@ const Navbar = () => {
 
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: '45px'}}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -180,8 +180,10 @@ const Navbar = () => {
             >
               {user ? (<MenuItem onClick={handleCloseUserMenu}>
 
-                <Typography textAlign="center" onClick={logOut}>Log Out {user.firstName}</Typography>
-              </MenuItem>
+                <Typography
+                  sx={{ fontFamily: "Paytone One"}} 
+                  textAlign="center" onClick={logOut}>Log Out {user.firstName}</Typography>
+              </MenuItem >
               ) : settings.map((setting, index) => (
                 <LinkRouter to={setting.to} key={index} onClick={handleCloseUserMenu} className="Links">
                   <MenuItem >
