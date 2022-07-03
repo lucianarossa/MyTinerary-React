@@ -23,6 +23,7 @@ function SignUp() {
     const [email, setEmail] = useState("")
     const [pass, setPass] = useState("")
     const [image, setImage] = useState("")
+    const [country, setCountry] = useState("")
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -35,14 +36,7 @@ function SignUp() {
     }, [])
 
     const countries = useSelector(store => store.countriesReducer.countries)
-    const [selectCountry, setSelectCountry] = useState("unselected")
-
-    console.log(countries)
-
-    function selected(event){
-        setSelectCountry(event.target.value)
-    }
-   
+     // console.log(countries)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -52,7 +46,8 @@ function SignUp() {
             email: email,
             password: pass,
             image: image,
-            from: "form-signup"
+            from: "form-signup",
+            country: country
         }
         const res = await dispatch(usersActions.signUpUser(userData))
         // console.log(res)
@@ -72,7 +67,6 @@ function SignUp() {
             }
         }
 
-        setSelectCountry("unselected")
         setFirstName("")
         setLastName("")
         setEmail("")
@@ -91,14 +85,14 @@ function SignUp() {
                 <Grid.Container className="inputs-container">
                     <form onSubmit={handleSubmit} className="form">
                         <Grid>
-                         <select className="select-forms" onChange= {selected}>
+                         <select className="select-forms" onChange= {e => setCountry(e.target.value)}>
                             {countries?.map(country =>
-                                <option>{country.country}</option>
+                                <option key={country._id}>{country.country}</option>
                                  )}
                          </select>
                         </Grid>
 
-                        {selectCountry !== "unselected" ?
+                        { country!== "" ?
                         <>
                         <Grid>
                             <Input onChange={e => setFirstName(e.target.value)}
@@ -154,7 +148,7 @@ function SignUp() {
                             <button type="submit" className="first-btn"> CREATE ACCOUNT!
                             </button>
                             <p className="boxtitle">Or</p>
-                            <GoogleSignUp />
+                            <GoogleSignUp props={country} />
                             <div className="boxlogin">
                                 <p className="boxtitle">Already have an account?</p>
                                 <LinkRouter to="/login" className="Links">

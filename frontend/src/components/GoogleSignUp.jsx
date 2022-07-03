@@ -7,14 +7,16 @@ import toast from 'react-hot-toast';
 import { useNavigate } from "react-router-dom"
 
 
-function GoogleSignUp() {
+function GoogleSignUp(props) {
     const dispatch = useDispatch();
     const navigate = useNavigate()
+    // console.log(props)
 
     async function handleCallBackResponse(response) {
-        console.log(response.credential);
+        // console.log(response.credential);
         let userObject = jwt_decode(response.credential);
-        console.log(userObject);
+        // console.log(userObject);
+        console.log(props)
 
         const res = await dispatch(usersActions.signUpUser({
             firstName: userObject.given_name,
@@ -22,10 +24,11 @@ function GoogleSignUp() {
             email:userObject.email,
             password:userObject.sub,
             image: userObject.picture,
-            // country: {type: String},
+            country: props.props,
             from: "GOOGLE"
 
         }))
+  
 
         const errormsg = res.data.message
         if(res.data.from === "validator"){
@@ -39,6 +42,7 @@ function GoogleSignUp() {
                 navigate("/login")
             }else{
                 toast.error(res.data.message)
+                navigate("/login")
             }
         }
 
