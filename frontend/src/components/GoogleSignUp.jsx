@@ -23,7 +23,7 @@ function GoogleSignUp() {
             password:userObject.sub,
             image: userObject.picture,
             // country: {type: String},
-            from: "google"
+            from: "GOOGLE"
 
         }))
 

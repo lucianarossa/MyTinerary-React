@@ -15,7 +15,7 @@ export default function GoogleLogIn() {
         const res = await dispatch(usersActions.logInUser({
             email: userObject.email,
             password: userObject.sub,
-            from: 'google'
+            from: 'GOOGLE'
         }))
 
         console.log(res)

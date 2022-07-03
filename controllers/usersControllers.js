@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken")
 
 const usersControllers = {
     signUpUsers: async (req, res) => {
-        let {firstName, lastName, email, password, image, from} = req.body.userData
+        let {firstName, lastName, email, password, image, from, country} = req.body.userData
         try{
             const userExist = await User.findOne({email})
             const verification = false //por default
@@ -18,7 +18,7 @@ const usersControllers = {
                 res.json({
                     success: false,
                     from: "signup",
-                    message: "You are already registered, please Log In"
+                    message: "You are already registered please Log In"
                 })
                 } else {
                 const hashedPassword = bcryptjs.hashSync(password, 10)
@@ -28,7 +28,7 @@ const usersControllers = {
                 res.json({
                     success: true,
                     from: "signup",
-                    message: "We have added " + from + " to your means of registration"
+                    message: "We add " + from + " to your registration means"
                 })
             }
 
@@ -41,6 +41,7 @@ const usersControllers = {
                 email: email,
                 password: [hashedPassword],
                 image: image,
+                country: country,
                 from: [from],
                 uniqueString: uniqueString, 
                 verification: verification
@@ -52,7 +53,7 @@ const usersControllers = {
                 res.json({
                     success: true,
                     from: "signup",
-                    message: "Congratulations you have registered with " + from
+                    message: "Congratulations! you registered with " + from
                 })
             } else { //si la data VIENE DEL FORM
                 await newUser.save()
@@ -60,12 +61,12 @@ const usersControllers = {
                 res.json({
                     success: true,
                     from: "signup",
-                    message: "Check your mailbox to finish validation" 
+                    message: "We sent you an EMAIL to validate your registration, please check your inbox" 
                 })
             }
          }
     } catch (error) {
-        res.json({ success: false, message: "Ups! Something is wrong, try in a few minutes" ,console: console.log(error)})
+        res.json({ success: false, message: "Oops! Something went wrong try in a few minutes" ,console: console.log(error)})
         
     }
 },
@@ -110,7 +111,7 @@ const usersControllers = {
                         res.json({
                             success: false,
                             from: from,
-                            message: "You are not registered with " + from + "If you want to enter with this method you must sign in with " + from
+                            message: "You are not registered with " + from + " please Sign In"
                         })
                     }
 
@@ -139,13 +140,13 @@ const usersControllers = {
                         res.json({
                             success: false,
                             from: from,
-                            message: "Your mail or your password don't match",
+                            message: "Your email or your password does not match please check",
                         })
                     }
                 }
             }
         } catch (error) {
-            res.json({success: false, message:"Ups! Something is wrong, try in a few minutes", console: console.log(error)})
+            res.json({success: false, message:"Oops! Something went wrong try in a few minutes", console: console.log(error)})
         }
     }, 
 
@@ -156,7 +157,7 @@ const usersControllers = {
         await user.save()
         res.json({
             success: true,
-            message: mail+' sign out!'})
+            message: mail+' LOG OUT!'})
     },
 
     verifyMail: async (req, res) => {
@@ -171,7 +172,7 @@ const usersControllers = {
         }
         else {res.json({
             success: false,
-            message: `email hasn't been confirmed yet!`})
+            message: `Your email has not been confirmed yet`})
         }
     },
 
