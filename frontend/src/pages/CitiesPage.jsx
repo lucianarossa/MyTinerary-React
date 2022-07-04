@@ -5,14 +5,14 @@ import Cities from "../components/Cities";
 
 
 
-function CitiesPage (){
-    
-    return(
-       <>
-       <CoverCities/>
-       <Cities/>
-       </>     
-)
+function CitiesPage() {
+
+    return (
+        <>
+            <CoverCities />
+            <Cities />
+        </>
+    )
 }
 
 export default CitiesPage;

@@ -20,15 +20,15 @@ import usersActions from "./redux/actions/usersActions";
 function App(props) {
 
   useEffect(() => {
-      props.getCities()
+    props.getCities()
     if (localStorage.getItem("token") !== null) {
       const token = localStorage.getItem("token")
       props.verifyToken(token)
-      
+
     }
     // eslint-disable-next-line 
   }, [])
-  
+
 
   return (
     <>
@@ -49,8 +49,8 @@ function App(props) {
         <Route path="*" element={<Index />} />
         <Route path="/citiespage" element={<CitiesPage />} />
         <Route path="citiespage/citydetails/:id" element={<CityDetails />} />
-        { !props.user && <Route path="/signup" element={<SignUp />} />}
-        { !props.user && <Route path="/login" element={<LogIn />} />}
+        {!props.user && <Route path="/signup" element={<SignUp />} />}
+        {!props.user && <Route path="/login" element={<LogIn />} />}
       </Routes>
       <Footer />
       <ScrollToTop

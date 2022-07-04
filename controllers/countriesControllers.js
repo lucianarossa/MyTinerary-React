@@ -5,11 +5,11 @@ const Country = require('../models/country')
 
 const countriesControllers = {
     getCountries: async (req, res) => { //devuelve un array 
-        let countries 
-        let error = null 
+        let countries
+        let error = null
         try {
-            countries = await Country.find() 
-        } catch (err) { error = err } 
+            countries = await Country.find()
+        } catch (err) { error = err }
         res.json({
             response: error ? 'ERROR' : { countries },
             success: error ? false : true,
@@ -18,13 +18,13 @@ const countriesControllers = {
     },
 
     addCountry: async (req, res) => {
-        const { country } = req.body.data  
+        const { country } = req.body.data
         let onecountry
         let error = null
         try {
-            onecountry = await new Country({    
+            onecountry = await new Country({
                 country: country,
-            }).save() 
+            }).save()
         } catch (err) {
             error = err
         }
@@ -37,7 +37,7 @@ const countriesControllers = {
 
     multiplesCountries: async (req, res) => {
         let country = []
-        const data = req.body.data 
+        const data = req.body.data
         let error = null
         try {
             data.map(async (item) => {
@@ -52,7 +52,7 @@ const countriesControllers = {
             success: error ? false : true,
             error: error
         })
-    }, 
+    },
 }
 
 module.exports = countriesControllers

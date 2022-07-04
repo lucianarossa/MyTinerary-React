@@ -6,7 +6,6 @@ const pages = [{ name: "Home", to: "/" }, { name: "Cities", to: "/citiespage" }]
 
 
 
-
 function Footer() {
    return (
       <div className="footer-container">

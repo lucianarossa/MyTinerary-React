@@ -5,11 +5,11 @@ const City = require('../models/city')
 
 const citiesControllers = {
     getCities: async (req, res) => { //devuelve un array 
-        let cities  
-        let error = null 
+        let cities
+        let error = null
         try {
-            cities = await City.find() 
-        } catch (err) { error = err } 
+            cities = await City.find()
+        } catch (err) { error = err }
         res.json({
             response: error ? 'ERROR' : { cities },
             success: error ? false : true,
@@ -33,16 +33,16 @@ const citiesControllers = {
     }
     ,
     addCity: async (req, res) => {
-        const { name, country, description, image } = req.body.data  
+        const { name, country, description, image } = req.body.data
         let city
         let error = null
         try {
-            city = await new City({    
+            city = await new City({
                 name: name,
                 country: country,
                 description: description,
                 image: image
-            }).save() 
+            }).save()
         } catch (err) {
             error = err
         }
@@ -55,10 +55,10 @@ const citiesControllers = {
     modifyCity: async (req, res) => {
         const id = req.params.id
         const city = req.body
-        let citydb  
+        let citydb
         let error = null
         try {
-            citydb = await City.findOneAndUpdate({ _id: id }, city, {new:true}) 
+            citydb = await City.findOneAndUpdate({ _id: id }, city, { new: true })
         } catch (err) {
             error = err
         }
@@ -86,7 +86,7 @@ const citiesControllers = {
 
     multiplesCities: async (req, res) => {
         let city = []
-        const data = req.body.data 
+        const data = req.body.data
         let error = null
         try {
             data.map(async (item) => {
@@ -104,7 +104,7 @@ const citiesControllers = {
             success: error ? false : true,
             error: error
         })
-    }, 
+    },
 
 }
 

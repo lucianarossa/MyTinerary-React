@@ -10,30 +10,30 @@ import citiesActions from "../redux/actions/citiesActions";
 function Cities() {
 
     const [inputValue, setInputValue] = useState("")
-    const dispatch= useDispatch()
+    const dispatch = useDispatch()
 
     useEffect(() => {
-   
+
         dispatch(citiesActions.filterCities(inputValue))
         // eslint-disable-next-line
-}, [inputValue])
+    }, [inputValue])
 
     const cityFilter = useSelector(store => store.citiesReducer.filter)
-    
+
     return (
         <div className="main-cities-container">
-           <h2 className="cities-subt">Let's explore the world!</h2> 
-           <div className="cities-filter">
-                 <Input aria-label="input" onKeyUp={(evento) => { setInputValue(evento.target.value) }} type="text" placeholder=" search by city..."></Input>
-           </div>
+            <h2 className="cities-subt">Let's explore the world!</h2>
+            <div className="cities-filter">
+                <Input aria-label="input" onKeyUp={(evento) => { setInputValue(evento.target.value) }} type="text" placeholder=" search by city..."></Input>
+            </div>
             <div className="cards-container">
                 {cityFilter?.length > 0 ? (<CardsCities cardFilter={cityFilter} />) : (<NotFound />)}
             </div>
         </div>
     )
 }
-  
-  
-  export default Cities
-  
+
+
+export default Cities
+
 

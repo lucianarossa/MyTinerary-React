@@ -18,11 +18,11 @@ export default function GoogleLogIn() {
             from: 'GOOGLE'
         }))
 
-        console.log(res)
+        // console.log(res)
         if (res.data.success) {
             toast.success(res.data.message)
             navigate("/")
-        }else{
+        } else {
             toast.error(res.data.message)
             navigate("/signup")
         }
@@ -39,7 +39,7 @@ export default function GoogleLogIn() {
 
         google.accounts.id.renderButton(
             document.getElementById('buttonDiv'),
-            { theme: "filled_black", size: "small", locale:'en', text:'signin_with', shape:"pill"}
+            { theme: "filled_black", size: "small", locale: 'en', text: 'signin_with', shape: "pill" }
         )
         // eslint-disable-next-line
     });

@@ -57,7 +57,7 @@ const Navbar = () => {
   async function logOut() {
     await dispatch(usersActions.logOutUser())
       .then(navigate("/"))
-  } 
+  }
 
 
   // IMPRIMO
@@ -141,7 +141,7 @@ const Navbar = () => {
 
           {/* //MENU */}
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page, index) => (
               <LinkRouter to={page.to} key={index}
                 onClick={handleCloseNavMenu} className="Links">
@@ -154,19 +154,19 @@ const Navbar = () => {
           {/* //USER MENU */}
 
           <Box sx={{ flexGrow: 0 }}>
-          {!user ?
-            <Tooltip title="User">
-              <IconButton className= "avatarbutton" onClick={handleOpenUserMenu} sx={{ p: 0, boxShadow:"0px 15px 20px grey" }}>
-                <Avatar alt="userlogo" src={process.env.PUBLIC_URL + "/assets/userlogo.png"} />
-              </IconButton>
-            </Tooltip> :
-            <Tooltip title={user.firstName}>
-              <IconButton className= "avatarbutton" onClick={handleOpenUserMenu} sx={{ p: 0, boxShadow:"0px 15px 20px grey" }}>
-                <Avatar alt="userlogo" src={user.image} />
-              </IconButton>
-            </Tooltip>}
+            {!user ?
+              <Tooltip title="User">
+                <IconButton className="avatarbutton" onClick={handleOpenUserMenu} sx={{ p: 0, boxShadow: "0px 15px 20px grey" }}>
+                  <Avatar alt="userlogo" src={process.env.PUBLIC_URL + "/assets/userlogo.png"} />
+                </IconButton>
+              </Tooltip> :
+              <Tooltip title={user.firstName}>
+                <IconButton className="avatarbutton" onClick={handleOpenUserMenu} sx={{ p: 0, boxShadow: "0px 15px 20px grey" }}>
+                  <Avatar alt="userlogo" src={user.image} />
+                </IconButton>
+              </Tooltip>}
             <Menu
-              sx={{ mt: '45px'}}
+              sx={{ mt: '45px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -184,7 +184,7 @@ const Navbar = () => {
               {user ? (<MenuItem onClick={handleCloseUserMenu}>
 
                 <Typography
-                  sx={{ fontFamily: "Paytone One"}} 
+                  sx={{ fontFamily: "Paytone One" }}
                   textAlign="center" onClick={logOut}>Log Out {user.firstName}</Typography>
               </MenuItem >
               ) : settings.map((setting, index) => (

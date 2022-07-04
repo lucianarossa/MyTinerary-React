@@ -3,7 +3,7 @@ const initialState = {
     alert: {
         view: false,
         message: '',
-        success:false
+        success: false
     }
 }
 

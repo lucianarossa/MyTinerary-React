@@ -16,31 +16,31 @@ function GoogleSignUp(props) {
         // console.log(response.credential);
         let userObject = jwt_decode(response.credential);
         // console.log(userObject);
-        console.log(props)
+        // console.log(props)
 
         const res = await dispatch(usersActions.signUpUser({
             firstName: userObject.given_name,
             lastName: userObject.family_name,
-            email:userObject.email,
-            password:userObject.sub,
+            email: userObject.email,
+            password: userObject.sub,
             image: userObject.picture,
             country: props.props,
             from: "GOOGLE"
 
         }))
-  
+
 
         const errormsg = res.data.message
-        if(res.data.from === "validator"){
+        if (res.data.from === "validator") {
             errormsg.forEach(e => {
                 toast.error(e.message)
             })
-        } 
+        }
         if (res.data.from === "signup") {
-            if(res.data.success){
+            if (res.data.success) {
                 toast.success(res.data.message)
                 navigate("/login")
-            }else{
+            } else {
                 toast.error(res.data.message)
                 navigate("/login")
             }
@@ -58,9 +58,9 @@ function GoogleSignUp(props) {
 
         google.accounts.id.renderButton(
             document.getElementById("buttonDiv"),
-            { theme: "filled_black", size: "small", locale:'en',text:'signup_with', shape:"pill"}
+            { theme: "filled_black", size: "small", locale: 'en', text: 'signup_with', shape: "pill" }
         )
-    }); 
+    });
 
     return (
         <div>

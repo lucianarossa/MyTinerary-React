@@ -6,7 +6,7 @@ const usersActions = {
         return async (dispatch, getState) => {
             try {
                 const res = await axios.post("http://localhost:4000/api/auth/signup", { userData })
-                console.log(res)
+                // console.log(res)
                 dispatch({
                     type: 'MESSAGE',
                     payload: {
@@ -47,7 +47,7 @@ const usersActions = {
     },
 
     logOutUser: () => {
-        return async (dispatch, getState) => {  
+        return async (dispatch, getState) => {
             localStorage.removeItem('token')
             dispatch({
                 type: 'USER',
@@ -64,7 +64,7 @@ const usersActions = {
                 headers: {
                     "Authorization": "Bearer " + token
                 }
-            }) 
+            })
                 .then(res => {
                     if (res.data.success) {
                         dispatch({ type: "USER", payload: res.data.response });

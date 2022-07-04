@@ -110,19 +110,19 @@
   color: rgb(0, 0, 0) !important;
 }
 
-.notfounditi{
+.notfounditi {
   height: 35vh;
 }
 
 
-.notf-title{
+.notf-title {
   text-align: center;
   font-size: 20px;
   padding-bottom: 1rem;
 }
 
-@media(min-width: 520px){
-  .notf-title{
+@media(min-width: 520px) {
+  .notf-title {
     text-align: center;
     font-size: 25px;
     padding-bottom: 1rem;
@@ -130,11 +130,10 @@
   }
 }
 
-#buttonDiv{
+#buttonDiv {
   -webkit-box-shadow: 4px 8px 19px -5px rgba(0, 0, 0, 0.27);
   box-shadow: 0px 15px 20px grey;
   border-radius: 18px;
   padding: 5px;
   background-color: black;
 }
-

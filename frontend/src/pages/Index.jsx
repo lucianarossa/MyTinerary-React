@@ -5,13 +5,13 @@ import Carrousel from "../components/Carrousel"
 
 
 function Index() {
-    return(
+    return (
         <>
-        <CoverHome/>
-        <Welcome/>
-        <Carrousel/>
+            <CoverHome />
+            <Welcome />
+            <Carrousel />
         </>
-)
+    )
 }
 
 export default Index

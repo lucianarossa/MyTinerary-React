@@ -17,7 +17,7 @@ function CardsCities({ cardFilter }) {
               </LinkRouter>
             </p>
           </div>
-        </div> 
+        </div>
       ))}
     </div>
   );

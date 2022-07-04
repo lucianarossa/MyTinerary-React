@@ -93,15 +93,15 @@
     transform: translateY(-1px);
 }
 
-@media(max-width: 670px){
+@media(max-width: 670px) {
     .social-media {
         height: 8vh;
         margin-left: .3rem;
     }
-    
+
 }
 
-@media(max-width:670px){
+@media(max-width:670px) {
     .navbar-button {
         height: 7vh;
         font-size: 10px !important;
@@ -113,5 +113,5 @@
         background-color: #EDDAD4;
         border: none;
         border-radius: 45px;
-}
+    }
 }

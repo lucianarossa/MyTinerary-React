@@ -1,10 +1,10 @@
 //mongoose permite crear el modelo
-const mongoose = require ("mongoose")
+const mongoose = require("mongoose")
 
 //Defino el esquema (objeto de la colecc).
 
 const countrySchema = new mongoose.Schema({
-    country: {type: String, required: true},
+    country: { type: String, required: true },
 })
 
 

@@ -5,11 +5,11 @@ const Itinerary = require('../models/itinerary')
 
 const itinerariesControllers = {
     getItineraries: async (req, res) => { //devuelve un array 
-        let itineraries  
-        let error = null 
+        let itineraries
+        let error = null
         try {
-            itineraries = await Itinerary.find() 
-        } catch (err) { error = err } 
+            itineraries = await Itinerary.find()
+        } catch (err) { error = err }
         res.json({
             response: error ? 'ERROR' : { itineraries },
             success: error ? false : true,
@@ -33,11 +33,11 @@ const itinerariesControllers = {
     }
     ,
     addItinerary: async (req, res) => {
-        const { name, author, authorimage, description, price, duration, hashtags, likes, activities, city } = req.body.data  
+        const { name, author, authorimage, description, price, duration, hashtags, likes, activities, city } = req.body.data
         let itinerary
         let error = null
         try {
-            city = await new Itinerary({    
+            city = await new Itinerary({
                 name: name,
                 username: author,
                 userimage: authorimage,
@@ -48,7 +48,7 @@ const itinerariesControllers = {
                 likes: likes,
                 activities: activities,
                 city: city
-            }).save() 
+            }).save()
         } catch (err) {
             error = err
         }
@@ -62,10 +62,10 @@ const itinerariesControllers = {
     modifyItinerary: async (req, res) => {
         const id = req.params.id
         const itinerary = req.body
-        let itinerarydb  
+        let itinerarydb
         let error = null
         try {
-            itinerarydb = await Itinerary.findOneAndUpdate({ _id: id }, itinerary, {new:true}) 
+            itinerarydb = await Itinerary.findOneAndUpdate({ _id: id }, itinerary, { new: true })
         } catch (err) {
             error = err
         }
@@ -94,7 +94,7 @@ const itinerariesControllers = {
 
     multiplesItineraries: async (req, res) => {
         let itineraries = []
-        const data = req.body.data 
+        const data = req.body.data
         let error = null
         try {
             data.map(async (item) => {
@@ -120,12 +120,12 @@ const itinerariesControllers = {
         })
     },
 
-    getItinerariesByCity: async (req,res) => {
+    getItinerariesByCity: async (req, res) => {
         const id = req.params.id
         let itineraries
         let error = null
         try {
-            itineraries = await Itinerary.find({ city : id })
+            itineraries = await Itinerary.find({ city: id })
         } catch (err) {
             error = err
         }

@@ -16,13 +16,13 @@ function CityDetails() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-   
-           dispatch(citiesActions.getOneCity(id))
-           dispatch(itinerariesActions.getItinerariesByCity(id))
-           // eslint-disable-next-line
+
+    dispatch(citiesActions.getOneCity(id))
+    dispatch(itinerariesActions.getItinerariesByCity(id))
+    // eslint-disable-next-line
   }, [id])
-  
-  const city = useSelector( store => store.citiesReducer.getOneCity) 
+
+  const city = useSelector(store => store.citiesReducer.getOneCity)
   const itineraries = useSelector(store => store.itinerariesReducer.getItinerariesByCity)
 
   return (
@@ -35,14 +35,14 @@ function CityDetails() {
       </Container>
       <Container fluid className="details-main">
         <h1 className="itineraries-title">Itineraries</h1>
-        
-          {itineraries?.length > 0 ? <Itinerary data={itineraries}/> : <NotFoundItinenary/>}
-      
+
+        {itineraries?.length > 0 ? <Itinerary data={itineraries} /> : <NotFoundItinenary />}
+
         <LinkRouter to="/citiespage" className="Links">
           <button className="call-button"> BACK TO CITIES!
           </button>
         </LinkRouter>
-      
+
       </Container>
     </>
   )

@@ -1,12 +1,11 @@
 import React from "react";
 import "../styles/carrousel.css"
 import Carousel from 'react-grid-carousel'
-import {connect} from "react-redux"
+import { connect } from "react-redux"
 
 
 
 function Carrousel(props) {
-
 
   return (
     <div className="carrousel-container">
@@ -35,7 +34,7 @@ function Carrousel(props) {
 }
 
 const mapStateToProps = (state) => {
-  return{
+  return {
     cities: state.citiesReducer.cities,
     auxiliar: state.citiesReducer.auxiliar
   }

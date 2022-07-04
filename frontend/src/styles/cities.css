@@ -17,7 +17,7 @@
     position: absolute;
 }
 
-.overlay{
+.overlay {
     height: 80vh;
     width: 100%;
     position: absolute;
@@ -251,7 +251,6 @@
     text-shadow: none;
 }
 
-.button-two{
+.button-two {
     visibility: hidden;
 }
-
