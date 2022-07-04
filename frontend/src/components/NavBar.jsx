@@ -56,7 +56,7 @@ const Navbar = () => {
 
   async function logOut() {
     await dispatch(usersActions.logOutUser())
-      .then(navigate("/"))
+      .then(navigate("/goodbye"))
   }
 
 
