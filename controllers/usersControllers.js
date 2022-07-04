@@ -78,14 +78,15 @@ const usersControllers = {
         try{
             const userExist = await User.findOne({email})
             // const indexPass = userExist.from.indexOf(from)
-
+            let matchpassword = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
+ 
             if(!userExist){ //si el usuario NO EXISTE
                 res.json({success: false, message: "You are not registered yet please Sign Up"})
 
             } else { //si el usuario EXISTE
 
                 if(from !== "form-signup"){  //EXISTE PERO NO EN SIGNUP
-                    let matchpassword = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
+                    
 
                     if(matchpassword.length > 0) { 
 
@@ -118,7 +119,8 @@ const usersControllers = {
                     //EXISTE EN SIGNUP
 
                 } else {
-                    let matchpassword = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
+                    if(userExist.verification === true) {
+
                     if(matchpassword.length > 0) {
                         const userData = {
                             id: userExist._id,
@@ -143,22 +145,19 @@ const usersControllers = {
                             message: "Your email or your password does not match please check",
                         })
                     }
+                } else {
+                    res.json({
+                        success: false, 
+                        from: from,
+                        message: "Please check to verify your email"
+                    })
+                }
                 }
             }
         } catch (error) {
             res.json({success: false, message:"Oops! Something went wrong try in a few minutes", console: console.log(error)})
         }
     }, 
-
-    logOutUser: async (req, res) => {
-       
-        const mail = req.body.email
-        const user = await User.findOne({email})
-        await user.save()
-        res.json({
-            success: true,
-            message: mail+' LOG OUT!'})
-    },
 
     verifyMail: async (req, res) => {
         const string = req.params.string

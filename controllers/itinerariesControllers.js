@@ -1,4 +1,4 @@
-//guardo en city lo que cree en models
+//guardo en itinerary lo que cree en models
 const Itinerary = require('../models/itinerary')
 
 //guardo los controladores y sus metodos para manioular la base de datos

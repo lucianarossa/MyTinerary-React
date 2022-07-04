@@ -13,7 +13,6 @@ import { useEffect } from "react"
 import CitiesPage from "./pages/CitiesPage"
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn"
-import SignPage from "./pages/SignPage";
 import { Toaster } from 'react-hot-toast'
 import usersActions from "./redux/actions/usersActions";
 
@@ -47,11 +46,11 @@ function App(props) {
       <NavBar />
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="*" element={<Index />} />
         <Route path="/citiespage" element={<CitiesPage />} />
         <Route path="citiespage/citydetails/:id" element={<CityDetails />} />
-        <Route path="/signup" element={<SignPage />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<LogIn />} />
+        { !props.user && <Route path="/signup" element={<SignUp />} />}
+        { !props.user && <Route path="/login" element={<LogIn />} />}
       </Routes>
       <Footer />
       <ScrollToTop
@@ -72,4 +71,10 @@ const mapDispatchToProps = {
   verifyToken: usersActions.verifyToken
 }
 
-export default connect(null, mapDispatchToProps)(App)
+const mapStateToProps = (state) => {
+  return {
+    user: state.usersReducer.user
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

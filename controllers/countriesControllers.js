@@ -1,4 +1,4 @@
-//guardo en city lo que cree en models
+//guardo en countries lo que cree en models
 const Country = require('../models/country')
 
 //guardo los controladores y sus metodos para manioular la base de datos

@@ -55,7 +55,7 @@ const Navbar = () => {
   const dispatch = useDispatch()
 
   async function logOut() {
-    await dispatch(usersActions.logOutUser(user.email))
+    await dispatch(usersActions.logOutUser())
       .then(navigate("/"))
   } 
 
@@ -154,14 +154,17 @@ const Navbar = () => {
           {/* //USER MENU */}
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="User" placement="left-start">
+          {!user ?
+            <Tooltip title="User">
               <IconButton className= "avatarbutton" onClick={handleOpenUserMenu} sx={{ p: 0, boxShadow:"0px 15px 20px grey" }}>
-
-                {!user ? <Avatar alt="userlogo" src={process.env.PUBLIC_URL + "/assets/userlogo.png"} /> : <Avatar alt="userlogo" src={user.image} />}
-
+                <Avatar alt="userlogo" src={process.env.PUBLIC_URL + "/assets/userlogo.png"} />
               </IconButton>
-
-            </Tooltip>
+            </Tooltip> :
+            <Tooltip title={user.firstName}>
+              <IconButton className= "avatarbutton" onClick={handleOpenUserMenu} sx={{ p: 0, boxShadow:"0px 15px 20px grey" }}>
+                <Avatar alt="userlogo" src={user.image} />
+              </IconButton>
+            </Tooltip>}
             <Menu
               sx={{ mt: '45px'}}
               id="menu-appbar"

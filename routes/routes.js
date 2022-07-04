@@ -8,7 +8,7 @@ const countriesControllers = require ("../controllers/countriesControllers")
 
 const {getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities} = citiesControllers;
 const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItineraries, getItinerariesByCity} = itinerariesControllers; 
-const {signUpUsers, logInUser, logOutUser, verifyMail, verifyToken} = usersControllers
+const {signUpUsers, logInUser, verifyMail, verifyToken} = usersControllers
 const {getCountries, addCountry, multiplesCountries} = countriesControllers
 const passport = require("../config/passport");
 
@@ -54,9 +54,6 @@ Router.route('/auth/signup')
 
 Router.route ('/auth/login')
 .post(logInUser)
-
-Router.route ('/auth/logoutuser')
-.post(logOutUser)
 
 Router.route("/verify/:string") 
 .get(verifyMail)
