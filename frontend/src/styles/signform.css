@@ -135,19 +135,29 @@
     width: 70%;
     height: 5vh;
     margin-bottom: .5rem;
-    font-size: 13px;
+    font-size: 13px !important;
     color: #212121 !important;
     background-color: #EDDAD4;
-    border-radius: 17px;
+    border-radius: 17px !important;
+    font-family: "Paytone One" !important;
     text-align: center;
-    border: none;
+    border: none !important;
+}
+
+.select-forms:after{
+   border: none !important;
 }
 
 @media(max-width: 768px) {
     .select-forms {
-        width: 70%;
+        width: 90%;
         font-size: 13px;
     }
+}
+
+.selectoptions{
+font-size: 13px !important;
+font-family: "Paytone One" !important;
 }
 
 .css-1s2u09g-control {

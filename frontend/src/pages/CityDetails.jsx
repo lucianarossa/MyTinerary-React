@@ -35,8 +35,10 @@ function CityDetails() {
       </Container>
       <Container fluid className="details-main">
         <h1 className="itineraries-title">Itineraries</h1>
-
-        {itineraries?.length > 0 ? <Itinerary data={itineraries} /> : <NotFoundItinenary />}
+        
+        {itineraries?.length > 0 ? 
+        itineraries.map ((itinerary, index) =>
+         <Itinerary data={itinerary} key={index} />) : <NotFoundItinenary />}
 
         <LinkRouter to="/citiespage" className="Links">
           <button className="call-button"> BACK TO CITIES!

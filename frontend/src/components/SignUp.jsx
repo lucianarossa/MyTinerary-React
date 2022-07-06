@@ -15,6 +15,7 @@ import countriesActions from "../redux/actions/countriesActions";
 import { useEffect } from "react";
 
 
+
 function SignUp() {
 
 
@@ -87,7 +88,7 @@ function SignUp() {
                         <Grid>
                             <select className="select-forms" onChange={e => setCountry(e.target.value)}>
                                 {countries?.map(country =>
-                                    <option key={country._id}>{country.country}</option>
+                                    <option className="selectoptions" key={country._id}>{country.country}</option>
                                 )}
                             </select>
                         </Grid>

@@ -8,13 +8,13 @@ const usersControllers = {
     signUpUsers: async (req, res) => {
         let { firstName, lastName, email, password, image, from, country } = req.body.userData
         try {
-            const userExist = await User.findOne({ email })
+            const userExist = await User.findOne({ email })  // SI EXISTE UN USUARIO
             const verification = false //por default
             const uniqueString = crypto.randomBytes(15).toString("hex")//utilizo los metodos de crypto
 
             //si el USUARIO EXISTE
             if (userExist) {
-                if (userExist.from.indexOf(from) !== -1) {
+                if (userExist.from.indexOf(from) !== -1) { //SI COINCIDE EL FROM CON LA FORMA QUE SE LOGUEA LO MANDA AL LOGIN
                     res.json({
                         success: false,
                         from: "signup",
@@ -22,8 +22,8 @@ const usersControllers = {
                     })
                 } else {
                     const hashedPassword = bcryptjs.hashSync(password, 10)
-                    userExist.from.push(from)
-                    userExist.password.push(hashedPassword)
+                    userExist.from.push(from) //AGREGO UN NUEVO FROM
+                    userExist.password.push(hashedPassword) //PUSHEA LA PASH HASHEADA
                     await userExist.save()
                     res.json({
                         success: true,
@@ -57,7 +57,7 @@ const usersControllers = {
                     })
                 } else { //si la data VIENE DEL FORM
                     await newUser.save()
-                    await sendEmail(email, uniqueString)
+                    await sendEmail(email, uniqueString) // sendEmail es mi FUNCION
                     res.json({
                         success: true,
                         from: "signup",
@@ -74,18 +74,16 @@ const usersControllers = {
 
     logInUser: async (req, res) => {
         const { email, password, from, image } = req.body.userData
-        // console.log(req.body)
         try {
             const userExist = await User.findOne({ email })
-            let matchpassword = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
-
+            
             if (!userExist) { //si el usuario NO EXISTE
+               
                 res.json({ success: false, message: "You are not registered yet please Sign Up" })
 
             } else { //si el usuario EXISTE
-
+                let matchpassword = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
                 if (from !== "form-signup") {  //EXISTE PERO NO EN SIGNUP
-
 
                     if (matchpassword.length > 0) {
 
@@ -154,7 +152,7 @@ const usersControllers = {
                 }
             }
         } catch (error) {
-            res.json({ success: false, message: "Oops! Something went wrong try in a few minutes" })
+            res.json({ success: false, message: "Oops! Something went wrong try in a few minutes" ,console: console.log(error)})
         }
     },
 

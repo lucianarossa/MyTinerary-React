@@ -13,7 +13,7 @@ const sendEmail = async (email, string) => {
     const accessToken = await myOAuth2Client.getAccessToken()
     const transporter = nodemailer.createTransport({
         service: "gmail",
-        auth: {
+        auth: { //METODOS DE AUTENTICACION
             user: process.env.USER,
             type: "OAuth2",
             clientId: process.env.GOOGLE_CLIENTID,
@@ -48,7 +48,7 @@ const sendEmail = async (email, string) => {
     }
 
 
-    await transporter.sendMail(mailOptions, function (error, response) {
+    await transporter.sendMail(mailOptions, function (error, response) { //LE APLICO AL TRANSPORTER EL METODO SENMAIL
         if (error) {
             console.log(error)
         } else {

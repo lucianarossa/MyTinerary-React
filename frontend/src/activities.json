@@ -1,0 +1,80 @@
+{
+    "data": [
+        
+                {
+                    "name": "Walking tour of Anne Frank's Jewish Quarter",
+                    "image": "/assets/activity1-amsterdam.jpg",
+                    "description":"This tour follows your way through the city's Jewish quarter with a guide who has thoroughly brushed up on its WWII history",
+                    "itinerary": "62c51a938a41642162d1bfd2"
+                },
+                {
+                    "name": "Amsterdam Open Boat Tour with Live Guide and Unlimited Drinks",
+                    "image": "/assets/activity2-amsterdam.jpg",
+                    "description":"Amsterdam is best explored by water, and this affordable boat cruise gives you unobstructed views of canalside attractions like the Anne Frank House and Hermitage Museum",
+                    "itinerary": "62c51a938a41642162d1bfd2"
+                },
+                {
+                    "name": "Anne Frank House Museum",
+                    "image": "/assets/activity3-amsterdam.jpg",
+                    "description":"The Anne Frank House is a museum with a history As a visitor, you will experience this history through quotes, photos, films and original objects. The atmosphere in the museum is small and authentic",
+                    "itinerary": "62c51a938a41642162d1bfd2"
+                },
+                {
+                    "name": "Gaudí and modernist Barcelona tour",
+                    "image": "/assets/activity1-barcelona.jpg",
+                    "description":"Delve into the modernist heart of Barcelona with this Gaudí tour that will take us to discover the main symbols of modernism in Spain",
+                    "itinerary": "62c51a938a41642162d1bfd3"
+                },
+                {
+                    "name": "Sagrada Familia skip-the-line tour",
+                    "image": "/assets/activity2-barcelona.jpg",
+                    "description":"If there is a place that no one can miss when visiting Barcelona, it is the Sagrada Familia. On this visit we will discover Gaudí's masterpiece skipping his endless queues",
+                    "itinerary": "62c51a938a41642162d1bfd3"
+                },
+                {
+                    "name": "Gaudí Wonders Tour",
+                    "image": "/assets/activity3-barcelona.jpg",
+                    "description":"On this tour we will visit Park Güell and the Sagrada Familia. Two Gaudí masterpieces in a single day and skipping the queues!",
+                    "itinerary": "62c51a938a41642162d1bfd3"
+                },
+                {
+                    "name": "Loch Ness, Glencoe and the Highlands",
+                    "image": "/assets/activity1-edinburgh.jpg",
+                    "description":"Take in the best of the Scottish Highlands on a guided day trip from Edinburgh. Look for Nessie, meet the hairy cows and see impressive landscapes",
+                    "itinerary": "62c51a938a41642162d1bfd6"
+                },
+                {
+                    "name": "Edinburgh Castle Tour",
+                    "image": "/assets/activity2-edinburgh.jpg",
+                    "description":"Explore one of the most important fortresses in Scottish history on this guided walking tour of Edinburgh Castle",
+                    "itinerary": "62c51a938a41642162d1bfd6"
+                },
+                {
+                    "name": "Glenfinnan, Mallaig and Glencoe Adventure",
+                    "image": "/assets/activity3-edinburgh.jpg",
+                    "description":"Take your iconic Harry Potter Hogwarts Express photo, visit Mallaig Harbour, take a trip along the Way to the Isles, and explore beautiful Glencoe on this full-day tour",
+                    "itinerary": "62c51a938a41642162d1bfd6"
+                },
+                {
+                    "name": "Colosseum, Pantheon and Roman Forum",
+                    "image": "/assets/activity1-rome.jpg",
+                    "description":"Discover the legacy of the Roman emperors and gladiators who made the amphitheater such a notorious enclave",
+                    "itinerary": "62c51a938a41642162d1bfd7"
+                },
+                {
+                    "name": "Colosseum with Gladiator Gate Entrance and Arena Access",
+                    "image": "/assets/activity2-rome.jpg",
+                    "description":"Stand where gladiators once fought, hear tales of ruthless mobs and emperors, then explore the first level of the Colosseum with your guide. End with a tour of Palatine Hill and the Roman Forum, with stories bringing the ruins to life",
+                    "itinerary": "62c51a938a41642162d1bfd7"
+                },
+                {
+                    "name": "Ancient Rome and Colosseum Underground Tour",
+                    "image": "/assets/activity3-rome.jpg",
+                    "description":"Peek into the Colosseum's underground chambers and gladiatorial passageways on a tour of sites normally off limits to the general public",
+                    "itinerary": "62c51a938a41642162d1bfd7"
+                }
+                
+            
+                
+            ] 
+}

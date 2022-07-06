@@ -2,118 +2,120 @@
     "data": [
         
                 {
-                    "name": "visit the Jewish quarter of Anne Frank",
+                    "name": "THE JEWISH QUARTER OF ANNE FRANK",
                     "author": "Jenna Collins",
                     "authorimage": "/assets/JennaCollins.jpg",
                     "description": "Discover the history of World War II in Amsterdam and follow in the footsteps of Anne Frank on this tour of the Jewish Quarter.",
                     "price":"💵💵",
                     "duration":"3",
                     "hashtags":["#visitamsterdam", "#annefrank", "#jewishquarter"],
-                    "likes":"",
-                    "activities":"",
-                    "city":"Amsterdam"
+                    "likes":[],
+                    "city":"62a94f987abd36a40facae91",
+                    "comments":[]
                 },
             
                 {
-                    "name": "Gaudi Full Tour",
+                    "name": "GAUDI FULL TOUR",
                     "author": "Arianna Watson",
                     "authorimage": "/assets/AriannaWatson.jpg",
                     "description": "Visit the main works of Gaudi and admire the spectacular views of Barcelona surrounded by modernist architecture.",
                     "price":"💵💵",
                     "duration":"4",
                     "hashtags":["#visitbarcelona", "#gaudi", "#gaudiarchitecture"],
-                    "likes":"",
-                    "activities":"",
-                    "city":"Barcelona"
+                    "likes":[],
+                    "city":"62a94f987abd36a40facae92",
+                    "comments":[] 
                 },
          
             
                 {
-                    "name": "The Crown Jewels",
+                    "name": "THE CROWN JEWELS",
                     "author": "Lisa Thompson",
                     "authorimage": "/assets/LisaThompson.jpg",
                     "description": "Absorb over 1,000 years of history at the Tower of London and see the Crown Jewels. Gather fascinating facts about the Yeoman Warders, the guardians of the tower, and discover the ravens.",
-                    "price":"💵💵💵💵",
+                    "price":"💵",
                     "duration":"8",
                     "hashtags":["#london", "#crown", "#castles"],
-                    "likes":"",
-                    "activities":"",
-                    "city":"London"
+                    "likes":[],
+                    "city":"62a94f987abd36a40facae97",
+                    "comments":[]  
                 },
         
                 {
-                    "name": "Highlands and their legends",
+                    "name": "HIGHLANDS AND THEIR LEGENDS",
                     "author": "Mark Connely",
                     "authorimage": "/assets/MarkConnely.jpg",
                     "description": "Tour the best of the Scottish Highlands. Look for Nessie, meet the hairy cows and see impressive landscapes.",
-                    "price":"💵💵💵",
+                    "price":"💵💵",
                     "duration":"6",
                     "hashtags":["#highlands", "#visitscotland", "#legends"],
-                    "likes":"",
-                    "activities":"",
-                    "city":"Edinburgh"
+                    "likes":[],
+                    "city":"62a94f987abd36a40facae95",
+                    "comments":[]
                 },
                 {
-                    "name": "Edinburgh top to bottom",
+                    "name": "EDINBURGH TOP TO BOTTOM",
                     "author": "Amber Fletcher",
                     "authorimage": "/assets/AmberFletcher.jpg",
                     "description": "Visit the city of Edinburgh and the vaults dating back to the early 18th century. Your guide will tell you about murders, witches and the inhabitants of this terrifying place.",
-                    "price":"💵💵💵💵",
+                    "price":"💵",
                     "duration":"10",
                     "hashtags":["#edinburgh", "#vaults", "#castle"],
-                    "likes":"",
-                    "activities":"",
-                    "city":"Edinburgh"
+                    "likes":[],
+                    "city":"62a94f987abd36a40facae95",
+                    "comments":[]
+                
                 },
       
                 {
-                    "name": "Ancient Rome",
+                    "name": "ANCIENT ROME",
                     "author": "Carol Martin",
                     "authorimage": "/assets/CarolMartin.jpg",
                     "description": "Enjoy an experience without stress. He admires the remains of some of the most important monuments of the Roman Republic.",
                     "price":"💵💵",
                     "duration":"8",
                     "hashtags":["#rome", "#ancientrome", "#visitrome"],
-                    "likes":"",
-                    "activities":"",
-                    "city":"Rome"
+                    "likes":[],
+                    "city":"62a94f987abd36a40facae9a",
+                    "comments":[] 
                 },
                 {
-                    "name": "Flavors of Italy",
+                    "name": "FLAVORS OF ITALY",
                     "author": "Joseph Corner",
                     "authorimage": "/assets/JosephCorner.jpg",
                     "description": "Different activities to delight you with the best Italian cuisine.",
-                    "price":"💵💵💵",
+                    "price":"💵💵",
                     "duration":"7",
                     "hashtags":["#italiancuisine", "#rome", "#visititaly"],
-                    "likes":"",
-                    "activities":"",
-                    "city":"Rome"
+                    "likes":[],
+                    "city":"62a94f987abd36a40facae9a",
+                    "comments":[]
+                    
                 },
          
                 {
-                    "name": "The city of light",
+                    "name": "THE CITY OF LIGHTS",
                     "author": "Mary Thomas",
                     "authorimage": "/assets/MaryThomas.jpg",
                     "description": "Enjoy the City of Light seeing Paris illuminated after dark..",
                     "price":"💵💵",
                     "duration":"8",
                     "hashtags":["#cityoflight", "#paris", "#sunsettour"],
-                    "likes":"",
-                    "activities":"",
-                    "city":"Paris"
+                    "likes":[],
+                    "city":"62a94f987abd36a40facae99",
+                    "comments": []
                 },
                 {
-                    "name": "Going back to the Moulin Rouge era",
+                    "name": "GOING BACK TO THE MOULIN ROUGE ERA",
                     "author": "Kevin Bourbon",
                     "authorimage": "/assets/KevinBourbon.jpg",
                     "description": "Enjoy the sumptuous atmosphere of the Moulin Rouge, the world-renowned Parisian cabaret, and its surroundings.",
-                    "price":"💵💵💵💵💵",
+                    "price":"💵",
                     "duration":"15",
-                    "hashtags":["#mpulinerouge", "#montmartre", "#paris"],
-                    "likes":"",
-                    "activities":"",
-                    "city":"Paris"
+                    "hashtags":["#moulinrouge", "#montmartre", "#paris"],
+                    "likes":[],
+                    "city":"62a94f987abd36a40facae99",
+                    "comments":[] 
                 }
             ]
 }

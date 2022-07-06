@@ -62,7 +62,7 @@ const usersActions = {
 
             await axios.get("http://localhost:4000/api/auth/token", {
                 headers: {
-                    "Authorization": "Bearer " + token
+                    "Authorization": "Bearer " + token //el header espera una autoriz. metodo para autenticar y autozar el usuario
                 }
             })
                 .then(res => {
@@ -82,7 +82,7 @@ const usersActions = {
 
                 )
                 .catch(error => {
-                    if (error.response.status === 401)
+                    if (error.response.status === 401) //problemas de autenticacion
                         dispatch({
                             type: "MESSAGE",
                             payload: {

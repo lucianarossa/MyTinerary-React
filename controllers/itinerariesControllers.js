@@ -33,21 +33,21 @@ const itinerariesControllers = {
     }
     ,
     addItinerary: async (req, res) => {
-        const { name, author, authorimage, description, price, duration, hashtags, likes, activities, city } = req.body.data
+        const { name, author, authorimage, description, price, duration, hashtags, likes, city, comments } = req.body.data
         let itinerary
         let error = null
         try {
             city = await new Itinerary({
                 name: name,
-                username: author,
-                userimage: authorimage,
+                author: author,
+                authorimage: authorimage,
                 description: description,
                 price: price,
                 duration: duration,
                 hashtags: hashtags,
                 likes: likes,
-                activities: activities,
-                city: city
+                city: city,
+                comments: comments
             }).save()
         } catch (err) {
             error = err
@@ -107,9 +107,9 @@ const itinerariesControllers = {
                     duration: item.duration,
                     hashtags: item.hashtags,
                     likes: item.likes,
-                    activities: item.activities,
-                    city: item.city
-                }).save()
+                    city: item.city,
+                    comments: item.comments
+                }).save() 
             })
         } catch (err) { error = err }
         itineraries = await Itinerary.find()
@@ -134,7 +134,34 @@ const itinerariesControllers = {
             success: error ? false : true,
             error: error
         })
-    }
+    }, 
+
+    likesDislike: async (req, res) => {
+        const id = req.params.itiId //LLEGA X PARAM DESDE AXIOS (ID ITI)
+        const user = req.user._id //LLEGA X RESP DE PASSPORT
+        console.log(req.params)
+        console.log(req.user)
+
+        await Itinerary.findOne({_id:id}) // buscamos un iti que su obj id sea igual al q pasamos x parametro
+
+        .then((itinerary) => {
+            console.log(itinerary)
+            if (itinerary.likes.includes(user)){ //de ese iti buscamos la prop like y si esa prop incluye el user
+                Itinerary.findOneAndUpdate({_id:id}, {$pull: {likes:user}}, {new: true}) //si incluye el user, buscamos el iti p/ actualizarlo x id y utilizamos el metodo pull de mongo (extraer), para extraer el like del usuer y devolver el nuevo user// DESLIKEAR
+                .then((response) => res.json({success:true,  response: response.likes}))//devolvemos resp/ PARA ALERTA
+                .catch((error) => console.log(error))
+
+            } else { //si la prop like de iti no incluye el user
+                Itinerary.findOneAndUpdate({_id:id}, {$push: {likes:user}}, {new: true}) //busca el iti y le hace push (agregar) el like del user /LIKEAR ($push llama al metodo)
+                .then((response) => res.json({success:true, response: response.likes}))
+                .catch((error) => console.log(error))
+            }
+        })
+        .catch((error) => res.json({success: false, response: error}))
+       
+    },
+
+
 
 }
 

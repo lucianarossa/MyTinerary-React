@@ -22,6 +22,7 @@ function App(props) {
 
   useEffect(() => {
     props.getCities()
+    
     if (localStorage.getItem("token") !== null) {
       const token = localStorage.getItem("token")
       props.verifyToken(token)
