@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../styles/itinerary.css"
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { useDispatch, useSelector } from "react-redux"
 import { useState } from "react";
 import commentsActions from "../redux/actions/commentsActions";
+import toast from 'react-hot-toast';
 
-function Comment({ itineraries, handleSetReload }) {
+function Comment({ itineraries }) {
     // console.log("ITINERARIO", itineraries)
-    console.log(handleSetReload)
 
     const user = useSelector(store => store.usersReducer.user)
-    // console.log("USER", user)
     const [inputText, setInputText] = useState()
     const [modify, setModify] = useState()
     const [itinerary, setItinerary] = useState(itineraries.data)
     const dispatch = useDispatch()
-    // console.log("ITINERARY", itinerary)
+    const inputTextElement = useRef(null)
+
+    function handleInputText(event) {
+        setInputText(event.currentTarget.textContent)
+    }
+
+    //AGREGAR COMENTARIO
 
     async function addCommentUser(event) {
         const commentData = {
@@ -25,34 +30,47 @@ function Comment({ itineraries, handleSetReload }) {
         }
         const resp = await dispatch(commentsActions.addComment(commentData))
         setItinerary(resp.response.newComment)
-        document.querySelector("#newComment").textContent = ""
-        // console.log("RESPUESTA", resp)
+        console.log("RESPUESTA", resp)
+        inputTextElement.current.innerText = ""
         setInputText("")
-        handleSetReload()
+
+        if (resp.success) {
+            toast.success(resp.message)
+        } else {
+            toast.error(resp.message)
+        }
     }
 
-
-    // console.log(comment, "COMMENT")
+    //EDITAR COMENTARIO
 
     async function modifyComment(event) {
-
         const commentData = {
             commentID: event.target.id,
             comment: modify,
         }
         const res = await dispatch(commentsActions.modifyComment(commentData))
         setItinerary(res.data.response.newComment)
-        handleSetReload()
+        setModify(res.data)
+        if (res.data.success) {
+            toast.success(res.data.message)
+        } else {
+            toast.error(res.data.message)
+        }
     }
+
+    //ELIMINAR COMENTARIO
 
     async function deleteComment(event) {
         const res = await dispatch(commentsActions.deleteComment(event.target.id))
         console.log(res)
         setItinerary(res.data.response.deleteComment)
-        handleSetReload()
 
+        if (res.data.success) {
+            toast.success(res.data.message)
+        } else {
+            toast.error(res.data.message)
+        }
     }
-
 
 
     return (
@@ -91,7 +109,7 @@ function Comment({ itineraries, handleSetReload }) {
                                             />
                                         </Stack>
                                         <div className="comment-author">{comment.userId.firstName} {comment.userId.lastName}</div>
-                                        <div id="newComment" type="text" className="comment-box" placeholder="Add a Comment" onInput={(event) => setModify(event.currentTarget.textContent)} suppressContentEditableWarning={true} contentEditable>{comment.comment}</div>
+                                        <div className="comment-box" placeholder="Add a Comment" onInput={(event) => setModify(event.currentTarget.textContent)} suppressContentEditableWarning={true} contentEditable>{comment.comment}</div>
                                     </div>
                                     <div className="comment-buttons">
                                         <button onClick={modifyComment} id={comment._id} className="call-button comment-button">EDIT✏️</button>
@@ -117,7 +135,7 @@ function Comment({ itineraries, handleSetReload }) {
                                     />
                                 </Stack>
                                 <div className="comment-author">{user.firstName} {user.lastName}</div>
-                                <div id="newComment" className="comment-box" placeholder="Add a Comment" onInput={(event) => setInputText(event.currentTarget.textContent)} contentEditable suppressContentEditableWarning={true}></div>
+                                <div className="comment-box" placeholder="Add a Comment" ref={inputTextElement} onInput={handleInputText} contentEditable suppressContentEditableWarning={true}></div>
 
                             </div>
                             <div className="comment-buttons">

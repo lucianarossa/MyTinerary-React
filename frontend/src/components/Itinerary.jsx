@@ -13,7 +13,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Comment from "./Comment"
 
-function Itinerary({ data, handleSetR }) {
+function Itinerary({ data }) {
     // console.log("🚀 ~ file: Itinerary.jsx ~ line 17 ~ Itinerary ~ data", data)
 
     const dispatch = useDispatch()
@@ -95,7 +95,7 @@ function Itinerary({ data, handleSetR }) {
                                                     <Activity activity={activity} key={index} />) : <NotFoundActivities />}
                                         </div>
 
-                                       <Comment itineraries={{data}} handleSetReload={{handleSetR}}/>
+                                       <Comment itineraries={{data}}/>
                                     </div>
 
                                 </Collapse>

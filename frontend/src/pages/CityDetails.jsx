@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import "../styles/details.css"
 import { useParams } from "react-router-dom"
 import { Link as LinkRouter } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import Itinerary from "../components/Itinerary"
 import { useDispatch, useSelector } from "react-redux"
 import citiesActions from "../redux/actions/citiesActions";
@@ -14,18 +14,14 @@ import NotFoundItinenary from "../components/NotFoundItinerary";
 function CityDetails() {
   const { id } = useParams() //recibe el id, desestructura el parametro con el metodo useparams
   const dispatch = useDispatch()
-  const [reload, setReload] = useState(false)
 
   useEffect(() => {
 
     dispatch(citiesActions.getOneCity(id))
     dispatch(itinerariesActions.getItinerariesByCity(id))
     // eslint-disable-next-line
-  }, [id,reload])
+  }, [id])
 
-  function handleSetReload(){
-    setReload(!reload)
-  }
 
   const city = useSelector(store => store.citiesReducer.getOneCity)
   const itineraries = useSelector(store => store.itinerariesReducer.getItinerariesByCity)
@@ -40,10 +36,10 @@ function CityDetails() {
       </Container>
       <Container fluid className="details-main">
         <h1 className="itineraries-title">Itineraries</h1>
-        
-        {itineraries?.length > 0 ? 
-        itineraries.map ((itinerary, index) =>
-         <Itinerary data={itinerary} handleSetR={handleSetReload}key={index} />) : <NotFoundItinenary />}
+
+        {itineraries?.length > 0 ?
+          itineraries.map((itinerary, index) =>
+            <Itinerary data={itinerary} key={index} />) : <NotFoundItinenary />}
 
         <LinkRouter to="/citiespage" className="Links">
           <button className="call-button"> BACK TO CITIES!

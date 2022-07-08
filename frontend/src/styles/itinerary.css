@@ -536,7 +536,7 @@
 
 .comment-box-comment{
     border: 2px solid pink;
-    padding: .5rem;
+    padding: 1rem;
     margin-top: 2rem;
     border-radius: 30px !important;
     box-shadow: 0px 12px 15px grey;
@@ -552,13 +552,14 @@
     background-color:  #deacb877;
     border-radius: 30px;
     margin: .5rem;
-    padding: 1rem;
+    padding: 1.2rem;
 }
 
 .comments-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 10vh;
 }
 
 .comment-author{
@@ -619,6 +620,10 @@
 
 .comment-buttons{
     margin: 0rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    height: 8vh;
     
 }
 
