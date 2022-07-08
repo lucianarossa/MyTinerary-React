@@ -7,22 +7,16 @@ import { useDispatch, useSelector } from "react-redux"
 import { useState, useEffect } from "react";
 import activitiesActions from "../redux/actions/activitiesActions";
 import itinerariesActions from "../redux/actions/itinerariesActions";
-// import commentsActions from "../redux/actions/commentsActions";
 import Activity from "./Activity";
 import NotFoundActivities from "./NotFoundActivities";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
+import Comment from "./Comment"
 
-function Itinerary({ data }) {
+function Itinerary({ data, handleSetR }) {
     // console.log("🚀 ~ file: Itinerary.jsx ~ line 17 ~ Itinerary ~ data", data)
 
     const dispatch = useDispatch()
-    // const [itinerary, setItinerary] = useState()
-    // const [inputText, setInputText] = useState()
-    // const [modif, setModif] = useState()
-    // const [reload, setReload] = useState(false)
     const [likes, setLikes] = useState()
     const [activities, setActivities] = useState([])
     const user = useSelector(store => store.usersReducer.user)
@@ -43,36 +37,9 @@ function Itinerary({ data }) {
 
     async function likesOrDislikes() {
         const res = await dispatch(itinerariesActions.likeDislike(data._id))
-        console.log("RESPUESTA", res)
         setLikes(res)
     }
-    console.log("LIKES", likes)
-
-
-    // async function addCommentUser(event) {
-    //     const commentData = {
-    //         itinerary: itinerary._id,
-    //         comment: inputText,
-    //     }
-    //     await dispatch(commentsActions.addComment(commentData))
-    //         .then(response => setItinerary(response.data.response.newComment), setInputText(""))
-
-    // }
-
-    // async function modifyCommentUser(event) {
-    //     const commentData = {
-    //         commentId: event.target.id,
-    //         comment: modif,
-    //     }
-    //     await dispatch(commentsActions.modifyComment(commentData))
-    //     setReload(!reload)
-    // }
-
-    // async function deleteCommentUser(event) {
-    //     await dispatch(commentsActions.deleteComment(event.target.id))
-    //     setReload(!reload)
-    // }
-
+    // console.log("LIKES", likes)
 
     return (
         <>
@@ -97,7 +64,8 @@ function Itinerary({ data }) {
                             <div className="price-duration-like">
 
                                 {user ?
-                                    <button className="button-like" onClick={likesOrDislikes}> {likes?.includes(user.id) ?
+                                    <button className="button-like" onClick={likesOrDislikes}> 
+                                    {likes?.includes(user.id) ?
                                         (<span style={{ fontSize: "30" }}>
                                             <FavoriteIcon className="like" />
                                         </span>) :
@@ -120,24 +88,14 @@ function Itinerary({ data }) {
                                 <Collapse title="MORE INFO" shadow css={{ backgroundColor: "#8090909f", boxShadow: "0px 5px 8px rgba(0, 0, 0, 0.505)", marginBottom: "0" }}>
                                     <div className="activities-container">
                                         <h3 className="funtitle">ACTIVITIES TO ENJOY</h3>
+
                                         <div className="card-container">
                                             {activities?.length > 0 ?
                                                 activities.map((activity, index) =>
                                                     <Activity activity={activity} key={index} />) : <NotFoundActivities />}
                                         </div>
-                                        <h3 className="funtitle">OUR TRAVELERS SAY</h3>
-                                        <div className="comments-container">
-                                            <Stack direction="row" spacing={2}>
-                                                <Avatar
-                                                    alt="Remy Sharp"
-                                                    src={process.env.PUBLIC_URL + `${data.authorimage}`}
-                                                    sx={{ width: 56, height: 56, margin: 2 }}
-                                                />
-                                            </Stack>
-                                            <div className="comment-author">Jenny Williams:</div>
 
-                                            <div className="comment-box">Really Fun!</div>
-                                        </div>
+                                       <Comment itineraries={{data}} handleSetReload={{handleSetR}}/>
                                     </div>
 
                                 </Collapse>

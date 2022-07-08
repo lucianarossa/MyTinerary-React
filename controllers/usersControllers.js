@@ -90,6 +90,7 @@ const usersControllers = {
                         const userData = {
                             id: userExist._id,
                             firstName: userExist.firstName,
+                            lastName: userExist.lastName,
                             email: userExist.email,
                             image: userExist.image,
                             from: from,
@@ -122,6 +123,7 @@ const usersControllers = {
                             const userData = {
                                 id: userExist._id,
                                 firstName: userExist.firstName,
+                                lastName: userExist.lastName,
                                 email: userExist.email,
                                 image: userExist.image,
                                 from: from,
@@ -177,7 +179,7 @@ const usersControllers = {
         if (req, res) {
             res.json({
                 success: true,
-                response: { id: req.user.id, firstName: req.user.firstName, email: req.user.email, image: req.user.image, from: "token" },
+                response: { id: req.user.id, firstName: req.user.firstName, lastName: req.user.lastName, email: req.user.email, image: req.user.image, from: "token" },
                 messagge: "Welcome " + req.user.firstName
             })
         } else {

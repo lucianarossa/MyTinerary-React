@@ -24,11 +24,11 @@ const activitiesActions = {
     getActivitiesByItinerary: (id) => {
         return async (dispatch, getState) => {
             const res = await axios.get(`http://localhost:4000/api/activitiesbyitinerary/${id}`)
-            console.log("RES",res)
+            // console.log("RES",res)
             return res.data.response
         }
     },
 
 }
 
-export default activitiesActions
+export default activitiesActions 

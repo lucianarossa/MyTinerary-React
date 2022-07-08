@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import "../styles/details.css"
 import { useParams } from "react-router-dom"
 import { Link as LinkRouter } from "react-router-dom"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Itinerary from "../components/Itinerary"
 import { useDispatch, useSelector } from "react-redux"
 import citiesActions from "../redux/actions/citiesActions";
@@ -14,13 +14,18 @@ import NotFoundItinenary from "../components/NotFoundItinerary";
 function CityDetails() {
   const { id } = useParams() //recibe el id, desestructura el parametro con el metodo useparams
   const dispatch = useDispatch()
+  const [reload, setReload] = useState(false)
 
   useEffect(() => {
 
     dispatch(citiesActions.getOneCity(id))
     dispatch(itinerariesActions.getItinerariesByCity(id))
     // eslint-disable-next-line
-  }, [id])
+  }, [id,reload])
+
+  function handleSetReload(){
+    setReload(!reload)
+  }
 
   const city = useSelector(store => store.citiesReducer.getOneCity)
   const itineraries = useSelector(store => store.itinerariesReducer.getItinerariesByCity)
@@ -38,7 +43,7 @@ function CityDetails() {
         
         {itineraries?.length > 0 ? 
         itineraries.map ((itinerary, index) =>
-         <Itinerary data={itinerary} key={index} />) : <NotFoundItinenary />}
+         <Itinerary data={itinerary} handleSetR={handleSetReload}key={index} />) : <NotFoundItinenary />}
 
         <LinkRouter to="/citiespage" className="Links">
           <button className="call-button"> BACK TO CITIES!

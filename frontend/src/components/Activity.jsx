@@ -3,7 +3,7 @@ import "../styles/itinerary.css"
 
 
 function Activity({activity}){
-    console.log(activity)
+    // console.log(activity)
     return(
         <div className="card card-activ">
           <img width="100%" className="card-img card-img-activ" src={process.env.PUBLIC_URL + `${activity.image}`} alt="cities" />

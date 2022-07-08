@@ -61,7 +61,9 @@ Router.route("/itineraries/like/:itiId")
 
 Router.route("/itineraries/comment")
 .post(passport.authenticate("jwt", {session: false}), addComment)
-.put(passport.authenticate("jwt", {session: false}), modifyComment)
+
+Router.route('/allItineraries/comment')
+.put(passport.authenticate('jwt',{ session: false }),modifyComment)
 
 Router.route("/itineraries/comment/:id")
 .post(passport.authenticate("jwt", {session: false}), deleteComment)

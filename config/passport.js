@@ -17,14 +17,14 @@ module.exports = passport.use(new jwtStrategy({
                 return done(null, user)
             }
             else if (err) {
-                // console.log(err)
+                console.log(err)
                 return done(err, false)
             } else {
                 return done(null, false)
             }
         })
         .catch(err => {
-            // console.log(err.status)
+            console.log(err.status)
             return done(err.false)
         })
 }
