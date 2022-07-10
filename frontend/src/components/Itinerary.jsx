@@ -11,10 +11,10 @@ import Activity from "./Activity";
 import NotFoundActivities from "./NotFoundActivities";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import Comment from "./Comment"
+import AddComment from "./AddComment"
 import toast from 'react-hot-toast';
 
-function Itinerary({ data, setChangeReload }) {
+function Itinerary({ data, setChangeReload}) {
 
 
     const dispatch = useDispatch()
@@ -30,7 +30,7 @@ function Itinerary({ data, setChangeReload }) {
         activitiesIti()
         // eslint-disable-next-line
     }, [])
-    
+
 
     async function likesOrDislikes() {
         const res = await dispatch(itinerariesActions.likeDislike(data._id))
@@ -98,7 +98,7 @@ function Itinerary({ data, setChangeReload }) {
                                                     <Activity activity={activity} key={index} />) : <NotFoundActivities />}
                                         </div>
 
-                                       <Comment itineraries={{data}}/>
+                                       <AddComment itineraries={{data}} setChangeReload={setChangeReload} />
                                     </div>
 
                                 </Collapse>

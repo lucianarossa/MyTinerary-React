@@ -84,7 +84,7 @@ const itinerariesControllers = {
             itinerary = await Itinerary.findOneAndDelete({ _id: id })
         } catch (err) {
             error = err
-        }
+        } 
         res.json({
             response: error ? 'ERROR' : itinerary,
             success: error ? false : true,
