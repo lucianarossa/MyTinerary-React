@@ -12,12 +12,12 @@ import NotFoundActivities from "./NotFoundActivities";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Comment from "./Comment"
+import toast from 'react-hot-toast';
 
-function Itinerary({ data }) {
-    // console.log("🚀 ~ file: Itinerary.jsx ~ line 17 ~ Itinerary ~ data", data)
+function Itinerary({ data, setChangeReload }) {
+
 
     const dispatch = useDispatch()
-    const [likes, setLikes] = useState()
     const [activities, setActivities] = useState([])
     const user = useSelector(store => store.usersReducer.user)
 
@@ -26,46 +26,49 @@ function Itinerary({ data }) {
         const activitiesIti = async () => {
             const res = await dispatch(activitiesActions.getActivitiesByItinerary(data._id));
             setActivities(res);
-            // console.log("ACTIVITIES",res)
         }
-
         activitiesIti()
         // eslint-disable-next-line
     }, [])
-
-
+    
 
     async function likesOrDislikes() {
         const res = await dispatch(itinerariesActions.likeDislike(data._id))
-        setLikes(res)
+        setChangeReload()
+        
+        if (res.success) {
+            toast.success(res.message)
+        } else {
+            toast.error(res.message)
+        }    
     }
-    // console.log("LIKES", likes)
+    
 
     return (
         <>
-            <Card key={data._id} className="iti-card" isHoverable variant="bordered" css={{ mw: "80%", padding: "2", backgroundColor: "white", boxShadow: "0px 5px 8px rgba(0, 0, 0, 0.505)" }}>
+            <Card className="iti-card" isHoverable variant="bordered" css={{ mw: "80%", padding: "2", backgroundColor: "white", boxShadow: "0px 5px 8px rgba(0, 0, 0, 0.505)" }}>
                 <div className="card-box">
                     <Card.Body css={{ w: "100%" }}>
                         <div>
-                            <Text className="iti-title">{data.name}</Text>
+                            <Text className="iti-title">{data?.name}</Text>
                             <User
-                                src={process.env.PUBLIC_URL + `${data.authorimage}`}
-                                name={data.author}
+                                src={process.env.PUBLIC_URL + `${data?.authorimage}`}
+                                name={data?.author}
                                 bordered
                                 color="error"
                                 zoomed
                                 squared
                             />
-                            <Text h6 css={{ w: "100%" }}>"{data.description}"</Text>
+                            <Text h6 css={{ w: "100%" }}>"{data?.description}"</Text>
                             <div className="price-duration">
-                                <Text className="price-dur">Price:  {data.price}</Text>
-                                <Text className="price-dur">Duration:  {data.duration} hs</Text>
+                                <Text className="price-dur">Price:  {data?.price}</Text>
+                                <Text className="price-dur">Duration:  {data?.duration} hs</Text>
                             </div>
                             <div className="price-duration-like">
 
                                 {user ?
                                     <button className="button-like" onClick={likesOrDislikes}> 
-                                    {likes?.includes(user.id) ?
+                                    {data?.likes.includes(user.id) ?
                                         (<span style={{ fontSize: "30" }}>
                                             <FavoriteIcon className="like" />
                                         </span>) :
@@ -73,7 +76,7 @@ function Itinerary({ data }) {
                                     </button>
                                     : (<span style={{ fontSize: "30" }}><FavoriteBorderIcon className="nolike" /></span>)
                                 }
-                                <p className="price-dur like-text">{likes?.length} likes!</p>
+                                <p className="price-dur like-text">{data?.likes.length} likes!</p>
                             </div>
                             <div className="price-duration-hash">
                                 {data.hashtags.map((hash, index) =>

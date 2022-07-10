@@ -52,6 +52,7 @@ function App(props) {
         <Route path="/citiespage" element={<CitiesPage />} />
         <Route path="citiespage/citydetails/:id" element={<CityDetails />} />
         <Route path="/goodbye" element= {<GoodBye/>}/>
+        {/* //si el usuario esta deslogueado puede acceder  */}
         {!props.user && <Route path="/signup" element={<SignUp />} />}
         {!props.user && <Route path="/login" element={<LogIn />} />}
       </Routes>

@@ -139,25 +139,25 @@ const itinerariesControllers = {
     likesDislike: async (req, res) => {
         const id = req.params.itiId //LLEGA X PARAM DESDE AXIOS (ID ITI)
         const user = req.user._id //LLEGA X RESP DE PASSPORT
-        console.log(req.params)
-        console.log(req.user)
+      
 
         await Itinerary.findOne({_id:id}) // buscamos un iti que su obj id sea igual al q pasamos x parametro
 
         .then((itinerary) => {
-            console.log(itinerary)
+            console.log("ITINERARIO",itinerary)
+
             if (itinerary.likes.includes(user)){ //de ese iti buscamos la prop like y si esa prop incluye el user
                 Itinerary.findOneAndUpdate({_id:id}, {$pull: {likes:user}}, {new: true}) //si incluye el user, buscamos el iti p/ actualizarlo x id y utilizamos el metodo pull de mongo (extraer), para extraer el like del usuer y devolver el nuevo user// DESLIKEAR
-                .then((response) => res.json({success:true,  response: response.likes}))//devolvemos resp/ PARA ALERTA
+                .then((response) => res.json({success:true,  response: response.likes, message: "You don't like it anymore!"}))//devolvemos resp/ PARA ALERTA
                 .catch((error) => console.log(error))
 
             } else { //si la prop like de iti no incluye el user
                 Itinerary.findOneAndUpdate({_id:id}, {$push: {likes:user}}, {new: true}) //busca el iti y le hace push (agregar) el like del user /LIKEAR ($push llama al metodo)
-                .then((response) => res.json({success:true, response: response.likes}))
+                .then((response) => res.json({success:true, response: response.likes, message: "Glad you like it!"}))
                 .catch((error) => console.log(error))
             }
         })
-        .catch((error) => res.json({success: false, response: error}))
+        .catch((error) => res.json({success: false, response: error, message: "Ooops, something went wrong, try in a few minutes!"}))
        
     },
 

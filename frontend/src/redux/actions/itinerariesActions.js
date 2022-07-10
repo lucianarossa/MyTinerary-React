@@ -31,19 +31,29 @@ const itinerariesActions = {
 
     likeDislike: (itiId) => { //RECIBE EL ID DEL ITI COMO PARAM
         const token = localStorage.getItem("token") //LEVANTO EL TOKEN
-        return async () => {
+        return async (dispatch) => {
             try {
                 let response = await axios.put(`http://localhost:4000/api/itineraries/like/${itiId}`, {}, //ESPERA EL PUT DE AXIOS, PRIMER PARAMETRO OBJETO VACIO(PARA OCUPAR EL LUGAR DE BODY Y NO TOME EL HEADER COMO BODY) Y LUEGO EL HEADER
                 {headers: {
                     Authorization: "Bearer "+ token
                 }
             })
-            console.log("resactions",response)
-            return response.data.response
+            dispatch({
+                type: 'message',
+                payload: {
+                    view: true,
+                    message: response.data.message,
+                    success: response.data.success
+                }
+            })
+
+            return response.data
+       
 
             }catch (error) {
                 console.log(error)
             }
+            
         }
     }
 

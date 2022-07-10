@@ -7,7 +7,7 @@ import { useState } from "react";
 import commentsActions from "../redux/actions/commentsActions";
 import toast from 'react-hot-toast';
 
-function Comment({ itineraries }) {
+function Comment({ itineraries}) {
     // console.log("ITINERARIO", itineraries)
 
     const user = useSelector(store => store.usersReducer.user)
@@ -16,10 +16,15 @@ function Comment({ itineraries }) {
     const [itinerary, setItinerary] = useState(itineraries.data)
     const dispatch = useDispatch()
     const inputTextElement = useRef(null)
+    const [reload, setReload] = React.useState(false)
 
     function handleInputText(event) {
         setInputText(event.currentTarget.textContent)
-    }
+    } 
+
+    function reloadChanger(){
+        setReload(!reload)
+      }
 
     //AGREGAR COMENTARIO
 
@@ -30,10 +35,10 @@ function Comment({ itineraries }) {
         }
         const resp = await dispatch(commentsActions.addComment(commentData))
         setItinerary(resp.response.newComment)
-        console.log("RESPUESTA", resp)
         inputTextElement.current.innerText = ""
-        setInputText("")
-
+        reloadChanger()
+        
+     
         if (resp.success) {
             toast.success(resp.message)
         } else {
@@ -51,6 +56,8 @@ function Comment({ itineraries }) {
         const res = await dispatch(commentsActions.modifyComment(commentData))
         setItinerary(res.data.response.newComment)
         setModify(res.data)
+        reloadChanger()
+        
         if (res.data.success) {
             toast.success(res.data.message)
         } else {
@@ -62,8 +69,9 @@ function Comment({ itineraries }) {
 
     async function deleteComment(event) {
         const res = await dispatch(commentsActions.deleteComment(event.target.id))
-        console.log(res)
         setItinerary(res.data.response.deleteComment)
+        reloadChanger()
+        
 
         if (res.data.success) {
             toast.success(res.data.message)
@@ -80,10 +88,12 @@ function Comment({ itineraries }) {
             <div className="comment-box-comment" style={{ display: "flex", flexDirection: "column", backgroundColor: "white" }}>
 
                 {itinerary?.comments.map(comment =>
-                    <>
-                        {comment.userId._id !== user?.id ?
-                            <div className="boxes">
-                                <div key={comment._id} className="comments-container">
+                    <div className="boxes" key={comment._id}>
+                        
+                        {/* SI EL USUARIO NO ES EL QUE HIZO EL COMENTARIO */}
+                        {comment?.userId._id !== user?.id ?
+                        
+                                <div className="comments-container">
                                     <Stack direction="row" spacing={2}>
                                         <Avatar
                                             alt="Remy Sharp"
@@ -96,11 +106,11 @@ function Comment({ itineraries }) {
                                         <p>{comment.comment}</p>
                                     </div>
                                 </div>
-                            </div>
+                            
                             :
                             <>
-                                <div className="boxes">
-                                    <div key={comment._id} className="comments-container">
+                                <div>
+                                    <div className="comments-container">
                                         <Stack direction="row" spacing={2}>
                                             <Avatar
                                                 alt="Remy Sharp"
@@ -109,7 +119,7 @@ function Comment({ itineraries }) {
                                             />
                                         </Stack>
                                         <div className="comment-author">{comment.userId.firstName} {comment.userId.lastName}</div>
-                                        <div className="comment-box" placeholder="Add a Comment" onInput={(event) => setModify(event.currentTarget.textContent)} suppressContentEditableWarning={true} contentEditable>{comment.comment}</div>
+                                        <div className="comment-box" onInput={(event) => setModify(event.currentTarget.textContent)} suppressContentEditableWarning={true} contentEditable>{comment.comment}</div>
                                     </div>
                                     <div className="comment-buttons">
                                         <button onClick={modifyComment} id={comment._id} className="call-button comment-button">EDIT✏️</button>
@@ -118,7 +128,7 @@ function Comment({ itineraries }) {
                                 </div>
                             </>
                         }
-                    </>
+                    </div>
                 )}
 
                 {/* CONDICION USUARIO LOGUEADO*/}
@@ -135,7 +145,7 @@ function Comment({ itineraries }) {
                                     />
                                 </Stack>
                                 <div className="comment-author">{user.firstName} {user.lastName}</div>
-                                <div className="comment-box" placeholder="Add a Comment" ref={inputTextElement} onInput={handleInputText} contentEditable suppressContentEditableWarning={true}></div>
+                                <div className="comment-box" ref={inputTextElement} onInput={handleInputText} contentEditable suppressContentEditableWarning={true}></div>
 
                             </div>
                             <div className="comment-buttons">

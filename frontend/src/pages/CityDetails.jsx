@@ -11,16 +11,23 @@ import citiesActions from "../redux/actions/citiesActions";
 import itinerariesActions from "../redux/actions/itinerariesActions";
 import NotFoundItinenary from "../components/NotFoundItinerary";
 
+
 function CityDetails() {
   const { id } = useParams() //recibe el id, desestructura el parametro con el metodo useparams
   const dispatch = useDispatch()
+  const [reload, setReload] = React.useState(false)
+  
 
   useEffect(() => {
 
     dispatch(citiesActions.getOneCity(id))
     dispatch(itinerariesActions.getItinerariesByCity(id))
     // eslint-disable-next-line
-  }, [id])
+  }, [id, reload])
+
+  function reloadChanger(){
+    setReload(!reload)
+  }
 
 
   const city = useSelector(store => store.citiesReducer.getOneCity)
@@ -29,7 +36,7 @@ function CityDetails() {
   return (
     <>
       <Container fluid className="details-container" key={city?._id}>
-        <img width="100%" className="details-image" src={process.env.PUBLIC_URL + `${city.image}`} alt="cities" />
+        <img width="100%" className="details-image" src={process.env.PUBLIC_URL + `${city?.image}`} alt="cities" />
         <div className="overlay-cities"></div>
         <p className="details-description">{city?.phrase}</p>
         <h1 className="details-title">{city?.name}</h1>
@@ -38,8 +45,8 @@ function CityDetails() {
         <h1 className="itineraries-title">Itineraries</h1>
 
         {itineraries?.length > 0 ?
-          itineraries.map((itinerary, index) =>
-            <Itinerary data={itinerary} key={index} />) : <NotFoundItinenary />}
+          itineraries?.map((itinerary, index) =>
+            <Itinerary data={itinerary} key={index} setChangeReload={reloadChanger}/>) : <NotFoundItinenary />}
 
         <LinkRouter to="/citiespage" className="Links">
           <button className="call-button"> BACK TO CITIES!
