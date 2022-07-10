@@ -61,7 +61,7 @@ function SignUp() {
         }
         if (res.data.from === "signup") {
             if (res.data.success) {
-                toast.success(res.data.message)
+                toast(res.data.message)
                 navigate("/")
             } else {
                 toast.error(res.data.message)

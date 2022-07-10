@@ -28,16 +28,17 @@ function Itinerary({ data, setChangeReload}) {
             setActivities(res);
         }
         activitiesIti()
+        
         // eslint-disable-next-line
-    }, [])
+    }, [data._id])
 
 
     async function likesOrDislikes() {
         const res = await dispatch(itinerariesActions.likeDislike(data._id))
         setChangeReload()
         
-        if (res.success) {
-            toast.success(res.message)
+        if (res?.success) {
+            toast(res.message)
         } else {
             toast.error(res.message)
         }    
@@ -76,7 +77,10 @@ function Itinerary({ data, setChangeReload}) {
                                     </button>
                                     : (<span style={{ fontSize: "30" }}><FavoriteBorderIcon className="nolike" /></span>)
                                 }
-                                <p className="price-dur like-text">{data?.likes.length} likes!</p>
+
+                                {data.likes.length === 1 ?
+                                <p className="price-dur like-text">{data?.likes.length} like!</p> :
+                                <p className="price-dur like-text">{data?.likes.length} likes!</p> }
                             </div>
                             <div className="price-duration-hash">
                                 {data.hashtags.map((hash, index) =>
@@ -94,7 +98,7 @@ function Itinerary({ data, setChangeReload}) {
 
                                         <div className="card-container">
                                             {activities?.length > 0 ?
-                                                activities.map((activity, index) =>
+                                                activities?.map((activity, index) =>
                                                     <Activity activity={activity} key={index} />) : <NotFoundActivities />}
                                         </div>
 

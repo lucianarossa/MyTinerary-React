@@ -9,7 +9,7 @@ const commentsControllers = {
         const user = req.user._id
         try {
             const newComment = await Itinerary.findOneAndUpdate({_id:itinerary}, {$push: {comments: {comment: comment, userId: user}}}, {new: true}).populate("comments.userId", {firstName:1, lastName:1, image:1})
-            res.json({success: true, response: {newComment}, message: "Thanks for your comment!"})
+            res.json({success: true, response: {newComment}, message: "Thanks for your comment! 🤙"})
         }
         catch(error) {
             console.log(error)
@@ -30,7 +30,7 @@ const commentsControllers = {
           res.json({
             success: true,
             response: { newComment },
-            message: "Your comment has been modified",
+            message: "Your comment has been modified ✏️",
           });
           console.log(newComment)
         } catch (error) {
@@ -49,7 +49,7 @@ const commentsControllers = {
         try {
             const deleteComment = await Itinerary.findOneAndUpdate({"comments._id": id}, {$pull:{comments: {_id: id}}}, {new: true}).populate("comments.userId", {firstName:1, lastName:1, image:1})
             // console.log(deleteComment)
-            res.json({success: true, response: {deleteComment}, message: "Your comment has been deleted!"})
+            res.json({success: true, response: {deleteComment}, message: "Your comment has been deleted! 🗑️"})
         }
         catch(error) {
             console.log(error)

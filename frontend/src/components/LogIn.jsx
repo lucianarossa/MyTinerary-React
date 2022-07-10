@@ -31,12 +31,12 @@ function LogIn() {
         }
         const res = await dispatch(usersActions.logInUser(userData))
         if (res.data.success) {
-            toast.success(res.data.message)
+            toast(res.data.message)
             navigate("/")
 
         } else {
             toast.error(res.data.message)
-            navigate("/signup")
+            
         }
 
         setEmail("")

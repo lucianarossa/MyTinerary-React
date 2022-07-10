@@ -18,7 +18,7 @@ const usersControllers = {
                     res.json({
                         success: false,
                         from: "signup",
-                        message: "You are already registered please Log In"
+                        message: "You are already registered please Log In 😉"
                     })
                 } else {
                     const hashedPassword = bcryptjs.hashSync(password, 10)
@@ -28,7 +28,7 @@ const usersControllers = {
                     res.json({
                         success: true,
                         from: "signup",
-                        message: "We add " + from + " to your registration means"
+                        message: "We add " + from + " to your registration means ✅"
                     })
                 }
 
@@ -53,7 +53,7 @@ const usersControllers = {
                     res.json({
                         success: true,
                         from: "signup",
-                        message: "Congratulations! you registered with " + from
+                        message: "Congratulations! you registered with " + from + "😁"
                     })
                 } else { //si la data VIENE DEL FORM
                     await newUser.save()
@@ -61,12 +61,12 @@ const usersControllers = {
                     res.json({
                         success: true,
                         from: "signup",
-                        message: "We sent you an EMAIL to validate your registration, please check your inbox"
+                        message: "We sent you an EMAIL to validate your registration, please check your inbox 📧"
                     })
                 }
             }
         } catch (error) {
-            res.json({ success: false, message: "Oops! Something went wrong try in a few minutes" })
+            res.json({ success: false, message: "Oops! Something went wrong try in a few minutes 😞" })
 
         }
     },
@@ -79,7 +79,7 @@ const usersControllers = {
             
             if (!userExist) { //si el usuario NO EXISTE
                
-                res.json({ success: false, message: "You are not registered yet please Sign Up" })
+                res.json({ success: false, message: "You are not registered yet please Sign Up 😉" })
 
             } else { //si el usuario EXISTE
                 let matchpassword = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
@@ -103,14 +103,14 @@ const usersControllers = {
                             success: true,
                             from: from,
                             response: { token, userData }, //al front le mando token y le mando userdata
-                            message: "Welcome back " + userData.firstName,
+                            message: "Welcome back " + userData.firstName + "😃",
                         })
 
                     } else {
                         res.json({
                             success: false,
                             from: from,
-                            message: "You are not registered with " + from + " please Sign In"
+                            message: "You are not registered with " + from + " please Sign In 🙂"
                         })
                     }
 
@@ -135,26 +135,26 @@ const usersControllers = {
                                 success: true,
                                 from: from,
                                 response: { token, userData },
-                                message: "Welcome back " + userData.firstName,
+                                message: "Welcome back " + userData.firstName + "😃",
                             })
                         } else {
                             res.json({
                                 success: false,
                                 from: from,
-                                message: "Your email or your password does not match please check",
+                                message: "Your email or your password does not match please check 🔑",
                             })
                         }
                     } else {
                         res.json({
                             success: false,
                             from: from,
-                            message: "Please check to verify your email"
+                            message: "Please check to verify your email 📧"
                         })
                     }
                 }
             }
         } catch (error) {
-            res.json({ success: false, message: "Oops! Something went wrong try in a few minutes" ,console: console.log(error)})
+            res.json({ success: false, message: "Oops! Something went wrong try in a few minutes 😞"})
         }
     },
 
@@ -169,7 +169,7 @@ const usersControllers = {
         else {
             res.json({
                 success: false,
-                message: `Your email has not been confirmed yet`
+                message: `Your email has not been confirmed yet 📧`
             })
         }
     },
@@ -180,12 +180,12 @@ const usersControllers = {
             res.json({
                 success: true,
                 response: { id: req.user.id, firstName: req.user.firstName, lastName: req.user.lastName, email: req.user.email, image: req.user.image, from: "token" },
-                messagge: "Welcome " + req.user.firstName
+                messagge: "Welcome " + req.user.firstName + "😃"
             })
         } else {
             res.json({
                 sucess: false,
-                message: "Please Log In again"
+                message: "Please Log In again 😉"
             })
         }
     },

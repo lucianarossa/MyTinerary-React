@@ -25,7 +25,7 @@ function Comments({comment, setChangeReload}){
         setChangeReload()
         
         if (res.data.success) {
-            toast.success(res.data.message)
+            toast(res.data.message)
         } else {
             toast.error(res.data.message)
         }
@@ -39,7 +39,7 @@ function Comments({comment, setChangeReload}){
         
 
         if (res.data.success) {
-            toast.success(res.data.message)
+            toast(res.data.message)
         } else {
             toast.error(res.data.message)
         }
@@ -51,6 +51,7 @@ function Comments({comment, setChangeReload}){
         <>
                                 <div>
                                     <div className="comments-container">
+                                        <div className="avatar-name">
                                         <Stack direction="row" spacing={2}>
                                             <Avatar
                                                 alt="Remy Sharp"
@@ -59,6 +60,7 @@ function Comments({comment, setChangeReload}){
                                             />
                                         </Stack>
                                         <div className="comment-author">{comment.userId.firstName} {comment.userId.lastName}</div>
+                                        </div>
                                         <div className="comment-box" onInput={(event) => setModify(event.currentTarget.textContent)} suppressContentEditableWarning={true} contentEditable>{comment.comment}</div>
                                     </div>
                                     <div className="comment-buttons">

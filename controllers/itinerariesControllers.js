@@ -148,12 +148,12 @@ const itinerariesControllers = {
 
             if (itinerary.likes.includes(user)){ //de ese iti buscamos la prop like y si esa prop incluye el user
                 Itinerary.findOneAndUpdate({_id:id}, {$pull: {likes:user}}, {new: true}) //si incluye el user, buscamos el iti p/ actualizarlo x id y utilizamos el metodo pull de mongo (extraer), para extraer el like del usuer y devolver el nuevo user// DESLIKEAR
-                .then((response) => res.json({success:true,  response: response.likes, message: "You don't like it anymore!"}))//devolvemos resp/ PARA ALERTA
+                .then((response) => res.json({success:true,  response: response.likes, message: "Sad that you don't like it anymore! 😞"}))//devolvemos resp/ PARA ALERTA
                 .catch((error) => console.log(error))
 
             } else { //si la prop like de iti no incluye el user
                 Itinerary.findOneAndUpdate({_id:id}, {$push: {likes:user}}, {new: true}) //busca el iti y le hace push (agregar) el like del user /LIKEAR ($push llama al metodo)
-                .then((response) => res.json({success:true, response: response.likes, message: "Glad you like it!"}))
+                .then((response) => res.json({success:true, response: response.likes, message: "Glad you like it! 😁"}))
                 .catch((error) => console.log(error))
             }
         })

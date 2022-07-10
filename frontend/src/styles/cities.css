@@ -75,12 +75,14 @@
 
 @media (max-width: 680px) {
     .cities-subt {
+        padding: 1rem;
         font-size: 30px;
     }
 }
 
 @media (max-width: 380px) {
     .cities-subt {
+        padding: 1rem;
         font-size: 25px;
 
     }
@@ -156,6 +158,16 @@
     box-shadow: 0px 12px 15px grey;
 }
 
+@media(max-width:426px){
+    .card {
+        border: none;
+        margin: 1rem;
+        width: 200px;
+        height: 230px;
+    }
+}
+
+
 .card:hover {
     transform: scale(.9);
 }
@@ -212,6 +224,12 @@
     font-family: 'Paytone One', sans-serif !important;
 }
 
+@media(max-width:426px){
+    .card .card-text h2 {
+        font-size: 17px;
+    }
+}
+
 .card .card-text p {
     padding-top: 1rem;
     font-size: 0.9rem;
@@ -225,6 +243,15 @@
     text-shadow: 2px 8px 8px black !important;
     font-family: 'Poppins', sans-serif;
 
+}
+
+@media(max-width: 426px){
+    .card .card-text p {
+        padding-top: .5rem;
+        font-size: 0.6rem;
+        margin-top: 0!important;
+    
+    }
 }
 
 .card .card-text p .button {
@@ -242,6 +269,18 @@
     text-decoration: none;
 }
 
+@media(max-width:426px){
+    .card .card-text p .button {
+        padding: 7px 17px;
+        border-radius: 12px;
+        border: 2px solid #fff;
+        letter-spacing: 1px;
+        margin-top: 10px;
+        font-size: .5rem;
+    }
+    
+}
+
 .card .card-text p .button:hover {
     background: #fff;
     color: #000;
@@ -254,3 +293,5 @@
 .button-two {
     visibility: hidden;
 }
+
+

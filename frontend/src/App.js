@@ -39,10 +39,11 @@ function App(props) {
           className: '',
           style: {
             boxShadow: "0px 3px 10px rgba(8, 8, 8, 0.413)",
-            padding: '1rem',
+            padding: '1.5rem',
             color: 'black',
             textAlign: "center",
-            fontSize: "14px",
+            fontSize: "17px",
+            border: "5px solid #BAC9C7"
           },
         }} />
       <NavBar />
@@ -61,7 +62,7 @@ function App(props) {
         style={{
           marginBottom: "8rem",
           marginLeft: "3rem",
-          zIndex: "1"
+          zIndex: "10"
 
         }}
         smooth

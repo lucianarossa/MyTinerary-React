@@ -16,8 +16,7 @@ function CityDetails() {
   const { id } = useParams() //recibe el id, desestructura el parametro con el metodo useparams
   const dispatch = useDispatch()
   const [reload, setReload] = useState(false)
-  // const [itineraries, setItineraries] = useState()
-  
+
 
   useEffect(() => {
    

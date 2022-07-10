@@ -38,11 +38,11 @@ function GoogleSignUp(props) {
         }
         if (res.data.from === "signup") {
             if (res.data.success) {
-                toast.success(res.data.message)
+                toast(res.data.message)
                 navigate("/login")
             } else {
                 toast.error(res.data.message)
-                navigate("/login")
+                
             }
         }
 
