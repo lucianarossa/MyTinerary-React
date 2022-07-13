@@ -5,7 +5,7 @@ const usersActions = {
         // console.log(userData)
         return async (dispatch, getState) => {
             try {
-                const res = await axios.post("http://localhost:4000/api/auth/signup", { userData })
+                const res = await axios.post("https://mytinerary-rossa.herokuapp.com/api/auth/signup", { userData })
                 // console.log(res)
                 dispatch({
                     type: 'MESSAGE',
@@ -25,7 +25,7 @@ const usersActions = {
 
     logInUser: (userData) => {
         return async (dispatch, getState) => {
-            const res = await axios.post("http://localhost:4000/api/auth/login", { userData })
+            const res = await axios.post("https://mytinerary-rossa.herokuapp.com/api/auth/login", { userData })
             //primero verifico que el success sea true
             if (res.data.success) {
 
@@ -60,7 +60,7 @@ const usersActions = {
 
         return async (dispatch, getState) => {
 
-            await axios.get("http://localhost:4000/api/auth/token", {
+            await axios.get("https://mytinerary-rossa.herokuapp.com/api/auth/token", {
                 headers: {
                     "Authorization": "Bearer " + token //el header espera una autoriz. metodo para autenticar y autozar el usuario
                 }

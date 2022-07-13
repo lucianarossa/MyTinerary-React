@@ -5,7 +5,7 @@ const itinerariesActions = {
 
     getItineraries: () => {
         return async (dispatch, getState) => {
-            const res = await axios.get("http://localhost:4000/api/itineraries")
+            const res = await axios.get("https://mytinerary-rossa.herokuapp.com/api/itineraries")
             // console.log(res)
             dispatch({ type: "GETITINERARIES", payload: res.data.response.itineraries })
 
@@ -15,7 +15,7 @@ const itinerariesActions = {
 
     getOneItinerary: (id) => {
         return async (dispatch, getState) => {
-            const res = await axios.get(`http://localhost:4000/api/itineraries/${id}`)
+            const res = await axios.get(`https://mytinerary-rossa.herokuapp.com/api/itineraries/${id}`)
             // console.log(res)
             dispatch({ type: 'GETONEITINERARY', payload: res.data.response })
         }
@@ -23,7 +23,7 @@ const itinerariesActions = {
  
     getItinerariesByCity: (id) => {
         return async (dispatch, getState) => {
-            const res = await axios.get(`http://localhost:4000/api/itinerarybycity/${id}`)
+            const res = await axios.get(`https://mytinerary-rossa.herokuapp.com/api/itinerarybycity/${id}`)
             // console.log(res)
             dispatch({ type: 'GETITINERARIESBYCITY', payload: res.data.response })
             return res
@@ -34,7 +34,7 @@ const itinerariesActions = {
         const token = localStorage.getItem("token") //LEVANTO EL TOKEN
         return async (dispatch) => {
             try {
-                let response = await axios.put(`http://localhost:4000/api/itineraries/like/${itiId}`, {}, //ESPERA EL PUT DE AXIOS, PRIMER PARAMETRO OBJETO VACIO(PARA OCUPAR EL LUGAR DE BODY Y NO TOME EL HEADER COMO BODY) Y LUEGO EL HEADER
+                let response = await axios.put(`https://mytinerary-rossa.herokuapp.com/api/itineraries/like/${itiId}`, {}, //ESPERA EL PUT DE AXIOS, PRIMER PARAMETRO OBJETO VACIO(PARA OCUPAR EL LUGAR DE BODY Y NO TOME EL HEADER COMO BODY) Y LUEGO EL HEADER
                 {headers: {
                     Authorization: "Bearer "+ token
                 }

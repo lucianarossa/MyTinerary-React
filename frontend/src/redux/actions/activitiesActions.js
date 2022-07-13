@@ -5,7 +5,7 @@ const activitiesActions = {
 
     getActivities: () => {
         return async (dispatch, getState) => {
-            const res = await axios.get("http://localhost:4000/api/activities")
+            const res = await axios.get("https://mytinerary-rossa.herokuapp.com/api/activities")
             // console.log(res)
             dispatch({ type: "GETACTIVITIES", payload: res.data.response.activities })
 
@@ -15,7 +15,7 @@ const activitiesActions = {
 
     getOneActivity: (id) => {
         return async (dispatch, getState) => {
-            const res = await axios.get(`http://localhost:4000/api/activities/${id}`)
+            const res = await axios.get(`https://mytinerary-rossa.herokuapp.com/api/activities/${id}`)
             // console.log(res)
             dispatch({ type: 'GETONEACTIVITY', payload: res.data.response })
         }
@@ -23,7 +23,7 @@ const activitiesActions = {
 
     getActivitiesByItinerary: (id) => {
         return async (dispatch, getState) => {
-            const res = await axios.get(`http://localhost:4000/api/activitiesbyitinerary/${id}`)
+            const res = await axios.get(`https://mytinerary-rossa.herokuapp.com/api/activitiesbyitinerary/${id}`)
             // console.log("RES",res)
             return res.data.response
         }

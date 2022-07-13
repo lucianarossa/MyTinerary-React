@@ -14,7 +14,7 @@ const sendEmail = async (email, string) => {
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: { //METODOS DE AUTENTICACION
-            user: process.env.USER,
+            user:"lucianarossa7@gmail.com",
             type: "OAuth2",
             clientId: process.env.GOOGLE_CLIENTID,
             clientSecret: process.env.GOOGLE_CLIENTSECRET,
@@ -38,7 +38,7 @@ const sendEmail = async (email, string) => {
         <h2 style="margin: 2rem; color: white; letter-spacing: 6px; text-shadow: 0px 0px 40px grey; font-size: 25px;">verify your account down below!</h2>
         <button style="background-color:#e993a6; color: black; padding: 1rem; border: none; border-radius: 30px;-webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
         box-shadow: 0px 15px 20px grey; margin: 1rem;">
-        <a href=http://localhost:4000/api/verify/${string} style="text-decoration: none; color:black; font-family:Paytone One; font-size: 20px">CLICK HERE!</a>
+        <a href=https://mytinerary-rossa.herokuapp.com/api/verify/${string} style="text-decoration: none; color:black; font-family:Paytone One; font-size: 20px">CLICK HERE!</a>
         </button>
         <h3 style="margin: 2rem; font-size: 20px; color: white; letter-spacing: 5px; text-shadow: 0px 0px 40px grey; ">SEE YOU!</h3>
         <h3 style="font-size:20px">MyTinerary - Team</h3>

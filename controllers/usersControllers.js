@@ -164,7 +164,7 @@ const usersControllers = {
         if (user) {
             user.verification = true
             await user.save()
-            res.redirect("http://localhost:3000/login")
+            res.redirect("https://my-tinerary-rossa.herokuapp.com/login")
         }
         else {
             res.json({

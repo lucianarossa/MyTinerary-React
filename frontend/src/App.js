@@ -39,10 +39,10 @@ function App(props) {
           className: '',
           style: {
             boxShadow: "0px 3px 10px rgba(8, 8, 8, 0.413)",
-            padding: '1.5rem',
+            padding: '1rem',
             color: 'black',
             textAlign: "center",
-            fontSize: "17px",
+            fontSize: "16px",
             border: "5px solid #BAC9C7"
           },
         }} />

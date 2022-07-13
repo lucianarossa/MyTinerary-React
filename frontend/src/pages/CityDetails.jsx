@@ -39,7 +39,7 @@ function CityDetails() {
   return (
     <>
       <Container fluid className="details-container" key={city?._id}>
-        <img width="100%" className="details-image" src={process.env.PUBLIC_URL + `${city?.image}`} alt="cities" />
+        <img width="100%" className="details-image" src={city?.image} alt="cities" />
         <div className="overlay-cities"></div>
         <p className="details-description">{city?.phrase}</p>
         <h1 className="details-title">{city?.name}</h1>

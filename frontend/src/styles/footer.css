@@ -115,3 +115,21 @@
         border-radius: 45px;
     }
 }
+
+@media(max-width:420px) {
+    .navbar-button {
+        height: 5vh;
+    }
+}
+
+@media(max-width:380px) {
+    .navbar-button {
+        height: 4.5vh;
+    }
+}
+
+@media(max-width:300px) {
+    .navbar-button {
+        height: 5.5vh;
+    }
+}

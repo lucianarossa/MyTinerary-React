@@ -8,6 +8,7 @@ const Router = require('./routes/routes')
 const app = express()
 const cors = require('cors')
 const passport = require("passport")
+const PORT = process.env.PORT || 4000
 
 //middlewares //puente entre el servidor y la base de datos.
 
@@ -16,7 +17,6 @@ app.use(express.json())
 app.use(passport.initialize())
 app.use('/api', Router)
 
-const PORT = 4000
 
 app.set('port', PORT)
 
