@@ -68,21 +68,6 @@ const citiesControllers = {
             error: error
         })
     },
-    removeCity: async (req, res) => {
-        const id = req.params.id
-        let city
-        let error = null
-        try {
-            city = await City.findOneAndDelete({ _id: id })
-        } catch (err) {
-            error = err
-        }
-        res.json({
-            response: error ? 'ERROR' : city,
-            success: error ? false : true,
-            error: error
-        })
-    },
 
     multiplesCities: async (req, res) => {
         let city = []
